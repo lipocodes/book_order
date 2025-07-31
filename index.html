@@ -110,7 +110,10 @@
     <img id="preview" />
     <br />
     <button onclick="sendImage()">Send</button>
-    <div id="result"></div>
+    <div id="result">
+      <div id="row1"></div>
+      <div id="row2"></div>
+    </div>
   </div>
 
   <script>
@@ -167,7 +170,8 @@
              {
               const title = list_books[i].substr(0,pos);
               const dewey = list_books[i].substr(pos+3);
-              console.log("aaaaaaaa=" + title + " "  + dewey); 
+              document.getElementById("row1").textContent = title;
+              document.getElementById("row2").textContent = dewey;
              }
             }
         
