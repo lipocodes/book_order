@@ -163,7 +163,7 @@
           const list_books = JSON.parse(res);
 
           //looping over the list & extracting titles & dewey numbers
-          //const table = document.getElementById("resultTable");
+          const table = document.getElementById("resultTable");
           //table.innerHTML = "";
           for(let i=0; i<list_books.length; i++)
             {  
@@ -172,8 +172,8 @@
              {
               try
               {    
-               //const title = list_books[i].substr(0,pos);
-               //const dewey = list_books[i].substr(pos+3);
+               const title = list_books[i].substr(0,pos);
+               const dewey = list_books[i].substr(pos+3);
                //const row = document.createElement("tr");
                //const cell1 = document.createElement("td");
                //row.appendChild(cell1); 
