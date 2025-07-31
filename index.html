@@ -149,7 +149,8 @@
     });
 
     async function sendImage() {
-      document.getElementById("result").innerText = "";
+      const table = document.getElementById("resultTable");
+      table.innerHTML = ""; 
       if (!selectedFile) {
         alert("Please take a photo first.");
         return;
