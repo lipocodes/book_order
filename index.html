@@ -152,11 +152,11 @@
         const json = await response.json();
 
         if (json.sorted) {
+          console.log("aaaaaaaa=" + json)
           resultBox.textContent = "✅ Sorted Dewey List:\n" + json.sorted.join("\n");
         } else if (json.filename) {
           resultBox.textContent = "✅ Image uploaded successfully as:\n" + json.filename;
         } else {
-          alert(resultBox.textContent);
           resultBox.textContent = "ℹ️ Server response:\n" + JSON.stringify(json, null, 2);
         }
 
