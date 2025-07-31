@@ -111,9 +111,9 @@
     <br />
     <button onclick="sendImage()">Send</button>
     <div id="result">
-      <div id="row1"></div>
-      <div id="row2"></div>
+      <table id="resultTable" style="width: 100%; border-collapse: collapse;"></table>
     </div>
+
   </div>
 
   <script>
@@ -163,25 +163,28 @@
           const list_books = JSON.parse(res);
 
           //looping over the list & extracting titles & dewey numbers
+          const table = document.getElementById("resultTable");
+          table.innerHTML = "";
           for(let i=0; i<list_books.length; i++)
             {  
              const pos = list_books[i].indexOf('^^^'); 
              if(pos>=0)
              {
               try
-              {  
-                
+              {    
                const title = list_books[i].substr(0,pos);
-               console.log("aaaaaaaaaaaaaa=" + list_books[i].substr(pos+3)); 
-               //const dewey = list_books[i].substr(pos+3);
-               //document.getElementById("row1").textContent = title;
-               //document.getElementById("row2").textContent = dewey;
+               const dewey = list_books[i].substr(pos+3);
+               const row = document.createElement("tr");
+               const cell1 = document.createElement("td");
+               cell1.textContent = title; 
+               const cell2 = document.createElement("td");
+               cell2.textContent = dewey; 
               }catch(e) {console.log("eeeeeeeeeeeeee=" + e.toString());}
              }
             }
         
           
-          resultBox.textContent = "✅ Sorted Dewey List:\n" + json.sorted.join("\n");
+          //resultBox.textContent = "✅ Sorted Dewey List:\n" + json.sorted.join("\n");
         } else if (json.filename) {
           resultBox.textContent = "✅ Image uploaded successfully as:\n" + json.filename;
         } else {
