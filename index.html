@@ -149,6 +149,7 @@
     });
 
     async function sendImage() {
+      document.getElementById("result").innerText = "";
       if (!selectedFile) {
         alert("Please take a photo first.");
         return;
@@ -218,7 +219,7 @@
               }
             }
           }
-         document.getElementById("status").textContent = "✅ The right book order ahould be:\n\n";
+         document.getElementById("status").textContent = "✅ The right book order ahould be:";
         } 
 
       } catch (error) {
