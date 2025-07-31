@@ -165,13 +165,12 @@
           //looping over the list & extracting titles & dewey numbers
           for(let i=0; i<list_books.length; i++)
             {  
-             const pos = list_books[i].indexOf('^^^');
-             console.log("aaaaaaaaaaaaaa=" + list_books[i]);
-             console.log("bbbbbbbbbbbbbb=" + pos); 
+             const pos = list_books[i].indexOf('^^^'); 
              if(pos>=0)
              {
               try
               {  
+                console.log("aaaaaaaaaaaaaa=" + list_books[i].substr(0,pos));
                //const title = list_books[i].substr(0,pos);
                //const dewey = list_books[i].substr(pos+3);
                //document.getElementById("row1").textContent = title;
