@@ -218,12 +218,8 @@
               }
             }
           }
-
-        } else if (json.filename) {
-          document.getElementById("status").textContent = "✅ Image uploaded successfully as:\n" + json.filename;
-        } else {
-          document.getElementById("status").textContent = "ℹ️ Server response:\n" + JSON.stringify(json, null, 2);
-        }
+         document.getElementById("status").textContent = "✅ The right book order ahould be:\n\n";
+        } 
 
       } catch (error) {
         document.getElementById("status").textContent = "❌ Error: " + error.message;
