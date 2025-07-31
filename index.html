@@ -69,37 +69,54 @@
     }
 
     #result {
-    margin-top: 25px;
-    padding: 15px;
-    background: #f1f3f5;
-    border-radius: 10px;
-    border-left: 4px solid #007bff;
-    text-align: left;
-    white-space: pre-wrap;
-    max-height: 250px;
-    overflow-y: auto;
-    font-size: 15px;
-    font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
-    line-height: 1.6;
-    color: #333;
-  }
+      margin-top: 25px;
+      padding: 15px;
+      background: #f1f3f5;
+      border-radius: 10px;
+      border-left: 4px solid #007bff;
+      text-align: left;
+      white-space: pre-wrap;
+      max-height: 250px;
+      overflow-y: auto;
+      font-size: 15px;
+      font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+      line-height: 1.6;
+      color: #333;
+    }
 
-   .custom-file-upload {
-    display: inline-block;
-    background: #28a745;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-bottom: 20px;
-   }
+    .custom-file-upload {
+      display: inline-block;
+      background: #28a745;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-bottom: 20px;
+    }
 
-  .custom-file-upload:hover {
-   background: #218838;
-  }
-    
+    .custom-file-upload:hover {
+      background: #218838;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+      padding: 8px;
+      text-align: left;
+      background-color: #f1f3f5;
+      border-bottom: 2px solid #ddd;
+    }
+
   </style>
 </head>
 <body>
@@ -111,9 +128,9 @@
     <br />
     <button onclick="sendImage()">Send</button>
     <div id="result">
-      <table id="resultTable" style="width: 100%; border-collapse: collapse;"></table>
+      <div id="status"></div> <!-- Status message -->
+      <table id="resultTable"></table>
     </div>
-
   </div>
 
   <script>
@@ -137,7 +154,8 @@
         return;
       }
 
-      resultBox.textContent = "⏳ Sending image to server...";
+      // Update status
+      document.getElementById("status").textContent = "⏳ Sending image to server...";
 
       const formData = new FormData();
       formData.append("image", selectedFile);
@@ -155,47 +173,60 @@
         const json = await response.json();
 
         if (json.sorted) {
-          //extract the list inside the JSON object
+          // Extract the list inside the JSON object
           let res = JSON.stringify(json);
           const pos1 = res.indexOf('[');
-          const pos2 = res.indexOf(']')+1;
-          res = res.substring(pos1,pos2);
+          const pos2 = res.indexOf(']') + 1;
+          res = res.substring(pos1, pos2);
           const list_books = JSON.parse(res);
 
-          //looping over the list & extracting titles & dewey numbers
+          // Clear previous table rows
           const table = document.getElementById("resultTable");
-          //table.innerHTML = "";
-          for(let i=0; i<list_books.length; i++)
-            {  
-             const pos = list_books[i].indexOf('^^^'); 
-             if(pos>=0)
-             {
-              try
-              {    
-               const title = list_books[i].substr(0,pos);
-               const dewey = list_books[i].substr(pos+3);
-               const row = document.createElement("tr");
-               const cell1 = document.createElement("td");
-               row.appendChild(cell1); 
-               const cell2 = document.createElement("td");
-               row.appendChild(cell2);
-               cell1.textContent = "title"; 
-               cell2.textContent = "dewey"; 
-               table.appendChild(row);
-              }catch(e) {console.log("eeeeeeeeeeeeee=" + e.toString());}
-             }
+          table.innerHTML = "";
+
+          // Create table header
+          const headerRow = document.createElement("tr");
+          const headerTitle = document.createElement("th");
+          headerTitle.textContent = "Title";
+          const headerDewey = document.createElement("th");
+          headerDewey.textContent = "Dewey";
+          headerRow.appendChild(headerTitle);
+          headerRow.appendChild(headerDewey);
+          table.appendChild(headerRow);
+
+          // Loop over the list & extract titles & Dewey numbers
+          for (let i = 0; i < list_books.length; i++) {
+            const pos = list_books[i].indexOf('^^^');
+            if (pos >= 0) {
+              try {
+                const title = list_books[i].substr(0, pos);
+                const dewey = list_books[i].substr(pos + 3);
+
+                const row = document.createElement("tr");
+
+                const cell1 = document.createElement("td");
+                cell1.textContent = title;
+
+                const cell2 = document.createElement("td");
+                cell2.textContent = dewey;
+
+                row.appendChild(cell1);
+                row.appendChild(cell2);
+                table.appendChild(row);
+              } catch (e) {
+                console.log("Error:", e.toString());
+              }
             }
-        
-          
-          //resultBox.textContent = "✅ Sorted Dewey List:\n" + json.sorted.join("\n");
+          }
+
         } else if (json.filename) {
-          resultBox.textContent = "✅ Image uploaded successfully as:\n" + json.filename;
+          document.getElementById("status").textContent = "✅ Image uploaded successfully as:\n" + json.filename;
         } else {
-          resultBox.textContent = "ℹ️ Server response:\n" + JSON.stringify(json, null, 2);
+          document.getElementById("status").textContent = "ℹ️ Server response:\n" + JSON.stringify(json, null, 2);
         }
 
       } catch (error) {
-        resultBox.textContent = "❌ Error: " + error.message;
+        document.getElementById("status").textContent = "❌ Error: " + error.message;
       }
     }
   </script>
