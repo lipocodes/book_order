@@ -168,11 +168,14 @@
              const pos = list_books[i].indexOf('^^^');
              if(pos>=0)
              {
-              const title = list_books[i].substr(0,pos);
-              const dewey = list_books[i].substr(pos+3);
+              try
+              {  
+               const title = list_books[i].substr(0,pos);
+               const dewey = list_books[i].substr(pos+3);
                console.log("aaaaaaaaaaaaaa=" + title + " " + dewey)
-              document.getElementById("row1").textContent = "Hi there";
-              document.getElementById("row2").textContent = "001.001";
+               document.getElementById("row1").textContent = title;
+               document.getElementById("row2").textContent = dewey;
+              }catch(e) {console.log("eeeeeeeeeeeeee=" + e.toString();)}
              }
             }
         
