@@ -41,6 +41,7 @@
       border-radius: 8px;
       width: 100%;
       margin-bottom: 20px;
+      display: none;
     }
 
     #preview {
@@ -80,11 +81,29 @@
       font-family: monospace;
       color: #333;
     }
+
+   .custom-file-upload {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 20px;
+   }
+
+  .custom-file-upload:hover {
+   background: #218838;
+  }
+    
   </style>
 </head>
 <body>
   <div class="container">
     <h2>📷 Take a Photo and Send</h2>
+    <label for="cameraInput" class="custom-file-upload">📷 Choose a Photo</label>
     <input type="file" accept="image/*" capture="environment" id="cameraInput" />
     <img id="preview" />
     <br />
