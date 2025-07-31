@@ -152,12 +152,25 @@
         const json = await response.json();
 
         if (json.sorted) {
-         
+          //extract the list inside the JSON object
           let res = JSON.stringify(json);
           const pos1 = res.indexOf('[');
-          const pos2 = res.indexOf(']');
+          const pos2 = res.indexOf(']')+1;
           res = res.substring(pos1,pos2);
-          console.log("aaaaaaaa=" + res);
+          const list_books = JSON.parse(res);
+
+          //looping over the list & extracting titles & dewey numbers
+          for(let i=0; i<list_books.length; i++)
+            {
+             const pos = list_books[i].indexOf('^^^');
+             if(pos>=0)
+             {
+              const title = list_books[i].substr(0,pos);
+              const dewey = list_books[i].substr(pos+3);
+              console.log("aaaaaaaa=" + title + " "  + dewey); 
+             }
+            }
+        
           
           resultBox.textContent = "✅ Sorted Dewey List:\n" + json.sorted.join("\n");
         } else if (json.filename) {
