@@ -125,7 +125,7 @@
   <div class="container">
     <h2>📷 Take a Photo and Send</h2>
     <label for="cameraInput" class="custom-file-upload">📷 Choose or Take a Photo</label>
-    <input   type="file"   id="imageInput"   accept="image/*" />
+    <input type="file" accept="image/*" id="cameraInput" capture="environment" />
     <img id="preview" />
     <br />
     <button onclick="sendImage()">Send</button>
