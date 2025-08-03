@@ -87,7 +87,7 @@
             document.getElementById("status").textContent = "✅ The right book order should be:";
           }else {document.getElementById("status").textContent = "✅ Everything is OK!"} 
 
-      } }catch (error) {
+      } catch (error) {
         document.getElementById("status").textContent = "❌ Error: " + error.message;
       }
     }
