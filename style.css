@@ -61,21 +61,19 @@
       background: #0056b3;
     }
 
-    #result {
+  #result {
   margin-top: 24px;
   padding: 20px 24px;
   background: #ffffff;
   border-radius: 12px;
   border: 1px solid #dee2e6;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  
   font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
   font-size: 14px;
   line-height: 1.7;
   color: #212529;
   white-space: pre-wrap;
   overflow-x: auto;
-
   transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
@@ -83,7 +81,6 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   border-color: #007bff;
 }
-
 
     .custom-file-upload {
       display: inline-block;
