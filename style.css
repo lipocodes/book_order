@@ -67,7 +67,9 @@
       background: #f1f3f5;
       border-radius: 10px;
       border-left: 4px solid #007bff;
-
+      text-align: left;
+      white-space: pre-wrap;
+      max-height: 250px;
     }
 
     .custom-file-upload {
