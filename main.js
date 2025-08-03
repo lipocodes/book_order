@@ -96,7 +96,7 @@
               }
             }
           }
-        document.getElementById("status").textContent = "✅ The right book order should be:";
+        //document.getElementById("status").textContent = "✅ The right book order should be:";
       } catch (error) {
         document.getElementById("status").textContent = "❌ Error: " + error.message;
       }
