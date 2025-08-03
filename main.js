@@ -110,7 +110,9 @@
               }
             }
           }
- 
+        if(document.getElementById("status").textContent.length>10){
+            document.getElementById("status").textContent = "✅ The right book order should be:";
+          }else {document.getElementById("status").textContent = "✅ Everything is OK!"} 
 
       } catch (error) {
         document.getElementById("status").textContent = "❌ Error: " + error.message;
