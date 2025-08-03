@@ -3,7 +3,6 @@
     const input = document.getElementById("cameraInput");
     const preview = document.getElementById("preview");
     const resultBox = document.getElementById("result");
-    resultBox.style.display = "none";
 
     input.addEventListener("change", function () {
       const file = input.files[0];
@@ -20,9 +19,7 @@
         alert("Please take a photo first.");
         return;
       }
-
-      // Update status
-      resultBox.style.display = "block";  
+ 
       document.getElementById("status").textContent = "⏳ Sending image to server...";
 
       const formData = new FormData();
