@@ -4,6 +4,12 @@
     const preview = document.getElementById("preview");
     const resultBox = document.getElementById("result");
 
+    if (resultBox.textContent.trim() === "") {
+    resultBox.style.display = "none";
+   } else {
+    resultBox.style.display = "block";
+   }
+
     input.addEventListener("change", function () {
       const file = input.files[0];
       if (file) {
