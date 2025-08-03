@@ -19,7 +19,8 @@
         alert("Please take a photo first.");
         return;
       }
- 
+
+      // Update status
       document.getElementById("status").textContent = "⏳ Sending image to server...";
 
       const formData = new FormData();
@@ -83,7 +84,8 @@
               }
             }
           }
-  
+         document.getElementById("status").textContent = "✅ The right book order ahould be:";
+        } 
 
       } catch (error) {
         document.getElementById("status").textContent = "❌ Error: " + error.message;
