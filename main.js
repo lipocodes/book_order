@@ -85,7 +85,7 @@
           }
          if(document.getElementById("status").textContent.length>10){
             document.getElementById("status").textContent = "✅ The right book order ahould be:";
-          }else {"✅ Everything is OK!"} 
+          }else {document.getElementById("status").textContent = "✅ Everything is OK!"} 
 
       } catch (error) {
         document.getElementById("status").textContent = "❌ Error: " + error.message;
