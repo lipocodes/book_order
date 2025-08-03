@@ -1,6 +1,6 @@
 {
   "name": "Book Sorting",
-  "short_name": "Shortcut",
+  "short_name": "Books",
   "start_url": "./index.html",
   "display": "standalone",
   "icons": [
