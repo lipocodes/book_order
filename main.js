@@ -13,31 +13,19 @@
     });
 
     async function sendImage() {
-      const table = document.getElementById("resultTable");
+           const table = document.getElementById("resultTable");
       table.innerHTML = ""; 
       if (!selectedFile) {
         alert("Please take a photo first.");
         return;
       }
- 
+
+      // Update status
       document.getElementById("status").textContent = "⏳ Sending image to server...";
 
       const formData = new FormData();
       formData.append("image", selectedFile);
 
-      try {
-       const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
-          method: "POST",
-          body: formData
-        });
-
-        if (!response.ok) {
-          throw new Error("Server error: " + response.statusText);
-        }
-
-        const json = await response.json();
-
-        
       try {
         const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
           method: "POST",
@@ -96,7 +84,9 @@
               }
             }
           }
-        //document.getElementById("status").textContent = "✅ The right book order should be:";
+         document.getElementById("status").textContent = "✅ The right book order ahould be:";
+        } 
+
       } catch (error) {
         document.getElementById("status").textContent = "❌ Error: " + error.message;
       }
