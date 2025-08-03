@@ -70,6 +70,7 @@
       text-align: left;
       white-space: pre-wrap;
       max-height: 250px;
+      overflow-y: auto; 
     }
 
     .custom-file-upload {
