@@ -61,7 +61,10 @@
           table.appendChild(headerRow);
 
           // Loop over the list & extract titles & Dewey numbers
-       
+          for (let i = 0; i < list_books.length; i++) {
+            
+          }
+         document.getElementById("status").textContent = "✅ The right book order ahould be:";
         } 
 
       } catch (error) {
