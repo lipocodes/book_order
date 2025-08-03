@@ -68,7 +68,17 @@
                 const title = list_books[i].substr(0, pos);
                 const dewey = list_books[i].substr(pos + 3);
 
-               
+                const row = document.createElement("tr");
+
+                const cell1 = document.createElement("td");
+                cell1.textContent = title;
+
+                const cell2 = document.createElement("td");
+                cell2.textContent = dewey;
+
+                row.appendChild(cell1);
+                row.appendChild(cell2);
+                table.appendChild(row);
               } catch (e) {
                 console.log("Error:", e.toString());
               }
