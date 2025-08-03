@@ -62,7 +62,14 @@
 
           // Loop over the list & extract titles & Dewey numbers
           for (let i = 0; i < list_books.length; i++) {
-            
+            const pos = list_books[i].indexOf('^^^');
+            if (pos >= 0) {
+              try {
+               
+              } catch (e) {
+                console.log("Error:", e.toString());
+              }
+            }
           }
          document.getElementById("status").textContent = "✅ The right book order ahould be:";
         } 
