@@ -26,16 +26,7 @@
       formData.append("image", selectedFile);
 
       try {
-        const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
-          method: "POST",
-          body: formData
-        });
 
-        if (!response.ok) {
-          throw new Error("Server error: " + response.statusText);
-        }
-
-        const json = await response.json();
 
 
 
