@@ -4,10 +4,10 @@
     const preview = document.getElementById("preview");
     const resultBox = document.getElementById("result");
 
-    if (resultBox.textContent.trim() === "") {
-    resultBox.style.display = "none";
-   } else {
+    if (resultBox.textContent.trim().length >= 100) {
     resultBox.style.display = "block";
+   } else {
+    resultBox.style.display = "none";
    }
 
     input.addEventListener("change", function () {
