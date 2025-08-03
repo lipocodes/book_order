@@ -65,6 +65,9 @@
             const pos = list_books[i].indexOf('^^^');
             if (pos >= 0) {
               try {
+                const title = list_books[i].substr(0, pos);
+                const dewey = list_books[i].substr(pos + 3);
+
                
               } catch (e) {
                 console.log("Error:", e.toString());
