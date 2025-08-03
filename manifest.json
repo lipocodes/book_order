@@ -1,5 +1,5 @@
 {
-  "name": "My Shortcut",
+  "name": "Book Sorting",
   "short_name": "Shortcut",
   "start_url": "./index.html",
   "display": "standalone",
