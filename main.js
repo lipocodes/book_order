@@ -13,14 +13,13 @@
     });
 
     async function sendImage() {
-           const table = document.getElementById("resultTable");
+      const table = document.getElementById("resultTable");
       table.innerHTML = ""; 
       if (!selectedFile) {
         alert("Please take a photo first.");
         return;
       }
-
-      // Update status
+ 
       document.getElementById("status").textContent = "⏳ Sending image to server...";
 
       const formData = new FormData();
@@ -84,8 +83,9 @@
               }
             }
           }
-         document.getElementById("status").textContent = "✅ The right book order ahould be:";
-        } 
+         if(document.getElementById("status").textContent.length>10){
+            document.getElementById("status").textContent = "✅ The right book order should be:";
+          }else {document.getElementById("status").textContent = "✅ Everything is OK!"} 
 
       } catch (error) {
         document.getElementById("status").textContent = "❌ Error: " + error.message;
