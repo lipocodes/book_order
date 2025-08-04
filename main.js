@@ -1,7 +1,7 @@
     let selectedFile = null;
 
     const input = document.getElementById("cameraInput");
-    const gallery = document.getElementById("gallery");
+    const gallery = document.getElementById("gallerySelection");
     const preview = document.getElementById("preview");
     const resultBox = document.getElementById("result");
 
