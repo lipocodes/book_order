@@ -11,8 +11,11 @@
 <body>
   <div class="container">
     <h2>📷 Take a Photo and Send</h2>
-    <label for="cameraInput" class="custom-file-upload">📷 Choose or Take a Photo</label>
-    <input type="file" accept="image/*" />
+    <label for="cameraInput" class="custom-file-upload">📷 Take a Photo</label>
+    <input type="file" accept="image/*" id="cameraInput" capture="environment" />
+    <br/>
+    <label for="gallerySelection" class="custom-file-upload">📷 Select a Photo</label>
+    <input type="file" accept="image/*" id="gallerySelection" />
     <img id="preview" />
     <br />
     <button onclick="sendImage()">Send</button>
@@ -25,6 +28,7 @@
 
 </body>
 </html>
+
 
 
 
