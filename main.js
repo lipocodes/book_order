@@ -36,7 +36,7 @@
       formData.append("image", selectedFile);
 
       try {
-        const response = await fetch("http://www.yvclib1.xyz/ocr/process", {
+        const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
           method: "POST",
           body: formData
         });
