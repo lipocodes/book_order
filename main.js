@@ -1,10 +1,19 @@
     let selectedFile = null;
 
     const input = document.getElementById("cameraInput");
+    const gallery = document.getElementById("gallery");
     const preview = document.getElementById("preview");
     const resultBox = document.getElementById("result");
 
     input.addEventListener("change", function () {
+      const file = input.files[0];
+      if (file) {
+        selectedFile = file;
+        preview.src = URL.createObjectURL(file);
+      }
+    });
+
+    gallery.addEventListener("change", function () {
       const file = input.files[0];
       if (file) {
         selectedFile = file;
