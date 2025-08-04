@@ -59,17 +59,6 @@
       transition: background 0.3s ease;
     }
 
-   #gallerySelection{
-      background: #1881f2;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: background 0.3s ease;
-    }
 
     button:hover {
       background: #0056b3;
