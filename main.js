@@ -119,7 +119,7 @@ try
     method: "POST",
     body: formData
 });
-console.log("aaaaaaaaaaaaaaa=" + response)     
+console.log("aaaaaaaaaaaaaaa=" + response.json())     
 if (!response.ok) {  
     console.log("bbbbbbbbbbbbbbbbbbb=" + response.statusText);
     throw new Error("Server error: " + response.statusText);
