@@ -5,7 +5,86 @@
     const preview = document.getElementById("preview");
     const resultBox = document.getElementById("result");
 
-    /////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+function displayCarousel(books) {
+  const container = document.getElementById('carouselContainer');
+  container.innerHTML = ''; // Clear existing
+
+  books.forEach(book => {
+    const item = document.createElement('div');
+    item.className = 'carousel-item';
+
+    const dewey = document.createElement('div');
+    dewey.className = 'dewey';
+    dewey.textContent = book.dewey;
+
+    const title = document.createElement('div');
+    title.className = 'title';
+    title.textContent = book.title;
+
+    item.appendChild(dewey);
+    item.appendChild(title);
+    container.appendChild(item);
+  });
+}
+
+// Scroll function for arrow buttons
+function scrollCarousel(direction) {
+  const container = document.getElementById('carouselContainer');
+  const scrollAmount = 150; // px
+  container.scrollLeft += direction * scrollAmount;
+}
+
+// Touch / mouse drag support
+(function enableDragScroll() {
+  const container = document.getElementById('carouselContainer');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  container.addEventListener('mousedown', (e) => {
+    isDown = true;
+    container.classList.add('active');
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    isDown = false;
+    container.classList.remove('active');
+  });
+
+  container.addEventListener('mouseup', () => {
+    isDown = false;
+    container.classList.remove('active');
+  });
+
+  container.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    container.scrollLeft = scrollLeft - walk;
+  });
+
+  // Mobile touch support
+  container.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
+
+  container.addEventListener('touchend', () => {
+    isDown = false;
+  });
+
+  container.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    container.scrollLeft = scrollLeft - walk;
+  });
+})();
 
 
 ////////////////////////////////////////////////////////////////////////
