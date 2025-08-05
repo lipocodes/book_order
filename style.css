@@ -125,3 +125,69 @@
 
 
 
+
+
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  cursor: grab;
+}
+
+.carousel-item {
+  min-width: 140px;
+  flex-shrink: 0;
+  border: 1px solid #aaa;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dewey {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.title {
+  margin-top: 6px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.carousel-nav {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+  color: #444;
+}
+
+.carousel-nav:hover {
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
