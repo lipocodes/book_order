@@ -119,7 +119,8 @@ try
     method: "POST",
     body: formData
 });
-console.log("aaaaaaaaaaaaaaa=" + response.json())     
+const data = await response.json();      
+console.log("aaaaaaaaaaaaaaa=" + data)     
 if (!response.ok) {  
     console.log("bbbbbbbbbbbbbbbbbbb=" + response.statusText);
     throw new Error("Server error: " + response.statusText);
