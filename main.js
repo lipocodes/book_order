@@ -126,7 +126,7 @@ function scrollCarousel(direction) {
           throw new Error("Server error: " + response.statusText);
         }
 
-            const json = await response.json();
+          console.log("aaaaaaaaaaaaaaaaaaaa=" + str(type(response)) + "\n" + str(response))
 
          }catch(e) {}
          
