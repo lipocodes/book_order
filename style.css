@@ -117,3 +117,35 @@
       background-color: #f1f3f5;
       border-bottom: 2px solid #ddd;
     }
+
+
+
+
+
+
+
+
+  .table-scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: grab;
+}
+
+.table-scroll-container:active {
+  cursor: grabbing;
+}
+
+#resultTable {
+  border-collapse: collapse;
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+#resultTable td, #resultTable th {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
