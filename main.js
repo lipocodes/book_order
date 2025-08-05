@@ -124,7 +124,7 @@ let list_books = [];
 list_books.push(data);
 displayCarousel(list_books);  
 const list_items = JSON.stringify(list_books[0]["sorted"]);
-      
+console.log("aaaaaaaaaaaaaa=" + list_items);       
 
 let books = [];      
 for(let i=0; i<list_items.length; i++){
@@ -132,7 +132,7 @@ for(let i=0; i<list_items.length; i++){
  const pos = item.indexOf("^^^");
  const dewey = item.substr(pos+3);     
  const title = item.substr(0,pos);
- console.log("ccccccccccccc=" + item);      
+      
  let obj = {};
  obj.dewey = dewey;
  obj.title = title;         
