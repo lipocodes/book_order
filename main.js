@@ -1,4 +1,4 @@
-oglet selectedFile = null;
+let selectedFile = null;
 const input = document.getElementById("cameraInput");
 const gallerySelection = document.getElementById("gallerySelection");
 const preview = document.getElementById("preview");
