@@ -131,7 +131,10 @@ for(let i=0; i<list_items.length; i++){
  const pos = item.indexOf("^^^");
  const dewey = item.substr(pos+3);     
  const title = item.substr(0,pos);
- books.push({dewey,title});     
+ let obj = {};
+ obj.dewey = dewey;
+ obj.title = title;
+ books.push(obj);     
 }
 displayCarousel(books);      
       
@@ -141,7 +144,7 @@ if (!response.ok) {
     throw new Error("Server error: " + response.statusText);
 }
 
-document.getElementById("status").textContent = "✅ The right book order ahould be:";
+document.getElementById("status").textContent = "✅ The right book order should be:";
 }
 catch(error) 
 {
