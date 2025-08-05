@@ -24,6 +24,9 @@
 
     async function sendImage() {
          try {
+         const formData = new FormData();
+         formData.append("image", selectedFile);
+             
         const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
           method: "POST",
           body: formData
