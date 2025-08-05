@@ -107,7 +107,6 @@ container.addEventListener('touchmove', (e) => {
 
 
 async function sendImage() {
-console.log("aaaaaaaaaaaaaaaaaaaaa");
 // Update status
 document.getElementById("status").textContent = "⏳ Sending image to server...";
        
@@ -120,7 +119,7 @@ try
     method: "POST",
     body: formData
 });
-if (!response.ok) {
+if (!response.ok) {  console.log("xxxxxxxxxxxxxxxxxxxx");
     throw new Error("Server error: " + response.statusText);
 }
 
