@@ -123,15 +123,18 @@ const data = await response.json();
 let list_books = [];
 list_books.push(data);
 displayCarousel(list_books);  
-const list_items = JSON.stringify(list_books[0]["sorted"]); 
+const list_items = JSON.stringify(list_books[0]["sorted"]);
+
+let books = [];      
 for(let i=0; i<list_items.length; i++){
  const item = list_items[i];
  const pos = item.indexOf("^^^");
- const title = item.substr(0,pos);
  const dewey = item.substr(pos+3);     
+ const title = item.substr(0,pos);
+ books.push({dewey,title});     
 }
       
-console.log("aaaaaaaaaaaaaaa=" + JSON.stringify(list_books[0]["sorted"]));     
+console.log("aaaaaaaaaaaaaaa=" + books);     
 if (!response.ok) {  
     console.log("bbbbbbbbbbbbbbbbbbb=" + response.statusText);
     throw new Error("Server error: " + response.statusText);
