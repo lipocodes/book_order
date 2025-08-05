@@ -134,9 +134,10 @@ for(let i=0; i<list_items.length; i++){
  let obj = {};
  obj.dewey = dewey;
  obj.title = title;
- books.push(obj);     
+ console.log("zzzzzzzzzzzzzz=" + obj.dewey + " " + obj.title);          
+ //books.push(obj);     
 }
-console.log("zzzzzzzzzzzzzz=" + books);      
+ 
 displayCarousel(books);      
       
     
