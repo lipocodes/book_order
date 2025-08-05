@@ -1,4 +1,4 @@
-let selectedFile = null;
+oglet selectedFile = null;
 const input = document.getElementById("cameraInput");
 const gallerySelection = document.getElementById("gallerySelection");
 const preview = document.getElementById("preview");
@@ -109,7 +109,7 @@ container.addEventListener('touchmove', (e) => {
 async function sendImage() {
 // Update status
 document.getElementById("status").textContent = "⏳ Sending image to server...";
-       
+console.log("xxxxxxxxxxxxxxxxxxxxxxx");       
 try 
 {
  const formData = new FormData();
