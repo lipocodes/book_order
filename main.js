@@ -136,6 +136,7 @@ for(let i=0; i<list_items.length; i++){
  obj.title = title;
  books.push(obj);     
 }
+console.log("zzzzzzzzzzzzzz=" + books);      
 displayCarousel(books);      
       
     
