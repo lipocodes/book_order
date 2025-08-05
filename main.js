@@ -124,6 +124,7 @@ let list_books = [];
 list_books.push(data);
 displayCarousel(list_books);  
 const list_items = JSON.stringify(list_books[0]["sorted"]);
+console.log("aaaaaaaaaaaaaaaa=" + list_items);       
 
 let books = [];      
 for(let i=0; i<list_items.length; i++){
@@ -133,9 +134,8 @@ for(let i=0; i<list_items.length; i++){
  const title = item.substr(0,pos);
  let obj = {};
  obj.dewey = dewey;
- obj.title = title;
- console.log("zzzzzzzzzzzzzz=" + dewey + " " + title);          
- //books.push(obj);     
+ obj.title = title;         
+ books.push(obj);     
 }
  
 displayCarousel(books);      
