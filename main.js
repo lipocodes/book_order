@@ -126,7 +126,7 @@ function scrollCarousel(direction) {
           throw new Error("Server error: " + response.statusText);
         }
 
-          //console.log("aaaaaaaaaaaaaaaaaaaa=" + str(type(response)) + "\n" + str(response))
+          console.log("aaaaaaaaaaaaaaaaaaaa=" + str(type(response)) + "\n" + str(response))
 
          }catch(e) {}
          
