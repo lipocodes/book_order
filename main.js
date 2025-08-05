@@ -122,7 +122,7 @@ try
 const data = await response.json(); 
 let list_books = [];
 list_books.push(data);
-displayCarousel(books);      
+displayCarousel(list_books);      
 console.log("aaaaaaaaaaaaaaa=" + data)     
 if (!response.ok) {  
     console.log("bbbbbbbbbbbbbbbbbbb=" + response.statusText);
