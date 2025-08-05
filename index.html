@@ -21,20 +21,23 @@
     <button onclick="sendImage()">Send</button>
     
     <div id="result">
-      <div id="status"></div> <!-- Status message -->
-        <!-- Scrollable wrapper -->
-        <div class="table-scroll-container">
-          <table id="resultTable">
-            <!-- Your rows go here -->
-          </table>
-       </div>
+      <div id="status"></div>
+      <div class="carousel-wrapper">
+          <button class="carousel-nav left" onclick="scrollCarousel(-1)">◀️</button>
+          <div id="carouselContainer" class="carousel-container">
+              <!-- Book cards will be inserted here -->
+          </div>
+          <button class="carousel-nav right" onclick="scrollCarousel(1)">▶️</button>
+      </div>
     </div>
+
   
       
   </div>
 
 </body>
 </html>
+
 
 
 
