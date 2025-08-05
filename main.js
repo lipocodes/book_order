@@ -119,7 +119,10 @@ try
     method: "POST",
     body: formData
 });
-const data = await response.json();      
+const data = await response.json(); 
+let list_books = [];
+list_books.append(data);
+displayCarousel(books);      
 console.log("aaaaaaaaaaaaaaa=" + data)     
 if (!response.ok) {  
     console.log("bbbbbbbbbbbbbbbbbbb=" + response.statusText);
@@ -134,7 +137,7 @@ catch(error)
 }
         
 ////////////////////////////////////////////////////////////////////
-const books = 
+/*const books = 
 [
   { dewey: '001.94', title: 'Mysteries of the Unknown' },
   { dewey: '303.49', title: 'Societies in Change' },
@@ -146,5 +149,5 @@ const books =
 ];
 
 displayCarousel(books);
-
+*/
 }
