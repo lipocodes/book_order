@@ -121,7 +121,7 @@ try
 });
 const data = await response.json(); 
 let list_books = [];
-list_books.append(data);
+list_books.push(data);
 displayCarousel(books);      
 console.log("aaaaaaaaaaaaaaa=" + data)     
 if (!response.ok) {  
