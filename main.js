@@ -110,7 +110,7 @@ async function sendImage() {
 
 // Update status
 document.getElementById("status").textContent = "⏳ Sending image to server...";
-        
+ /*       
 try 
 {
  const formData = new FormData();
@@ -130,7 +130,7 @@ catch(error)
 {
  document.getElementById("status").textContent = "❌ Error: " + error.message;
 }
-         
+  */       
 ////////////////////////////////////////////////////////////////////
 const books = 
 [
