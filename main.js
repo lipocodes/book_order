@@ -124,7 +124,7 @@ let list_books = [];
 list_books.push(data);
 displayCarousel(list_books);  
 const list_items = JSON.stringify(list_books[0]["sorted"]);
-console.log("aaaaaaaaaaaaaa=" + list_items);       
+console.log("bbbbbbbbbbbbbbbbbb=" + list_items.length);       
 
 let books = [];      
 for(let i=0; i<list_items.length; i++){
