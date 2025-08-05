@@ -134,7 +134,7 @@ for(let i=0; i<list_items.length; i++){
  let obj = {};
  obj.dewey = dewey;
  obj.title = title;
- console.log("zzzzzzzzzzzzzz=" + obj.dewey + " " + obj.title);          
+ console.log("zzzzzzzzzzzzzz=" + dewey + " " + title);          
  //books.push(obj);     
 }
  
