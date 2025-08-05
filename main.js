@@ -113,7 +113,8 @@ function scrollCarousel(direction) {
 
 
     async function sendImage() {
-         try {
+        /* 
+        try {
          const formData = new FormData();
          formData.append("image", selectedFile);
              
@@ -126,6 +127,7 @@ function scrollCarousel(direction) {
         }
         const json = await response.json();
          }catch(e) {}
+         */
         ////////////////////////////////////////////////////////////////////
         const books = [
         { dewey: '001.94', title: 'Mysteries of the Unknown' },
