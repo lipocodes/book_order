@@ -122,7 +122,15 @@ try
 const data = await response.json(); 
 let list_books = [];
 list_books.push(data);
-displayCarousel(list_books);      
+displayCarousel(list_books);  
+const list_items = JSON.stringify(list_books[0]["sorted"]); 
+for(let i=0; i<list_items.length; i++){
+ const item = list_items[i];
+ const pos = item.indexOf("^^^");
+ const title = item.substr(0,pos);
+ const dewey = item.substr(pos+3);     
+}
+      
 console.log("aaaaaaaaaaaaaaa=" + JSON.stringify(list_books[0]["sorted"]));     
 if (!response.ok) {  
     console.log("bbbbbbbbbbbbbbbbbbb=" + response.statusText);
