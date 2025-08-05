@@ -123,7 +123,7 @@ const data = await response.json();
 let list_books = [];
 list_books.push(data);
 displayCarousel(list_books);      
-console.log("aaaaaaaaaaaaaaa=" + data)     
+console.log("aaaaaaaaaaaaaaa=" + JSON.stringify(list_books));     
 if (!response.ok) {  
     console.log("bbbbbbbbbbbbbbbbbbb=" + response.statusText);
     throw new Error("Server error: " + response.statusText);
