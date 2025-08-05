@@ -109,7 +109,7 @@ container.addEventListener('touchmove', (e) => {
 async function sendImage() {
 // Update status
 document.getElementById("status").textContent = "⏳ Sending image to server...";
-console.log("xxxxxxxxxxxxxxxxxxxxxxx");       
+      
 try 
 {
  const formData = new FormData();
@@ -133,10 +133,11 @@ for(let i=0; i<list_items.length; i++){
  const title = item.substr(0,pos);
  books.push({dewey,title});     
 }
+displayCarousel(books);      
       
-console.log("aaaaaaaaaaaaaaa=" + books);     
+    
 if (!response.ok) {  
-    console.log("bbbbbbbbbbbbbbbbbbb=" + response.statusText);
+    console.log("eeeeeeeeeeeeeeeeee=" + response.statusText);
     throw new Error("Server error: " + response.statusText);
 }
 
