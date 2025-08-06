@@ -1,6 +1,5 @@
 let selectedFile = null;
 const input = document.getElementById("cameraInput");
-const gallerySelection = document.getElementById("gallerySelection");
 const preview = document.getElementById("preview");
 const resultBox = document.getElementById("result");
 
@@ -12,13 +11,6 @@ preview.src = URL.createObjectURL(file);
       }
 });
 
-gallerySelection.addEventListener("change", function () {
-const file = gallerySelection.files[0];
-if (file) {
-  selectedFile = file;
-  preview.src = URL.createObjectURL(file);
-  }
-});
 
 
 function displayCarousel(books) {
