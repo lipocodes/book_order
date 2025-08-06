@@ -67,7 +67,7 @@
 
 
 
-    .custom-file-upload {
+    .custom-file-upload1 {
       display: inline-block;
       background: #28a745;
       color: white;
@@ -79,7 +79,23 @@
       margin-bottom: 20px;
     }
 
-    .custom-file-upload:hover {
+    .custom-file-upload1:hover {
+      background: #218838;
+    }
+
+    .custom-file-upload2 {
+      display: inline-block;
+      background: #28a745;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .custom-file-upload2:hover {
       background: #218838;
     }
 
