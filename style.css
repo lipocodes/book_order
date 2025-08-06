@@ -123,18 +123,7 @@
 
 
 
-.input-row {
-  display: flex;
-  gap: 20px; /* space between the two input groups */
-  align-items: center; /* align vertically */
-  flex-wrap: wrap; /* allow wrap on small screens */
-}
 
-.input-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
 
 
 .carousel-wrapper {
