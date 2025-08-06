@@ -123,9 +123,8 @@ const data = await response.json();
 let list_books = [];
 list_books.push(data);
 displayCarousel(list_books);  
-const list_items = JSON.stringify(list_books[0]["sorted"]);
-console.log("aaaaaaaaaaaaaaaaaa=" + list_books[0]["sorted"].length);       
-
+const list_items = list_books[0]["sorted"];
+     
 let books = [];      
 for(let i=0; i<list_items.length; i++){
  const item = list_items[i];
