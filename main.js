@@ -99,6 +99,16 @@ container.addEventListener('touchmove', (e) => {
 
 
 async function sendImage() {
+
+//carousel needs to be empty
+document.getElementById("carouselContainer").innerHTML = "";
+      
+// taking a photo is compulsory..      
+if (!selectedFile) {
+        alert("Please take a photo first.");
+        return;
+      }
+      
 // Update status
 document.getElementById("status").textContent = "⏳ Sending image to server...";
       
