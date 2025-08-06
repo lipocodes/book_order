@@ -125,12 +125,13 @@
 }
 
 .carousel-container {
-   display: flex;
+  display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
   flex-grow: 1;
   gap: 12px;
   padding: 10px 0;
+  height: 125px; 
 }
 
 .carousel-item {
