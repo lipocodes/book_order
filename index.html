@@ -11,11 +11,18 @@
 <body>
   <div class="container">
     <h2>📷 Take a Photo and Send</h2>
-    <label for="cameraInput" class="custom-file-upload1">📷 Take a Photo</label>
-    <input type="file" accept="image/*" id="cameraInput" capture="environment" />
-    <br/>
-    <label for="gallerySelection" class="custom-file-upload2">📷 Select a Photo</label>
-    <input type="file" accept="image/*" id="gallerySelection" style="background-color: blue; color: white; border: none; padding: 6px; border-radius: 4px;" />
+
+    <div class="input-row">
+      <div class="input-group">
+        <label for="cameraInput" class="custom-file-upload1">📷 Take a Photo</label>
+        <input type="file" accept="image/*" id="cameraInput" capture="environment" />
+      </div>
+      <div class="input-group">
+        <label for="gallerySelection" class="custom-file-upload2">📷 Select a Photo</label>
+        <input type="file" accept="image/*" id="gallerySelection" style="background-color: blue; color: white; border: none; padding: 6px; border-radius: 4px;" />
+      </div>
+    </div>
+    
     <img id="preview" />
     <br />
     <button onclick="sendImage()">Send</button>
@@ -37,6 +44,7 @@
 
 </body>
 </html>
+
 
 
 
