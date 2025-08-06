@@ -137,10 +137,9 @@ for(let i=0; i<list_items.length; i++){
  obj.title = title;         
  books.push(obj);     
 }
-console.log("aaaaaaaaaaaaaaaaaa=" + books);   
+ 
 displayCarousel(books);      
-      
-    
+          
 if (!response.ok) {  
     console.log("eeeeeeeeeeeeeeeeee=" + response.statusText);
     throw new Error("Server error: " + response.statusText);
@@ -153,18 +152,4 @@ catch(error)
  document.getElementById("status").textContent = "❌ Error: " + error.message;
 }
         
-////////////////////////////////////////////////////////////////////
-/*const books = 
-[
-  { dewey: '001.94', title: 'Mysteries of the Unknown' },
-  { dewey: '303.49', title: 'Societies in Change' },
-  { dewey: '500', title: 'General Science' },
-  { dewey: '641.5', title: 'The Art of Cooking' },
-  { dewey: '910', title: 'World Explorers' },
-  { dewey: '398.2', title: 'Folk Tales and Fables' },
-  { dewey: '796', title: 'The Science of Sport' }
-];
-
-displayCarousel(books);
-*/
 }
