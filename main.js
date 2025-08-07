@@ -149,7 +149,7 @@ if (!response.ok) {
 }
 
 //if the book check was not clean of errors      
-if(list_books[0]["sorted"] == 1){
+if(list_books[0]["existing_swaps"] == 1){
  document.getElementById("status").textContent = "❌ The right book order should be:";     
 }else{
  document.getElementById("status").textContent = "✅ No misplaced books have been found!";
