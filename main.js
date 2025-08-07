@@ -127,6 +127,7 @@ list_books.push(data);
 displayCarousel(list_books);  
 const list_items = list_books[0]["sorted"];
      
+     
 let books = [];      
 for(let i=0; i<list_items.length; i++){
  const item = list_items[i];
@@ -148,7 +149,7 @@ if (!response.ok) {
 }
 
 //if the book check was not clean of errors      
-if(books.length>1){
+if(list_books[0]["sorted"] == 1){
  document.getElementById("status").textContent = "❌ The right book order should be:";     
 }else{
  document.getElementById("status").textContent = "✅ No misplaced books have been found!";
