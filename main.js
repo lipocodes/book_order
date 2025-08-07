@@ -150,6 +150,8 @@ if (!response.ok) {
 //if the book check was not clean of errors      
 if(books.length>1){
  document.getElementById("status").textContent = "❌ The right book order should be:";     
+}else{
+ document.getElementById("status").textContent = "";
 }
 
 }
