@@ -151,7 +151,7 @@ if (!response.ok) {
 if(books.length>1){
  document.getElementById("status").textContent = "❌ The right book order should be:";     
 }else{
- document.getElementById("status").textContent = "";
+ document.getElementById("status").textContent = "✅ No misplaced books have been found!";
 }
 
 }
