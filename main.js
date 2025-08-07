@@ -147,7 +147,11 @@ if (!response.ok) {
     throw new Error("Server error: " + response.statusText);
 }
 
-document.getElementById("status").textContent = "✅ The right book order should be:";
+//if the book check was not clean of errors      
+if(books.length(books)>1){
+ document.getElementById("status").textContent = "❌ The right book order should be:";     
+}
+
 }
 catch(error) 
 {
