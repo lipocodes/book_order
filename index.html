@@ -10,12 +10,13 @@
 </head>
 <body>
   <div class="container">
-  <h2>📷 Take a Photo and Send</h2>
-   <label for="cameraInput" class="custom-file-upload">📷 Take a Photo</label>
-    <input type="file" accept="image/*" id="cameraInput" capture="environment" />
-    <!--   <img id="preview" />  -->
-    <button onclick="sendImage()">Send</button>
-    
+    <h2>📷 Take a Photo and Send</h2>
+    <label for="cameraInput" class="custom-file-upload">📷 Take a Photo</label>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <input type="file" accept="image/*" id="cameraInput" capture="environment" />
+      <!--   <img id="preview" />  -->
+      <button onclick="sendImage()">Send</button>
+     </div>
     <div id="result">
       <div id="status"></div>
       <div class="carousel-wrapper">
@@ -33,6 +34,7 @@
 
 </body>
 </html>
+
 
 
 
