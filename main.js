@@ -16,6 +16,7 @@ fileName.textContent = input.files[0].name;
 
 
 function clearCarousel(){
+ const container = document.getElementById('carouselContainer');     
  container.innerHTML = '';
 }
 
