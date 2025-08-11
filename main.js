@@ -22,7 +22,8 @@ function clearCarousel(){
 
 function displayCarousel(books) {
 const container = document.getElementById('carouselContainer');
-container.innerHTML = ''; // Clear existing
+fileName.textContent = '';      
+container.innerHTML = '';  //clear carousel content
 
 books.forEach(book => {
 const item = document.createElement('div');
