@@ -12,7 +12,17 @@
   <div class="container">
     <h4>Find Displaced Books</h4>
     
-    <div>
+    <div id="photo1">
+      <div id="result">
+        <div id="status"></div>
+          <div class="carousel-wrapper">
+            <!-- <button class="carousel-nav left" onclick="scrollCarousel(-1)">◀️</button>   -->
+            <div id="carouselContainer" class="carousel-container">
+              <!-- Book cards will be inserted here -->
+            </div>
+            <!-- <button class="carousel-nav right" onclick="scrollCarousel(1)">▶️</button>   -->
+           </div>
+       </div>
       <div style="font-size:14px;font-weight: bold;">📷 Photo 1:</div>
       <label for="cameraInput" class="custom-file-upload">📷 Take a Photo</label>
       <input type="file" accept="image/*" id="cameraInput" capture="environment" />
@@ -20,16 +30,7 @@
       <span id="fileName"></span>
     </div>
  
-    <div id="result">
-      <div id="status"></div>
-      <div class="carousel-wrapper">
-          <!-- <button class="carousel-nav left" onclick="scrollCarousel(-1)">◀️</button>   -->
-          <div id="carouselContainer" class="carousel-container">
-              <!-- Book cards will be inserted here -->
-          </div>
-          <!-- <button class="carousel-nav right" onclick="scrollCarousel(1)">▶️</button>   -->
-      </div>
-    </div>
+    
 
   
       
@@ -37,6 +38,7 @@
 
 </body>
 </html>
+
 
 
 
