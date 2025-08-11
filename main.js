@@ -25,7 +25,7 @@ function clearCarousel(){
 
 function displayCarousel(books) {
 //const container = document.getElementById('carouselContainer');
-clear_carousel.style.display = "block";           
+         
 fileName.textContent = '';      
 container.innerHTML = '';  //clear carousel content
 
@@ -49,7 +49,8 @@ container.appendChild(item);
 
 // Scroll function for arrow buttons
 function scrollCarousel(direction) {
-  const container = document.getElementById('carouselContainer');
+  //const container = document.getElementById('carouselContainer');
+  clear_carousel.style.display = "block";      
   const scrollAmount = 150; // px
   container.scrollLeft += direction * scrollAmount;
 }
