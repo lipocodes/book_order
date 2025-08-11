@@ -131,7 +131,8 @@
 
 .carousel-item {
   min-width: 140px;
-  height:60px; 
+  height:80px;
+  font-size:12px; 
   flex-shrink: 0;
   border: 1px solid #aaa;
   padding: 12px;
