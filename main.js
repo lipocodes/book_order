@@ -2,12 +2,14 @@ let selectedFile = null;
 const input = document.getElementById("cameraInput");
 //const preview = document.getElementById("preview");
 const resultBox = document.getElementById("result");
+const fileName = document.getElementById("fileName");
 
 input.addEventListener("change", function () {
 const file = input.files[0];
 if (file) {
 selectedFile = file;
 //preview.src = URL.createObjectURL(file);
+fileName.textContent = input.files[0].name;      
       }
 });
 
