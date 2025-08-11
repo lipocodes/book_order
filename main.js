@@ -1,8 +1,11 @@
 let selectedFile = null;
+const container = document.getElementById('carouselContainer'); 
 const input = document.getElementById("cameraInput");
 //const preview = document.getElementById("preview");
 const resultBox = document.getElementById("result");
 const fileName = document.getElementById("fileName");
+const clear_carousel = document.getElementById("clear_carousel");
+
 
 input.addEventListener("change", function () {
 const file = input.files[0];
@@ -15,13 +18,14 @@ fileName.textContent = input.files[0].name;
 
 
 
-function clearCarousel(){
- const container = document.getElementById('carouselContainer');     
+function clearCarousel(){    
  container.innerHTML = '';
+ clear_carousel.style.display = "none";     
 }
 
 function displayCarousel(books) {
-const container = document.getElementById('carouselContainer');
+//const container = document.getElementById('carouselContainer');
+clear_carousel.style.display = "block";           
 fileName.textContent = '';      
 container.innerHTML = '';  //clear carousel content
 
