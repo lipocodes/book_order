@@ -15,6 +15,10 @@ fileName.textContent = input.files[0].name;
 
 
 
+function clearCarousel(){
+ container.innerHTML = '';
+}
+
 function displayCarousel(books) {
 const container = document.getElementById('carouselContainer');
 container.innerHTML = ''; // Clear existing
