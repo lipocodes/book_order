@@ -10,9 +10,15 @@
 </head>
 <body>
   <div class="container">
-   
+    <h4>Find Displaced Books</h4>
     
     <div id="photo1">
+      <div style="font-size:14px;font-weight: bold;">📷 Photo 1:</div>
+      <label for="cameraInput" class="custom-file-upload">📷 Take a Photo</label>
+      <input type="file" accept="image/*" id="cameraInput" capture="environment" />
+      <button class="custom-file-upload" onclick="sendImage()">Send</button>
+      <span id="fileName"></span>
+      
       <div id="result">
         <div id="status"></div>
           <div class="carousel-wrapper">
@@ -23,11 +29,7 @@
             <!-- <button class="carousel-nav right" onclick="scrollCarousel(1)">▶️</button>   -->
            </div>
        </div>
-      <div style="font-size:14px;font-weight: bold;">📷 Photo 1:</div>
-      <label for="cameraInput" class="custom-file-upload">📷 Take a Photo</label>
-      <input type="file" accept="image/*" id="cameraInput" capture="environment" />
-      <button class="custom-file-upload" onclick="sendImage()">Send</button>
-      <span id="fileName"></span>
+
     </div>
  
     
@@ -38,6 +40,7 @@
 
 </body>
 </html>
+
 
 
 
