@@ -1,4 +1,6 @@
-let selectedFile = null;
+let selectedFile1 = null;
+let selectedFile12 = null;
+let selectedFile3 = null;
 const container1 = document.getElementById('carouselContainer1'); 
 const container2 = document.getElementById('carouselContainer2');
 const container3 = document.getElementById('carouselContainer3'); 
@@ -23,7 +25,7 @@ const clear_carousel3 = document.getElementById("clear_carousel3");
 input1.addEventListener("change", function () {
 const file = input1.files[0];
 if (file) {
-selectedFile = file;
+selectedFile1 = file;
 //preview.src = URL.createObjectURL(file);
 fileName1.textContent = input1.files[0].name;      
       }
@@ -32,7 +34,7 @@ fileName1.textContent = input1.files[0].name;
 input2.addEventListener("change", function () {
 const file = input2.files[0];
 if (file) {
-selectedFile = file;
+selectedFile2 = file;
 //preview.src = URL.createObjectURL(file);
 fileName2.textContent = input2.files[0].name;      
       }
@@ -41,35 +43,48 @@ fileName2.textContent = input2.files[0].name;
 input3.addEventListener("change", function () {
 const file = input3.files[0];
 if (file) {
-selectedFile = file;
+selectedFile3 = file;
 //preview.src = URL.createObjectURL(file);
 fileName3.textContent = input3.files[0].name;      
       }
 });
 
 //////////////////////////////////////////////////////////////////
-function clearCarousel1(){    
- container1.innerHTML = '';
- clear_carousel1.style.display = "none";     
-}
-
-function clearCarousel2(){    
- container2.innerHTML = '';
- clear_carousel2.style.display = "none";     
-}
-
-function clearCarousel3(){    
- container3.innerHTML = '';
- clear_carousel3.style.display = "none";     
+function clearCarousel(num){ 
+ if(num == 1){
+   container1.innerHTML = '';
+   clear_carousel1.style.display = "none";  
+ }
+ else if(num == 2){
+   container2.innerHTML = '';
+   clear_carousel2.style.display = "none";  
+ }
+ else if(num == 3){
+   container3.innerHTML = '';
+   clear_carousel3.style.display = "none";  
+ }     
+      
 }
 
 //////////////////////////////////////////////////////////////
 
-function displayCarousel(books) {
+function displayCarousel(books,num) {
+if(num==1){
+  container1.style.display = "block";            
+  fileName1.textContent = '';      
+  container1.innerHTML = '';  //clear carousel content
+}
+else if(num==2){
+  container2.style.display = "block";            
+  fileName2.textContent = '';      
+  container2.innerHTML = '';  //clear carousel content
+}
+else if(num==3){
+  container3.style.display = "block";            
+  fileName3.textContent = '';      
+  container3.innerHTML = '';  //clear carousel content
+}      
 
-container1.style.display = "block";            
-fileName1.textContent = '';      
-container1.innerHTML = '';  //clear carousel content
 
 books.forEach(book => {
 const item = document.createElement('div');
@@ -85,9 +100,20 @@ title.textContent = book.title;
 
 item.appendChild(dewey);
 item.appendChild(title);
-container1.appendChild(item);
+if(num==1){
+ container1.appendChild(item);
+}
+else if(num==2){
+ container2.appendChild(item);
+}
+else if(num==3){
+ container3.appendChild(item);
+}     
+
 });
 }
+
+
 
 // Scroll function for arrow buttons
 function scrollCarousel(direction) {    
@@ -151,11 +177,18 @@ container1.addEventListener('touchmove', (e) => {
 
 
 
-async function sendImage() {
-
+async function sendImage(num) {
 //carousel needs to be empty
-document.getElementById("carouselContainer1").innerHTML = "";
-      
+if(num==1){
+ document.getElementById("carouselContainer1").innerHTML = "";
+}
+else if(num==2){
+ document.getElementById("carouselContainer2").innerHTML = "";
+}
+else if(num==3){
+ document.getElementById("carouselContainer3").innerHTML = "";
+}      
+    
 // taking a photo is compulsory..      
 if (!selectedFile) {
         alert("Please take a photo first.");
