@@ -1,18 +1,18 @@
 let selectedFile = null;
 const container = document.getElementById('carouselContainer1'); 
-const input = document.getElementById("cameraInput");
+const input1 = document.getElementById("cameraInput1");
 //const preview = document.getElementById("preview");
 const resultBox1 = document.getElementById("result1");
 const fileName1 = document.getElementById("fileName1");
 const clear_carousel1 = document.getElementById("clear_carousel1");
 
 
-input.addEventListener("change", function () {
-const file = input.files[0];
+input1.addEventListener("change", function () {
+const file = input1.files[0];
 if (file) {
 selectedFile = file;
 //preview.src = URL.createObjectURL(file);
-fileName1.textContent = input.files[0].name;      
+fileName1.textContent = input1.files[0].name;      
       }
 });
 
