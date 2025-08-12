@@ -1,5 +1,6 @@
 let selectedFile = null;
 const container1 = document.getElementById('carouselContainer1'); 
+container1.style.display = "none";  
 const input1 = document.getElementById("cameraInput1");
 //const preview = document.getElementById("preview");
 const resultBox1 = document.getElementById("result1");
@@ -25,7 +26,7 @@ function clearCarousel(){
 
 function displayCarousel(books) {
 
-clear_carousel1.style.display = "block";            
+container1.style.display = "block";            
 fileName1.textContent = '';      
 container1.innerHTML = '';  //clear carousel content
 
