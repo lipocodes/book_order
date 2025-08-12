@@ -1,5 +1,5 @@
 let selectedFile1 = null;
-let selectedFile12 = null;
+let selectedFile2 = null;
 let selectedFile3 = null;
 const container1 = document.getElementById('carouselContainer1'); 
 const container2 = document.getElementById('carouselContainer2');
@@ -25,10 +25,10 @@ const clear_carousel3 = document.getElementById("clear_carousel3");
 input1.addEventListener("change", function () {
 const file = input1.files[0];
 if (file) {
-selectedFile1 = file;
-//preview.src = URL.createObjectURL(file);
-fileName1.textContent = input1.files[0].name;      
-      }
+ selectedFile1 = file;
+ //preview.src = URL.createObjectURL(file);
+ fileName1.textContent = input1.files[0].name;      
+   }
 });
 
 input2.addEventListener("change", function () {
@@ -37,7 +37,7 @@ if (file) {
 selectedFile2 = file;
 //preview.src = URL.createObjectURL(file);
 fileName2.textContent = input2.files[0].name;      
-      }
+   }
 });
 
 input3.addEventListener("change", function () {
@@ -46,7 +46,7 @@ if (file) {
 selectedFile3 = file;
 //preview.src = URL.createObjectURL(file);
 fileName3.textContent = input3.files[0].name;      
-      }
+   }
 });
 
 //////////////////////////////////////////////////////////////////
@@ -69,6 +69,7 @@ function clearCarousel(num){
 //////////////////////////////////////////////////////////////
 
 function displayCarousel(books,num) {
+//before populating the carousel      
 if(num==1){
   container1.style.display = "block";            
   fileName1.textContent = '';      
@@ -117,7 +118,7 @@ function scrollCarousel(direction, num) {
 }
 
 
-
+////////////////////////////////////////////////////////////////////////
 // Touch / mouse drag support
 (function enableDragScroll() {
 
@@ -167,8 +168,10 @@ container1.addEventListener('touchmove', (e) => {
     const walk = (x - startX) * 1.5;
     container1.scrollLeft = scrollLeft - walk;
   });
-  ///////////////////////////////////////////////////////////////////////    
+     
 })();
+
+/////////////////////////////////////////////////////////////////////// 
 
 async function sendImage(num) {
   //carousel needs to be empty
@@ -233,19 +236,17 @@ async function sendImage(num) {
     //if the book check was not clean of errors      
     if(num==1 && list_books[0]["existing_swaps"] == 1){
      document.getElementById("status1").textContent = "❌ The right book order should be:";     
-    }else{
+    }else if(num==1){
      document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
     }
-
     else if(num==2 && list_books[0]["existing_swaps"] == 1){
      document.getElementById("status2").textContent = "❌ The right book order should be:";     
-    }else{
+    }else if(num==2){
      document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
     }  
-
     else if(num==3 && list_books[0]["existing_swaps"] == 1){
      document.getElementById("status3").textContent = "❌ The right book order should be:";     
-    }else{
+    }else if(num==3){
      document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
     }       
 
