@@ -26,6 +26,22 @@
           </div>
       </div>  
     </div>
+
+
+    <div id="photo2">
+      <div style="font-size:14px;font-weight: bold;">📷 Photo 2:</div>
+      <label for="cameraInput2" class="custom-file-upload">📷 Take a Photo</label>
+      <input type="file" accept="image/*" id="cameraInput2" capture="environment" />
+      <button class="custom-file-upload" onclick="sendImage()">Send</button>
+      <span id="fileName2"></span>
+      <div id="result2">
+        <div id="status2"></div>
+        <div class="carousel-wrapper">
+          <div id="carouselContainer2" class="carousel-container"></div>
+            <button id="clear_carousel2" class="custom-file-upload" onclick="clearCarousel()">Clear</button> 
+          </div>
+      </div>  
+    </div>
  
     
 
@@ -35,6 +51,7 @@
 
 </body>
 </html>
+
 
 
 
