@@ -1,10 +1,10 @@
 let selectedFile = null;
-const container = document.getElementById('carouselContainer'); 
+const container = document.getElementById('carouselContainer1'); 
 const input = document.getElementById("cameraInput");
 //const preview = document.getElementById("preview");
-const resultBox = document.getElementById("result");
-const fileName1 = document.getElementById("fileName");
-const clear_carousel = document.getElementById("clear_carousel");
+const resultBox1 = document.getElementById("result1");
+const fileName1 = document.getElementById("fileName1");
+const clear_carousel1 = document.getElementById("clear_carousel1");
 
 
 input.addEventListener("change", function () {
@@ -20,12 +20,12 @@ fileName1.textContent = input.files[0].name;
 
 function clearCarousel(){    
  container.innerHTML = '';
- clear_carousel.style.display = "none";     
+ clear_carousel1.style.display = "none";     
 }
 
 function displayCarousel(books) {
-//const container = document.getElementById('carouselContainer');
-clear_carousel.style.display = "block";            
+//const container = document.getElementById('carouselContainer1');
+clear_carousel1.style.display = "block";            
 fileName1.textContent = '';      
 container.innerHTML = '';  //clear carousel content
 
@@ -49,7 +49,7 @@ container.appendChild(item);
 
 // Scroll function for arrow buttons
 function scrollCarousel(direction) {
-  //const container = document.getElementById('carouselContainer');
+  //const container = document.getElementById('carouselContainer1');
     
   const scrollAmount = 150; // px
   container.scrollLeft += direction * scrollAmount;
@@ -57,7 +57,7 @@ function scrollCarousel(direction) {
 
 // Touch / mouse drag support
 (function enableDragScroll() {
-const container = document.getElementById('carouselContainer');
+const container = document.getElementById('carouselContainer1');
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -114,7 +114,7 @@ container.addEventListener('touchmove', (e) => {
 async function sendImage() {
 
 //carousel needs to be empty
-document.getElementById("carouselContainer").innerHTML = "";
+document.getElementById("carouselContainer1").innerHTML = "";
       
 // taking a photo is compulsory..      
 if (!selectedFile) {
@@ -123,7 +123,7 @@ if (!selectedFile) {
       }
       
 // Update status
-document.getElementById("status").textContent = "⏳ Sending image to server...";
+document.getElementById("status1").textContent = "⏳ Sending image to server...";
       
 try 
 {
@@ -163,15 +163,15 @@ if (!response.ok) {
 
 //if the book check was not clean of errors      
 if(list_books[0]["existing_swaps"] == 1){
- document.getElementById("status").textContent = "❌ The right book order should be:";     
+ document.getElementById("status1").textContent = "❌ The right book order should be:";     
 }else{
- document.getElementById("status").textContent = "✅ No misplaced books have been found!";
+ document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
 }
 
 }
 catch(error) 
 {
- document.getElementById("status").textContent = "❌ Error: " + error.message;
+ document.getElementById("status1").textContent = "❌ Error: " + error.message;
 }
         
 }
