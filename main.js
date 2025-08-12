@@ -193,8 +193,10 @@ async function sendImage(num) {
   try 
   {
    const formData = new FormData();
-   formData.append("image", selectedFile);
-   console.log("aaaaaaaaaaaaaaaaaa")        
+   if(num_input==1) formData.append("image", selectedFile1);
+   else if(num_input==2) formData.append("image", selectedFile2);
+   else if(num_input==3) formData.append("image", selectedFile3);
+       
    const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
       body: formData
