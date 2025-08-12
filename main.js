@@ -1,3 +1,4 @@
+let num_input = 0;
 let selectedFile1 = null;
 let selectedFile2 = null;
 let selectedFile3 = null;
@@ -51,15 +52,15 @@ fileName3.textContent = input3.files[0].name;
 
 //////////////////////////////////////////////////////////////////
 function clearCarousel(num){ 
- if(num == 1){
+ if(num_input == 1){
    container1.innerHTML = '';
    clear_carousel1.style.display = "none";  
  }
- else if(num == 2){
+ else if(num_input == 2){
    container2.innerHTML = '';
    clear_carousel2.style.display = "none";  
  }
- else if(num == 3){
+ else if(num_input == 3){
    container3.innerHTML = '';
    clear_carousel3.style.display = "none";  
  }     
@@ -68,19 +69,19 @@ function clearCarousel(num){
 
 //////////////////////////////////////////////////////////////
 
-function displayCarousel(books,num) {
+function displayCarousel(books) {
 //before populating the carousel      
-if(num==1){
+if(num_input==1){
   container1.style.display = "block";            
   fileName1.textContent = '';      
   container1.innerHTML = '';  //clear carousel content
 }
-else if(num==2){
+else if(num_input==2){
   container2.style.display = "block";            
   fileName2.textContent = '';      
   container2.innerHTML = '';  //clear carousel content
 }
-else if(num==3){
+else if(num_input==3){
   container3.style.display = "block";            
   fileName3.textContent = '';      
   container3.innerHTML = '';  //clear carousel content
@@ -101,20 +102,10 @@ books.forEach(book => {
 
   item.appendChild(dewey);
   item.appendChild(title);
-  if(num==1) container1.appendChild(item);
-  else if(num==2) container2.appendChild(item);
-  else if(num==3) container3.appendChild(item);
+  if(num_input==1) container1.appendChild(item);
+  else if(num_input==2) container2.appendChild(item);
+  else if(num_input==3) container3.appendChild(item);
  });
-}
-
-
-
-// Scroll function for arrow buttons
-function scrollCarousel(direction, num) {    
-  const scrollAmount = 150; // px
-  if(num == 1)  container1.scrollLeft += direction * scrollAmount;
-  else if(num == 2)  container2.scrollLeft += direction * scrollAmount;   
-  else if(num == 3)  container3.scrollLeft += direction * scrollAmount; 
 }
 
 
@@ -174,29 +165,31 @@ container1.addEventListener('touchmove', (e) => {
 /////////////////////////////////////////////////////////////////////// 
 
 async function sendImage(num) {
+   num_input = num; //from this point, we know which input we use 
+ 
   //carousel needs to be empty
-  if(num==1) document.getElementById("carouselContainer1").innerHTML = "";
-  else if(num==2)  document.getElementById("carouselContainer2").innerHTML = "";
-  else if(num==3)  document.getElementById("carouselContainer3").innerHTML = "";
+  if(num_input==1) document.getElementById("carouselContainer1").innerHTML = "";
+  else if(num_input==2)  document.getElementById("carouselContainer2").innerHTML = "";
+  else if(num_input==3)  document.getElementById("carouselContainer3").innerHTML = "";
          
   // taking a photo is compulsory..      
-  if (num==1 && !selectedFile1) {
+  if (num_input==1 && !selectedFile1) {
    alert("Please take a photo first.");
    return;
   }
-  else if (num==2 && !selectedFile2) {
+  else if (num_input==2 && !selectedFile2) {
    alert("Please take a photo first.");
    return;
   }
-  else if (num==3 && !selectedFile3) {
+  else if (num_input==3 && !selectedFile3) {
    alert("Please take a photo first.");
    return;
   }       
       
   // Update status
-  if(num==1) document.getElementById("status1").textContent = "⏳ Sending image to server...";
-  else if(num==2) document.getElementById("status2").textContent = "⏳ Sending image to server..."; 
-  else if(num==3) document.getElementById("status3").textContent = "⏳ Sending image to server...";      
+  if(num_input==1) document.getElementById("status1").textContent = "⏳ Sending image to server...";
+  else if(num_input==2) document.getElementById("status2").textContent = "⏳ Sending image to server..."; 
+  else if(num_input==3) document.getElementById("status3").textContent = "⏳ Sending image to server...";      
       
   try 
   {
@@ -210,7 +203,7 @@ async function sendImage(num) {
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
-    displayCarousel(list_books,num);  
+    displayCarousel(list_books);  
     const list_items = list_books[0]["sorted"];
           
     let books = [];      
@@ -226,7 +219,7 @@ async function sendImage(num) {
      books.push(obj);     
     }
  
-    displayCarousel(books,num);      
+    displayCarousel(books);      
           
     if (!response.ok) {  
       console.log("eeeeeeeeeeeeeeeeee=" + response.statusText);
@@ -234,19 +227,19 @@ async function sendImage(num) {
     }
 
     //if the book check was not clean of errors      
-    if(num==1 && list_books[0]["existing_swaps"] == 1){
+    if(num_input==1 && list_books[0]["existing_swaps"] == 1){
      document.getElementById("status1").textContent = "❌ The right book order should be:";     
-    }else if(num==1){
+    }else if(num_input==1){
      document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
     }
-    else if(num==2 && list_books[0]["existing_swaps"] == 1){
+    else if(num_input==2 && list_books[0]["existing_swaps"] == 1){
      document.getElementById("status2").textContent = "❌ The right book order should be:";     
-    }else if(num==2){
+    }else if(num_input==2){
      document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
     }  
-    else if(num==3 && list_books[0]["existing_swaps"] == 1){
+    else if(num_input==3 && list_books[0]["existing_swaps"] == 1){
      document.getElementById("status3").textContent = "❌ The right book order should be:";     
-    }else if(num==3){
+    }else if(num_input==3){
      document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
     }       
 
