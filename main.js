@@ -194,7 +194,7 @@ async function sendImage(num) {
   {
    const formData = new FormData();
    formData.append("image", selectedFile);
-          
+   console.log("aaaaaaaaaaaaaaaaaa")        
    const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
       body: formData
@@ -245,5 +245,5 @@ async function sendImage(num) {
     }       
 
   }
-  catch(error)  {    console.log("xxxxx=" + error);  }        
+  catch(error)  {    console.log("xxxxxxxx=" + error);  }        
 }
