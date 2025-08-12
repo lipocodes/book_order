@@ -5,6 +5,7 @@ const input1 = document.getElementById("cameraInput1");
 const resultBox1 = document.getElementById("result1");
 const fileName1 = document.getElementById("fileName1");
 const clear_carousel1 = document.getElementById("clear_carousel1");
+clear_carousel1.style.display = "none"; 
 
 
 input1.addEventListener("change", function () {
