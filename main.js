@@ -8,6 +8,7 @@ const clear_carousel1 = document.getElementById("clear_carousel1");
 
 
 input1.addEventListener("change", function () {
+      console.log("aaaaaaaaaaaaaaaa");
 const file = input1.files[0];
 if (file) {
 selectedFile = file;
