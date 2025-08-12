@@ -1,13 +1,25 @@
 let selectedFile = null;
 const container1 = document.getElementById('carouselContainer1'); 
-container1.style.display = "none";  
+const container2 = document.getElementById('carouselContainer2');
+const container3 = document.getElementById('carouselContainer3'); 
+container1.style.display = "none";
+container2.style.display = "none";
+container3.style.display = "none"; 
 const input1 = document.getElementById("cameraInput1");
+const input2 = document.getElementById("cameraInput2");
+const input3 = document.getElementById("cameraInput3");
 //const preview = document.getElementById("preview");
 const resultBox1 = document.getElementById("result1");
+const resultBox2 = document.getElementById("result2");
+const resultBox3 = document.getElementById("result3");
 const fileName1 = document.getElementById("fileName1");
+const fileName2 = document.getElementById("fileName2");
+const fileName3 = document.getElementById("fileName3");
 const clear_carousel1 = document.getElementById("clear_carousel1");
+const clear_carousel2 = document.getElementById("clear_carousel2");
+const clear_carousel3 = document.getElementById("clear_carousel3");
 
-
+//////////////////////////////////////////////////
 input1.addEventListener("change", function () {
 const file = input1.files[0];
 if (file) {
@@ -17,12 +29,41 @@ fileName1.textContent = input1.files[0].name;
       }
 });
 
+input2.addEventListener("change", function () {
+const file = input2.files[0];
+if (file) {
+selectedFile = file;
+//preview.src = URL.createObjectURL(file);
+fileName2.textContent = input2.files[0].name;      
+      }
+});
 
+input3.addEventListener("change", function () {
+const file = input3.files[0];
+if (file) {
+selectedFile = file;
+//preview.src = URL.createObjectURL(file);
+fileName3.textContent = input3.files[0].name;      
+      }
+});
 
-function clearCarousel(){    
+//////////////////////////////////////////////////////////////////
+function clearCarousel1(){    
  container1.innerHTML = '';
  clear_carousel1.style.display = "none";     
 }
+
+function clearCarousel2(){    
+ container2.innerHTML = '';
+ clear_carousel2.style.display = "none";     
+}
+
+function clearCarousel3(){    
+ container3.innerHTML = '';
+ clear_carousel3.style.display = "none";     
+}
+
+//////////////////////////////////////////////////////////////
 
 function displayCarousel(books) {
 
