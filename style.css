@@ -171,15 +171,15 @@
 }
 
 
-#fileName1,#fileName2{
+#fileName1,#fileName2,#fileName3{
  font-size:10px;
 }
 
-#status1,#status2{
+#status1,#status2,#status3{
  font-size:12px;
 }
 
-#clear_carousel1,#clear_carousel2 {
+#clear_carousel1,#clear_carousel2,#clear_carousel3 {
     display: none; 
 }
 
