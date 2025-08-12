@@ -201,6 +201,8 @@ async function sendImage(num) {
       body: formData
     });
     const data = await response.json(); 
+    console.log(data);
+   
     let list_books = [];
     list_books.push(data);
     displayCarousel(list_books);  
