@@ -166,7 +166,7 @@ container1.addEventListener('touchmove', (e) => {
 
 async function sendImage(num) {
    num_input = num; //from this point, we know which input we use 
- 
+   console.log("aaaaaaaaaaaaaaaa=" + num_input);
   //carousel needs to be empty
   if(num_input==1) document.getElementById("carouselContainer1").innerHTML = "";
   else if(num_input==2)  document.getElementById("carouselContainer2").innerHTML = "";
