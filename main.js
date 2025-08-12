@@ -1,5 +1,5 @@
 let selectedFile = null;
-const container = document.getElementById('carouselContainer1'); 
+const container1 = document.getElementById('carouselContainer1'); 
 const input1 = document.getElementById("cameraInput1");
 //const preview = document.getElementById("preview");
 const resultBox1 = document.getElementById("result1");
@@ -20,15 +20,15 @@ fileName1.textContent = input1.files[0].name;
 
 
 function clearCarousel(){    
- container.innerHTML = '';
+ container1.innerHTML = '';
  clear_carousel1.style.display = "none";     
 }
 
 function displayCarousel(books) {
-//const container = document.getElementById('carouselContainer1');
+
 clear_carousel1.style.display = "block";            
 fileName1.textContent = '';      
-container.innerHTML = '';  //clear carousel content
+container1.innerHTML = '';  //clear carousel content
 
 books.forEach(book => {
 const item = document.createElement('div');
@@ -44,66 +44,64 @@ title.textContent = book.title;
 
 item.appendChild(dewey);
 item.appendChild(title);
-container.appendChild(item);
+container1.appendChild(item);
 });
 }
 
 // Scroll function for arrow buttons
-function scrollCarousel(direction) {
-  //const container = document.getElementById('carouselContainer1');
-    
+function scrollCarousel(direction) {    
   const scrollAmount = 150; // px
-  container.scrollLeft += direction * scrollAmount;
+  container1.scrollLeft += direction * scrollAmount;
 }
 
 // Touch / mouse drag support
 (function enableDragScroll() {
-const container = document.getElementById('carouselContainer1');
+const container1 = document.getElementById('carouselContainer1');
 let isDown = false;
 let startX;
 let scrollLeft;
 
-container.addEventListener('mousedown', (e) => {
+container1.addEventListener('mousedown', (e) => {
 isDown = true;
-container.classList.add('active');
-startX = e.pageX - container.offsetLeft;
-scrollLeft = container.scrollLeft;
+container1.classList.add('active');
+startX = e.pageX - container1.offsetLeft;
+scrollLeft = container1.scrollLeft;
 });
 
-container.addEventListener('mouseleave', () => {
+container1.addEventListener('mouseleave', () => {
  isDown = false;
- container.classList.remove('active');
+ container1.classList.remove('active');
 });
 
-container.addEventListener('mouseup', () => {
+container1.addEventListener('mouseup', () => {
  isDown = false;
-  container.classList.remove('active');
+  container1.classList.remove('active');
 });
 
-container.addEventListener('mousemove', (e) => {
+container1.addEventListener('mousemove', (e) => {
 if (!isDown) return;
 e.preventDefault();
-const x = e.pageX - container.offsetLeft;
+const x = e.pageX - container1.offsetLeft;
 const walk = (x - startX) * 1.5;
-container.scrollLeft = scrollLeft - walk;
+container1.scrollLeft = scrollLeft - walk;
 });
 
 // Mobile touch support
-container.addEventListener('touchstart', (e) => {
+container1.addEventListener('touchstart', (e) => {
   isDown = true;
-  startX = e.touches[0].pageX - container.offsetLeft;
-  scrollLeft = container.scrollLeft;
+  startX = e.touches[0].pageX - container1.offsetLeft;
+  scrollLeft = container1.scrollLeft;
 });
 
-container.addEventListener('touchend', () => {
+container1.addEventListener('touchend', () => {
   isDown = false;
 });
 
-container.addEventListener('touchmove', (e) => {
+container1.addEventListener('touchmove', (e) => {
     if (!isDown) return;
-    const x = e.touches[0].pageX - container.offsetLeft;
+    const x = e.touches[0].pageX - container1.offsetLeft;
     const walk = (x - startX) * 1.5;
-    container.scrollLeft = scrollLeft - walk;
+    container1.scrollLeft = scrollLeft - walk;
   });
 })();
 
