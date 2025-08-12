@@ -194,13 +194,13 @@ async function sendImage(num) {
   {
    const formData = new FormData();
    formData.append("image", selectedFile);
-             
+          
    const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
       body: formData
     });
     const data = await response.json(); 
-    console.log(data);
+   
    
     let list_books = [];
     list_books.push(data);
@@ -245,5 +245,5 @@ async function sendImage(num) {
     }       
 
   }
-  catch(error)  {   }        
+  catch(error)  {    console.log("xxxxx=" + error);  }        
 }
