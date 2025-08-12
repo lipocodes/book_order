@@ -27,7 +27,8 @@
       </div>  
     </div>
 
-   
+    <br/> 
+    
     <div id="photo2">
       <div style="font-size:14px;font-weight: bold;">📷 Photo 2:</div>
       <label for="cameraInput2" class="custom-file-upload">📷 Take a Photo</label>
@@ -42,6 +43,23 @@
           </div>
       </div>  
     </div>
+
+    <br/>
+
+    <div id="photo3">
+      <div style="font-size:14px;font-weight: bold;">📷 Photo 3:</div>
+      <label for="cameraInput3" class="custom-file-upload">📷 Take a Photo</label>
+      <input type="file" accept="image/*" id="cameraInput3" capture="environment" />
+      <button class="custom-file-upload" onclick="sendImage()">Send</button>
+      <span id="fileName3"></span>
+      <div id="result3">
+        <div id="status3"></div>
+        <div class="carousel-wrapper">
+          <div id="carouselContainer3" class="carousel-container"></div>
+            <button id="clear_carousel3" class="custom-file-upload" onclick="clearCarousel()">Clear</button> 
+          </div>
+      </div>  
+    </div>
  
     
 
@@ -51,6 +69,7 @@
 
 </body>
 </html>
+
 
 
 
