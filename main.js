@@ -51,7 +51,7 @@ fileName3.textContent = input3.files[0].name;
 });
 
 //////////////////////////////////////////////////////////////////
-function clearCarousel(num){ 
+function clearCarousel(){ 
  if(num_input == 1){
    container1.innerHTML = '';
    clear_carousel1.style.display = "none";  
@@ -79,12 +79,12 @@ if(num_input==1){
 else if(num_input==2){
   container2.style.display = "block";            
   fileName2.textContent = '';      
-  container2.innerHTML = '';  //clear carousel content
+  container2.innerHTML = '';  
 }
 else if(num_input==3){
   container3.style.display = "block";            
   fileName3.textContent = '';      
-  container3.innerHTML = '';  //clear carousel content
+  container3.innerHTML = '';  
 }      
 
 
@@ -244,9 +244,5 @@ async function sendImage(num) {
     }       
 
   }
-  catch(error) 
-  {
-  document.getElementById("status1").textContent = "❌ Error: " + error.message;
-  }
-        
+  catch(error)  {   }        
 }
