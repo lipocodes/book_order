@@ -207,7 +207,7 @@ async function sendImage(num) {
    
     displayCarousel(list_books);  
     const list_items = list_books[0]["sorted"];
-    console.log("bbbbbbbbbbbbbbb=" + list_books[0]["sorted"]);  
+    
           
     let books = [];      
     for(let i=0; i<list_items.length; i++){
@@ -221,7 +221,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
- 
+    console.log("ccccccccccccccc=" + books);  
     displayCarousel(books);      
           
     if (!response.ok) {  
