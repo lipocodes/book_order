@@ -204,7 +204,7 @@ async function sendImage(num) {
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
-    console.log("aaaaaaaaaaaaaaaa=" + list_book); 
+    console.log("aaaaaaaaaaaaaaaa=" + list_books); 
     displayCarousel(list_books);  
     const list_items = list_books[0]["sorted"];
           
