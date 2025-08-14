@@ -103,8 +103,8 @@ books.forEach(book => {
   item.appendChild(dewey);
   item.appendChild(title);
    
-  if(num_input==1) {container1.appendChild(item); } 
-  else if(num_input==2) {container2.appendChild(item); }
+  if(num==1) {container1.appendChild(item); } 
+  else if(num==2) {container2.appendChild(item); }
   else if(num_input==3) {container3.appendChild(item);  }
  });
 }
