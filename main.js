@@ -186,9 +186,9 @@ async function sendImage(num) {
   }       
       
   // Update status
-  if(num_input==1) document.getElementById("status1").textContent = "⏳ Sending image to server...";
-  else if(num_input==2) document.getElementById("status2").textContent = "⏳ Sending image to server..."; 
-  else if(num_input==3) document.getElementById("status3").textContent = "⏳ Sending image to server...";      
+  if(num_input==1) document.getElementById("status1").textContent = "⏳ Processing...";
+  else if(num_input==2) document.getElementById("status2").textContent = "⏳ Processing..."; 
+  else if(num_input==3) document.getElementById("status3").textContent = "⏳ Processing...";      
       
   try 
   {
@@ -204,6 +204,7 @@ async function sendImage(num) {
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
+    console.log()
    
     displayCarousel(list_books);  
     const list_items = list_books[0]["sorted"];
