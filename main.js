@@ -75,16 +75,19 @@ if(num_input==1){
   container1.style.display = "block";            
   fileName1.textContent = '';      
   container1.innerHTML = '';  //clear carousel content
+  console.log("aaaaaaaaaaaaaaaaaa");  
 }
 else if(num_input==2){
   container2.style.display = "block";            
   fileName2.textContent = '';      
-  container2.innerHTML = '';  
+  container2.innerHTML = ''; 
+  console.log("bbbbbbbbbbbbbbbbb");
 }
 else if(num_input==3){
   container3.style.display = "block";            
   fileName3.textContent = '';      
-  container3.innerHTML = '';  
+  container3.innerHTML = '';
+  console.log("ccccccccccccccccc");
 }      
 
 
@@ -103,9 +106,9 @@ books.forEach(book => {
   item.appendChild(dewey);
   item.appendChild(title);
    
-  if(num_input==1) {container1.appendChild(item); console.log("aaaaaaaaaaaaaaaaaa"); } 
-  else if(num_input==2) {container2.appendChild(item); console.log("bbbbbbbbbbbbbbbbb");}
-  else if(num_input==3) {container3.appendChild(item);  console.log("ccccccccccccccccc"); }
+  if(num_input==1) {container1.appendChild(item); } 
+  else if(num_input==2) {container2.appendChild(item); }
+  else if(num_input==3) {container3.appendChild(item);  }
  });
 }
 
