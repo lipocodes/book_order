@@ -70,6 +70,7 @@ function clearCarousel(){
 //////////////////////////////////////////////////////////////
 
 function displayCarousel(books) {
+console.log("bbbbbbbbbbbbbbb=" + books[0]);  
 //before populating the carousel      
 if(num_input==1){
   container1.style.display = "block";            
@@ -201,7 +202,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-    console.log("aaaaaaaaaaaaaaaaaa=" + response);  
+   
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
