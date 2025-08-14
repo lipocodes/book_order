@@ -201,6 +201,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
+    console.log("aaaaaaaaaaaaaaaaaa=" + books);  
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
@@ -222,7 +223,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-    console.log("ccccccccccccccc=" + books);  
+    
     displayCarousel(books);      
           
     if (!response.ok) {  
