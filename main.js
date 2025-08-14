@@ -102,10 +102,10 @@ books.forEach(book => {
 
   item.appendChild(dewey);
   item.appendChild(title);
-  console.log("ccccccccccccccc=" + item);  
-  if(num_input==1) container1.appendChild(item);
-  else if(num_input==2) container2.appendChild(item);
-  else if(num_input==3) container3.appendChild(item);
+   
+  if(num_input==1) {container1.appendChild(item); console.log("aaaaaaaaaaaaaaaaaa"); } 
+  else if(num_input==2) {container2.appendChild(item); console.log("bbbbbbbbbbbbbbbbb");}
+  else if(num_input==3) {container3.appendChild(item);  console.log("ccccccccccccccccc"); }
  });
 }
 
