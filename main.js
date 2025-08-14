@@ -68,26 +68,23 @@ function clearCarousel(){
 }
 
 //////////////////////////////////////////////////////////////
-function displayCarousel(books) {
+function displayCarousel(books,num) {
 
 //before populating the carousel      
-if(num_input==1){
+if(num==1){
   container1.style.display = "block";            
   fileName1.textContent = '';      
   container1.innerHTML = '';  //clear carousel content
-  console.log("aaaaaaaaaaaaaaaaaa");  
 }
-else if(num_input==2){
+else if(num==2){
   container2.style.display = "block";            
   fileName2.textContent = '';      
   container2.innerHTML = ''; 
-  console.log("bbbbbbbbbbbbbbbbb");
 }
-else if(num_input==3){
+else if(num==3){
   container3.style.display = "block";            
   fileName3.textContent = '';      
   container3.innerHTML = '';
-  console.log("ccccccccccccccccc");
 }      
 
 
@@ -211,7 +208,7 @@ async function sendImage(num) {
     list_books.push(data);
     
    
-    displayCarousel(list_books);  
+    //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
     
           
@@ -228,7 +225,7 @@ async function sendImage(num) {
      books.push(obj);     
     }
     
-    displayCarousel(books);      
+    displayCarousel(books,num);      
           
     if (!response.ok) {  
       console.log("eeeeeeeeeeeeeeeeee=" + response.statusText);
