@@ -68,9 +68,8 @@ function clearCarousel(){
 }
 
 //////////////////////////////////////////////////////////////
-
 function displayCarousel(books) {
-console.log("bbbbbbbbbbbbbbb=" + books[0]);  
+
 //before populating the carousel      
 if(num_input==1){
   container1.style.display = "block";            
@@ -103,6 +102,7 @@ books.forEach(book => {
 
   item.appendChild(dewey);
   item.appendChild(title);
+  console.log("ccccccccccccccc=" + item);  
   if(num_input==1) container1.appendChild(item);
   else if(num_input==2) container2.appendChild(item);
   else if(num_input==3) container3.appendChild(item);
