@@ -51,16 +51,16 @@ fileName3.textContent = input3.files[0].name;
 });
 
 //////////////////////////////////////////////////////////////////
-function clearCarousel(){ 
- if(num_input == 1){
+function clearCarousel(num){ 
+ if(num == 1){
    container1.innerHTML = '';
    clear_carousel1.style.display = "none";  
  }
- else if(num_input == 2){
+ else if(num == 2){
    container2.innerHTML = '';
    clear_carousel2.style.display = "none";  
  }
- else if(num_input == 3){
+ else if(num == 3){
    container3.innerHTML = '';
    clear_carousel3.style.display = "none";  
  }     
@@ -105,7 +105,7 @@ books.forEach(book => {
    
   if(num==1) {container1.appendChild(item); } 
   else if(num==2) {container2.appendChild(item); }
-  else if(num_input==3) {container3.appendChild(item);  }
+  else if(num==3) {container3.appendChild(item);  }
  });
 }
 
@@ -166,37 +166,36 @@ container1.addEventListener('touchmove', (e) => {
 /////////////////////////////////////////////////////////////////////// 
 
 async function sendImage(num) {
-   num_input = num; //from this point, we know which input we use 
   //carousel needs to be empty
-  if(num_input==1) document.getElementById("carouselContainer1").innerHTML = "";
-  else if(num_input==2)  document.getElementById("carouselContainer2").innerHTML = "";
-  else if(num_input==3)  document.getElementById("carouselContainer3").innerHTML = "";
+  if(num==1) document.getElementById("carouselContainer1").innerHTML = "";
+  else if(num==2)  document.getElementById("carouselContainer2").innerHTML = "";
+  else if(num==3)  document.getElementById("carouselContainer3").innerHTML = "";
          
   // taking a photo is compulsory..      
-  if (num_input==1 && !selectedFile1) {
+  if (num==1 && !selectedFile1) {
    alert("Please take a photo first.");
    return;
   }
-  else if (num_input==2 && !selectedFile2) {
+  else if (num==2 && !selectedFile2) {
    alert("Please take a photo first.");
    return;
   }
-  else if (num_input==3 && !selectedFile3) {
+  else if (num==3 && !selectedFile3) {
    alert("Please take a photo first.");
    return;
   }       
       
   // Update status
-  if(num_input==1) document.getElementById("status1").textContent = "⏳ Processing...";
-  else if(num_input==2) document.getElementById("status2").textContent = "⏳ Processing..."; 
-  else if(num_input==3) document.getElementById("status3").textContent = "⏳ Processing...";      
+  if(num==1) document.getElementById("status1").textContent = "⏳ Processing...";
+  else if(num==2) document.getElementById("status2").textContent = "⏳ Processing..."; 
+  else if(num==3) document.getElementById("status3").textContent = "⏳ Processing...";      
       
   try 
   {
    const formData = new FormData();
-   if(num_input==1) formData.append("image", selectedFile1);
-   else if(num_input==2) formData.append("image", selectedFile2);
-   else if(num_input==3) formData.append("image", selectedFile3);
+   if(num==1) formData.append("image", selectedFile1);
+   else if(num==2) formData.append("image", selectedFile2);
+   else if(num==3) formData.append("image", selectedFile3);
        
    const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
@@ -233,19 +232,19 @@ async function sendImage(num) {
     }
 
     //if the book check was not clean of errors      
-    if(num_input==1 && list_books[0]["existing_swaps"] == 1){
+    if(num==1 && list_books[0]["existing_swaps"] == 1){
      document.getElementById("status1").textContent = "❌ The right book order should be:";     
-    }else if(num_input==1){
+    }else if(num==1){
      document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
     }
-    else if(num_input==2 && list_books[0]["existing_swaps"] == 1){
+    else if(num==2 && list_books[0]["existing_swaps"] == 1){
      document.getElementById("status2").textContent = "❌ The right book order should be:";     
-    }else if(num_input==2){
+    }else if(num==2){
      document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
     }  
-    else if(num_input==3 && list_books[0]["existing_swaps"] == 1){
+    else if(num==3 && list_books[0]["existing_swaps"] == 1){
      document.getElementById("status3").textContent = "❌ The right book order should be:";     
-    }else if(num_input==3){
+    }else if(num==3){
      document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
     }       
 
