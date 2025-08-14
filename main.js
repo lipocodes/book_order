@@ -201,7 +201,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-    console.log("aaaaaaaaaaaaaaaaaa=" + books);  
+    console.log("aaaaaaaaaaaaaaaaaa=" + response);  
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
