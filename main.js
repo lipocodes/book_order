@@ -209,10 +209,18 @@ async function sendImage(num) {
    
     //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
-    if(list_items.length==0){
+    if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
        return;
     }
+    else  if(num==2 && list_items.length==0){
+     document.getElementById("status2").textContent = "❌ The query failed.."; 
+     return;
+    }
+    if(num==3 && list_items.length==0){
+       document.getElementById("status3").textContent = "❌ The query failed.."; 
+       return;
+    } 
           
     let books = [];      
     for(let i=0; i<list_items.length; i++){
