@@ -75,17 +75,17 @@ function displayCarousel(books,num) {
 
 //before populating the carousel      
 if(num==1){
-  container1.style.display = "block";            
+  carousel_items1.style.display = "block";            
   fileName1.textContent = '';      
   container1.innerHTML = '';  //clear carousel content
 }
 else if(num==2){
-  container2.style.display = "block";            
+  carousel_items2.style.display = "block";            
   fileName2.textContent = '';      
   container2.innerHTML = ''; 
 }
 else if(num==3){
-  container3.style.display = "block";            
+  carousel_items3.style.display = "block";            
   fileName3.textContent = '';      
   container3.innerHTML = '';
 }      
