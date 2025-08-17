@@ -21,7 +21,9 @@ const fileName3 = document.getElementById("fileName3");
 const clear_carousel1 = document.getElementById("clear_carousel1");
 const clear_carousel2 = document.getElementById("clear_carousel2");
 const clear_carousel3 = document.getElementById("clear_carousel3");
-const lior = document.getElementById("lior");
+const lior1 = document.getElementById("lior1");
+const lior2 = document.getElementById("lior2");
+const lior3 = document.getElementById("lior3");
 
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {
@@ -106,9 +108,9 @@ books.forEach(book => {
 
   
    
-  if(num==1) {container1.appendChild(item);  } 
-  else if(num==2) {container2.appendChild(item); }
-  else if(num==3) {container3.appendChild(item); lior.appendChild(item);  }
+  if(num==1) {container1.appendChild(item);  lior1.appendChild(item);} 
+  else if(num==2) {container2.appendChild(item); lior2.appendChild(item);}
+  else if(num==3) {container3.appendChild(item); lior3.appendChild(item);  }
  });
 }
 
