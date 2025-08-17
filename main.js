@@ -82,9 +82,9 @@ else if(num==2){
   container2.innerHTML = ''; 
 }
 else if(num==3){
-  container3.style.display = "block";            
-  fileName3.textContent = '';      
-  container3.innerHTML = '';
+  container.style.display = "block";            
+  fileName.textContent = '';      
+  container.innerHTML = '';
 }      
 
 
@@ -105,7 +105,7 @@ books.forEach(book => {
    
   if(num==1) {container1.appendChild(item); } 
   else if(num==2) {container2.appendChild(item); }
-  else if(num==3) {container3.appendChild(item);  }
+  else if(num==3) {container.appendChild(item);  }
  });
 }
 
@@ -115,7 +115,7 @@ async function sendImage(num) {
   //carousel needs to be empty
   if(num==1) document.getElementById("carouselContainer1").innerHTML = "";
   else if(num==2)  document.getElementById("carouselContainer2").innerHTML = "";
-  else if(num==3)  document.getElementById("carouselContainer3").innerHTML = "";
+  else if(num==3)  document.getElementById("carouselContainer").innerHTML = "";
          
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
@@ -167,7 +167,7 @@ async function sendImage(num) {
      return;
     }
     else if(list_items.length == 0 & num ==3){
-     document.getElementById("status3").textContent = "❌ The query has failed"; 
+     document.getElementById("status").textContent = "❌ The query has failed"; 
      return;
     }
    
@@ -202,9 +202,9 @@ async function sendImage(num) {
      document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
     }  
     else if(num==3 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status3").textContent = "❌ The right book order should be:";     
+     document.getElementById("status").textContent = "❌ The right book order should be:";     
     }else if(num==3){
-     document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
+     document.getElementById("status").textContent = "✅ No misplaced books have been found!";
     }       
 
   }
