@@ -215,13 +215,16 @@ async function sendImage(num) {
     let books = [];
     //If the response holds no items, the query has failed
     if(list_items.length == 0 & num ==1){
-     document.getElementById("status1").textContent = "❌ The query has failed";    
+     document.getElementById("status1").textContent = "❌ The query has failed"; 
+     return;
     }
     else if(list_items.length == 0 & num ==2){
-     document.getElementById("status2").textContent = "❌ The query has failed";    
+     document.getElementById("status2").textContent = "❌ The query has failed";   
+     return;
     }
     else if(list_items.length == 0 & num ==3){
-     document.getElementById("status3").textContent = "❌ The query has failed";    
+     document.getElementById("status3").textContent = "❌ The query has failed"; 
+     return;
     }
    
     for(let i=0; i<list_items.length; i++){
