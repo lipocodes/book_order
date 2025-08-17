@@ -21,6 +21,7 @@ const fileName3 = document.getElementById("fileName3");
 const clear_carousel1 = document.getElementById("clear_carousel1");
 const clear_carousel2 = document.getElementById("clear_carousel2");
 const clear_carousel3 = document.getElementById("clear_carousel3");
+const lior = document.getElementById("lior");
 
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {
@@ -102,10 +103,12 @@ books.forEach(book => {
 
   item.appendChild(dewey);
   item.appendChild(title);
+
+  
    
-  if(num==1) {container1.appendChild(item); } 
+  if(num==1) {container1.appendChild(item); lior.appendChild(item); } 
   else if(num==2) {container2.appendChild(item); }
-  //else if(num==3) {container3.appendChild(item);  }
+  else if(num==3) {container3.appendChild(item);  }
  });
 }
 
