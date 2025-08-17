@@ -111,6 +111,7 @@ books.forEach(book => {
 
 
 ////////////////////////////////////////////////////////////////////////
+/*
 // Touch / mouse drag support
 (function enableDragScroll() {
 
@@ -162,7 +163,7 @@ container1.addEventListener('touchmove', (e) => {
   });
      
 })();
-
+*/
 /////////////////////////////////////////////////////////////////////// 
 
 async function sendImage(num) {
@@ -211,7 +212,18 @@ async function sendImage(num) {
     const list_items = list_books[0]["sorted"];
     
           
-    let books = [];      
+    let books = [];
+    //If the response holds no items, the query has failed
+    if(list_item.length == 0 & num ==1){
+     document.getElementById("status1").textContent = "❌ The query has failed";    
+    }
+    else if(list_item.length == 0 & num ==2){
+     document.getElementById("status2").textContent = "❌ The query has failed";    
+    }
+    else if(list_item.length == 0 & num ==3){
+     document.getElementById("status3").textContent = "❌ The query has failed";    
+    }
+   
     for(let i=0; i<list_items.length; i++){
      const item = list_items[i];
      const pos = item.indexOf("^^^");
