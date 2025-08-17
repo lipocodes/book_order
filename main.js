@@ -56,15 +56,15 @@ fileName3.textContent = input3.files[0].name;
 //////////////////////////////////////////////////////////////////
 function clearCarousel(num){ 
  if(num == 1){
-   container1.innerHTML = '';
+   carousel_items1.innerHTML = '';
    clear_carousel1.style.display = "none";  
  }
  else if(num == 2){
-   container2.innerHTML = '';
+   carousel_items2.innerHTML = '';
    clear_carousel2.style.display = "none";  
  }
  else if(num == 3){
-   container3.innerHTML = '';
+   carousel_items3.innerHTML = '';
    clear_carousel3.style.display = "none";  
  }     
       
@@ -77,17 +77,17 @@ function displayCarousel(books,num) {
 if(num==1){
   carousel_items1.style.display = "block";            
   fileName1.textContent = '';      
-  container1.innerHTML = '';  //clear carousel content
+  carousel_items1.innerHTML = '';  //clear carousel content
 }
 else if(num==2){
   carousel_items2.style.display = "block";            
   fileName2.textContent = '';      
-  container2.innerHTML = ''; 
+  carousel_items2.innerHTML = ''; 
 }
 else if(num==3){
   carousel_items3.style.display = "block";            
   fileName3.textContent = '';      
-  container3.innerHTML = '';
+  carousel_items3.innerHTML = '';
 }      
 
 
@@ -172,9 +172,9 @@ container1.addEventListener('touchmove', (e) => {
 
 async function sendImage(num) {
   //carousel needs to be empty
-  if(num==1) document.getElementById("carouselContainer1").innerHTML = "";
-  else if(num==2)  document.getElementById("carouselContainer2").innerHTML = "";
-  else if(num==3)  document.getElementById("carouselContainer3").innerHTML = "";
+  if(num==1) document.getElementById("carousel_items1").innerHTML = "";
+  else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
+  else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
          
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
