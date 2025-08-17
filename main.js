@@ -115,61 +115,6 @@ books.forEach(book => {
 }
 
 
-////////////////////////////////////////////////////////////////////////
-// Touch / mouse drag support
-(function enableDragScroll() {
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-container1.addEventListener('mousedown', (e) => {
-isDown = true;
-container1.classList.add('active');
-startX = e.pageX - container1.offsetLeft;
-scrollLeft = container1.scrollLeft;
-});
-
-container1.addEventListener('mouseleave', () => {
- isDown = false;
- container1.classList.remove('active');
-});
-
-container1.addEventListener('mouseup', () => {
- isDown = false;
-  container1.classList.remove('active');
-});
-
-container1.addEventListener('mousemove', (e) => {
-if (!isDown) return;
-e.preventDefault();
-const x = e.pageX - container1.offsetLeft;
-const walk = (x - startX) * 1.5;
-container1.scrollLeft = scrollLeft - walk;
-});
-
-// Mobile touch support
-container1.addEventListener('touchstart', (e) => {
-  isDown = true;
-  startX = e.touches[0].pageX - container1.offsetLeft;
-  scrollLeft = container1.scrollLeft;
-});
-
-container1.addEventListener('touchend', () => {
-  isDown = false;
-});
-
-container1.addEventListener('touchmove', (e) => {
-    if (!isDown) return;
-    const x = e.touches[0].pageX - container1.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    container1.scrollLeft = scrollLeft - walk;
-  });
-     
-})();
-
-/////////////////////////////////////////////////////////////////////// 
-
 async function sendImage(num) {
   //carousel needs to be empty
   if(num==1) document.getElementById("carousel_items1").innerHTML = "";
