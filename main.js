@@ -106,9 +106,9 @@ books.forEach(book => {
 
   
    
-  if(num==1) {container1.appendChild(item); lior.appendChild(item); } 
+  if(num==1) {container1.appendChild(item);  } 
   else if(num==2) {container2.appendChild(item); }
-  else if(num==3) {container3.appendChild(item);  }
+  else if(num==3) {container3.appendChild(item); lior.appendChild(item);  }
  });
 }
 
