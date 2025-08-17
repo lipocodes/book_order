@@ -210,7 +210,7 @@ async function sendImage(num) {
    
     //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
-    
+    console.log("aaaaaaaaaaaaaaaa=" + list_items.length)
           
     let books = [];
     //If the response holds no items, the query has failed
