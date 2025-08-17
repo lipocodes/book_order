@@ -13,7 +13,7 @@
       min-height: 100vh;
     }
 
-    .container { 
+    .container {
       background: white;
       padding: 30px 40px;
       border-radius: 16px;
@@ -122,7 +122,7 @@
 
 
 .carousel-container {
-display: flex;
+  display: flex;
   flex-direction: row;   /* ensure horizontal layout */
   align-items: center;   /* vertical centering of items */
   overflow-x: auto;      
@@ -130,7 +130,7 @@ display: flex;
   flex-grow: 1;
   gap: 12px;
   padding: 10px 0;
-  height: 125px;  
+  height: 125px; 
 }
 
 
