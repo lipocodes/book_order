@@ -9,68 +9,62 @@
   <script src="main.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <h4>Find Displaced Books</h4>
+    <div class="container">
+      <h4>Find Displaced Books</h4>
     
-    <div id="photo1">
-      <div style="font-size:14px;font-weight: bold;">📷 Photo 1:</div>
-      <label for="cameraInput1" class="custom-file-upload">📷 Take a Photo</label>
-      <input type="file" accept="image/*" id="cameraInput1" capture="environment" />
-      <button class="custom-file-upload" onclick="sendImage(1)">Send</button>
-      <span id="fileName1"></span>
-      <div id="result1">
-        <div id="status1"></div>
-        <div class="carousel-wrapper">
-          <div id="carouselContainer1" class="carousel-container"></div>
+      <div id="photo1">
+        <div style="font-size:14px;font-weight: bold;">📷 Photo 1:</div>
+        <label for="cameraInput1" class="custom-file-upload">📷 Take a Photo</label>
+        <input type="file" accept="image/*" id="cameraInput1" capture="environment" />
+        <button class="custom-file-upload" onclick="sendImage(1)">Send</button>
+        <span id="fileName1"></span>
+        <div id="result1">
+          <div id="status1"></div>
+          <div class="carousel-wrapper">
+            <div id="carouselContainer1" class="carousel-container"></div>
             <button id="clear_carousel1" class="custom-file-upload" onclick="clearCarousel(1)">Clear</button> 
           </div>
-      </div>  
-    </div>
+        </div>  
+      </div>
 
     <br/> 
     
-    <div id="photo2">
-      <div style="font-size:14px;font-weight: bold;">📷 Photo 2:</div>
-      <label for="cameraInput2" class="custom-file-upload">📷 Take a Photo</label>
-      <input type="file" accept="image/*" id="cameraInput2" capture="environment" />
-      <button class="custom-file-upload" onclick="sendImage(2)">Send</button>
-      <span id="fileName2"></span>
-      <div id="result2">
-        <div id="status2"></div>
-        <div class="carousel-wrapper">
-          <div id="carouselContainer2" class="carousel-container"></div>
+      <div id="photo2">
+        <div style="font-size:14px;font-weight: bold;">📷 Photo 2:</div>
+        <label for="cameraInput2" class="custom-file-upload">📷 Take a Photo</label>
+        <input type="file" accept="image/*" id="cameraInput2" capture="environment" />
+        <button class="custom-file-upload" onclick="sendImage(2)">Send</button>
+        <span id="fileName2"></span>
+        <div id="result2">
+          <div id="status2"></div>
+          <div class="carousel-wrapper">
+            <div id="carouselContainer2" class="carousel-container"></div>
             <button id="clear_carousel2" class="custom-file-upload" onclick="clearCarousel(2)">Clear</button> 
           </div>
-      </div>  
-    </div>
+        </div>  
+      </div>
 
-    <br/>
-
-    <div id="photo3">
-      <div style="font-size:14px;font-weight: bold;">📷 Photo 3:</div>
-      <label for="cameraInput3" class="custom-file-upload">📷 Take a Photo</label>
-      <input type="file" accept="image/*" id="cameraInput3" capture="environment" />
-      <button class="custom-file-upload" onclick="sendImage(3)">Send</button>
-      <span id="fileName3"></span>
-      <div id="result3">
-        <div id="status3"></div>
-        <div class="carousel-wrapper">
-          <!--<div id="carouselContainer3" class="carousel-container"></div>
-            <button id="clear_carousel3" class="custom-file-upload" onclick="clearCarousel(3)">Clear</button> 
-          </div> -->
-      </div>  
-    </div>
- 
-   
-       
-    </div>
-
-  
+      <br/>
       
+	  <div id="photo3">
+        <div style="font-size:14px;font-weight: bold;">📷 Photo 3:</div>
+        <label for="cameraInput3" class="custom-file-upload">📷 Take a Photo</label>
+        <input type="file" accept="image/*" id="cameraInput3" capture="environment" />
+        <button class="custom-file-upload" onclick="sendImage(3)">Send</button>
+        <span id="fileName3"></span>
+          <div id="result3">
+            <div id="status3"></div>
+            <div class="carousel-wrapper">
+              <div id="carouselContainer3" class="carousel-container"></div>
+              <button id="clear_carousel3" class="custom-file-upload" onclick="clearCarousel(3)">Clear</button> 
+            </div> 
+          </div>  
+      </div>
+    </div>
   </div>
- <div id="carouselContainer3" class="carousel-container"></div>
 </body>
 </html>
+
 
 
 
