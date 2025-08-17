@@ -214,13 +214,13 @@ async function sendImage(num) {
           
     let books = [];
     //If the response holds no items, the query has failed
-    if(list_item.length == 0 & num ==1){
+    if(list_items.length == 0 & num ==1){
      document.getElementById("status1").textContent = "❌ The query has failed";    
     }
-    else if(list_item.length == 0 & num ==2){
+    else if(list_items.length == 0 & num ==2){
      document.getElementById("status2").textContent = "❌ The query has failed";    
     }
-    else if(list_item.length == 0 & num ==3){
+    else if(list_items.length == 0 & num ==3){
      document.getElementById("status3").textContent = "❌ The query has failed";    
     }
    
