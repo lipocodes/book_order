@@ -45,25 +45,43 @@
       </div>
 
       <br/>
-      
+
+		
 	  <div id="photo3">
         <div style="font-size:14px;font-weight: bold;">📷 Photo 3:</div>
         <label for="cameraInput3" class="custom-file-upload">📷 Take a Photo</label>
         <input type="file" accept="image/*" id="cameraInput3" capture="environment" />
         <button class="custom-file-upload" onclick="sendImage(3)">Send</button>
         <span id="fileName3"></span>
-          <div id="result3">
+
+		  <!--
+		  <div id="result3">
             <div id="status3"></div>
             <div class="carousel-wrapper">
               <div id="carouselContainer3" class="carousel-container"></div>
               <button id="clear_carousel3" class="custom-file-upload" onclick="clearCarousel(3)">Clear</button> 
             </div> 
-          </div>  
+          </div>
+           -->
+		  
+          <div id="result3">
+            <div id="status3"></div>
+               <div class="carousel-wrapper">
+                      <!-- <button class="carousel-nav left" onclick="scrollCarousel(-1)">◀️</button>   -->
+                 <div id="carouselContainer3" class="carousel-container">
+
+                 </div>
+               </div>
+          </div>
+		  
       </div>
+
+		
     </div>
   </div>
 </body>
 </html>
+
 
 
 
