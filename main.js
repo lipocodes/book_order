@@ -108,9 +108,9 @@ books.forEach(book => {
 
   
    
-  if(num==1) {container1.appendChild(item);  carousel_items1.appendChild(item);} 
-  else if(num==2) {container2.appendChild(item); carousel_items2.appendChild(item);}
-  else if(num==3) {container3.appendChild(item); carousel_items3.appendChild(item);  }
+  if(num==1) { carousel_items1.appendChild(item);} 
+  else if(num==2) { carousel_items2.appendChild(item);}
+  else if(num==3) {carousel_items3.appendChild(item);  }
  });
 }
 
