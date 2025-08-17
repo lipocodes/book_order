@@ -110,61 +110,6 @@ books.forEach(book => {
 }
 
 
-////////////////////////////////////////////////////////////////////////
-/*
-// Touch / mouse drag support
-(function enableDragScroll() {
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-container1.addEventListener('mousedown', (e) => {
-isDown = true;
-container1.classList.add('active');
-startX = e.pageX - container1.offsetLeft;
-scrollLeft = container1.scrollLeft;
-});
-
-container1.addEventListener('mouseleave', () => {
- isDown = false;
- container1.classList.remove('active');
-});
-
-container1.addEventListener('mouseup', () => {
- isDown = false;
-  container1.classList.remove('active');
-});
-
-container1.addEventListener('mousemove', (e) => {
-if (!isDown) return;
-e.preventDefault();
-const x = e.pageX - container1.offsetLeft;
-const walk = (x - startX) * 1.5;
-container1.scrollLeft = scrollLeft - walk;
-});
-
-// Mobile touch support
-container1.addEventListener('touchstart', (e) => {
-  isDown = true;
-  startX = e.touches[0].pageX - container1.offsetLeft;
-  scrollLeft = container1.scrollLeft;
-});
-
-container1.addEventListener('touchend', () => {
-  isDown = false;
-});
-
-container1.addEventListener('touchmove', (e) => {
-    if (!isDown) return;
-    const x = e.touches[0].pageX - container1.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    container1.scrollLeft = scrollLeft - walk;
-  });
-     
-})();
-*/
-/////////////////////////////////////////////////////////////////////// 
 
 async function sendImage(num) {
   //carousel needs to be empty
@@ -197,7 +142,7 @@ async function sendImage(num) {
    if(num==1) formData.append("image", selectedFile1);
    else if(num==2) formData.append("image", selectedFile2);
    else if(num==3) formData.append("image", selectedFile3);
-       
+   
    const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
       body: formData
@@ -210,7 +155,6 @@ async function sendImage(num) {
    
     //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
-    console.log("aaaaaaaaaaaaaaaa=" + list_items.length)
           
     let books = [];
     //If the response holds no items, the query has failed
@@ -264,5 +208,5 @@ async function sendImage(num) {
     }       
 
   }
-  catch(error)  {    console.log("xxxxxxxx=" + error);  }        
+  catch(error)  {  alert(error);  console.log("xxxxxxxxxxxx=" + error);  }        
 }
