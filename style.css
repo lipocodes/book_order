@@ -122,15 +122,7 @@
 
 
 .carousel-container {
-  display: flex;
-  flex-direction: row;   /* ensure horizontal layout */
-  align-items: center;   /* vertical centering of items */
-  overflow-x: auto;      
-  scroll-behavior: smooth;
-  flex-grow: 1;
-  gap: 12px;
-  padding: 10px 0;
-  height: 125px; 
+
 }
 
 
