@@ -25,6 +25,10 @@ carousel_items1.style.display = "none";
 carousel_items2.style.display = "none";
 carousel_items3.style.display = "none"; 
 
+container1.style.display = "none";
+container2.style.display = "none";
+container3.style.display = "none";
+
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {
 const file = input1.files[0];
