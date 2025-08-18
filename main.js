@@ -125,7 +125,7 @@ books.forEach(book => {
 async function sendImage(num) {
   //carousel needs to be empty
   //if(num==1) document.getElementById("carousel_items1").innerHTML = "";
-  else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
+  /*else*/ if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
   else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
          
   // taking a photo is compulsory..      
