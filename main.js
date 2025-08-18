@@ -18,13 +18,13 @@ const fileName3 = document.getElementById("fileName3");
 const clear_carousel1 = document.getElementById("clear_carousel1");
 const clear_carousel2 = document.getElementById("clear_carousel2");
 const clear_carousel3 = document.getElementById("clear_carousel3");
-const carousel_items1 = document.getElementById("carousel_items1");
+//const carousel_items1 = document.getElementById("carousel_items1");
 const lior1 = document.getElementById("lior1");
 const lior2 = document.getElementById("lior2");
 const lior3 = document.getElementById("lior3");
 const carousel_items2 = document.getElementById("carousel_items2");
 const carousel_items3 = document.getElementById("carousel_items3");
-carousel_items1.style.display = "none";
+//carousel_items1.style.display = "none";
 carousel_items2.style.display = "none";
 carousel_items3.style.display = "none"; 
 
@@ -63,7 +63,7 @@ fileName3.textContent = input3.files[0].name;
 //////////////////////////////////////////////////////////////////
 function clearCarousel(num){ 
  if(num == 1){
-   carousel_items1.innerHTML = '';
+   //carousel_items1.innerHTML = '';
    clear_carousel1.style.display = "none";  
  }
  else if(num == 2){
@@ -82,9 +82,9 @@ function displayCarousel(books,num) {
 
 //before populating the carousel      
 if(num==1){
-  carousel_items1.style.display = "block";            
+  //carousel_items1.style.display = "block";            
   fileName1.textContent = '';      
-  carousel_items1.innerHTML = '';  //clear carousel content
+  //carousel_items1.innerHTML = '';  //clear carousel content
 }
 else if(num==2){
   carousel_items2.style.display = "block";            
@@ -115,7 +115,7 @@ books.forEach(book => {
 
   
    
-  if(num==1) { carousel_items1.appendChild(item);  lior1.appendChild(item);} 
+  if(num==1) { /*carousel_items1.appendChild(item);*/  lior1.appendChild(item);} 
   else if(num==2) { carousel_items2.appendChild(item); lior2.appendChild(item);}
   else if(num==3) {carousel_items3.appendChild(item);  lior3.appendChild(item);}
  });
@@ -124,7 +124,7 @@ books.forEach(book => {
 
 async function sendImage(num) {
   //carousel needs to be empty
-  if(num==1) document.getElementById("carousel_items1").innerHTML = "";
+  //if(num==1) document.getElementById("carousel_items1").innerHTML = "";
   else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
   else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
          
