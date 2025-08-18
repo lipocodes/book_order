@@ -28,6 +28,10 @@ const lior3 = document.getElementById("lior3");
 //carousel_items2.style.display = "none";
 //carousel_items3.style.display = "none"; 
 
+lior1.style.display = "none";
+lior2.style.display = "none";
+lior3.style.display = "none";
+
 container1.style.display = "none";
 container2.style.display = "none";
 container3.style.display = "none";
