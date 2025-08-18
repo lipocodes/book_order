@@ -22,6 +22,10 @@ const clear_carousel3 = document.getElementById("clear_carousel3");
 const lior1 = document.getElementById("lior1");
 const lior2 = document.getElementById("lior2");
 const lior3 = document.getElementById("lior3");
+
+lior1.style.display = "none";
+lior2.style.display = "none";
+lior3.style.display = "none";
  
 container1.style.display = "none";
 container2.style.display = "none";
