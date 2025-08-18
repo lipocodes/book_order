@@ -16,6 +16,7 @@ const resultBox3 = document.getElementById("result3");
 const fileName1 = document.getElementById("fileName1");
 const fileName2 = document.getElementById("fileName2");
 const fileName3 = document.getElementById("fileName3");
+
 const clear_carousel1 = document.getElementById("clear_carousel1");
 const clear_carousel2 = document.getElementById("clear_carousel2");
 const clear_carousel3 = document.getElementById("clear_carousel3");
@@ -31,6 +32,10 @@ carousel_items3.style.display = "none";
 container1.style.display = "none";
 container2.style.display = "none";
 container3.style.display = "none";
+
+clear_carousel1.style.display = "none";
+clear_carousel2.style.display = "none";
+clear_carousel3.style.display = "none";
 
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {
@@ -85,16 +90,19 @@ if(num==1){
   carousel_items1.style.display = "block";            
   fileName1.textContent = '';      
   carousel_items1.innerHTML = '';  //clear carousel content
+  clear_carousel1.style.display = "block";
 }
 else if(num==2){
   carousel_items2.style.display = "block";            
   fileName2.textContent = '';      
   carousel_items2.innerHTML = ''; 
+  clear_carousel1.style.display = "block";
 }
 else if(num==3){
   carousel_items3.style.display = "block";            
   fileName3.textContent = '';      
   carousel_items3.innerHTML = '';
+  clear_carousel1.style.display = "block";
 }      
 
 
@@ -115,7 +123,7 @@ books.forEach(book => {
 
   
    
-  if(num==1) { carousel_items1.appendChild(item);} 
+  if(num==1) { carousel_items1.appendChild(item); } 
   else if(num==2) { carousel_items2.appendChild(item);}
   else if(num==3) {carousel_items3.appendChild(item);}
  });
