@@ -8,10 +8,10 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: center; 
+  align-items: center;       /* ✅ center vertically */
   min-height: 100vh;
-  font-size: 18px; /* base font size bigger */
+  font-size: 18px;           /* base font size bigger */
 }
 
 .container {
@@ -22,6 +22,7 @@ body {
   max-width: 600px;
   width: 95%;
   text-align: left;
+  margin: 20px;              /* ✅ prevents touching edges on small screens */
 }
 
 h2 {
@@ -158,6 +159,7 @@ button:hover {
 @media (max-width: 480px) {
   .container {
     padding: 24px;
+    margin: 12px; /* smaller margin on tiny screens */
   }
   h2 {
     font-size: 1.6em;
