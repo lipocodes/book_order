@@ -82,19 +82,19 @@ function displayCarousel(books,num) {
 
 //before populating the carousel      
 if(num==1){
-  lior1.style.display = "block";            
+  //carousel_items1.style.display = "block";            
   fileName1.textContent = '';      
-  lior1.innerHTML = '';  //clear carousel content
+  //carousel_items1.innerHTML = '';  //clear carousel content
 }
 else if(num==2){
-  lior2.style.display = "block";            
+  //carousel_items2.style.display = "block";            
   fileName2.textContent = '';      
-  lior2.innerHTML = ''; 
+  //carousel_items2.innerHTML = ''; 
 }
 else if(num==3){
-  lior3.style.display = "block";            
+  //carousel_items3.style.display = "block";            
   fileName3.textContent = '';      
-  lior3.innerHTML = '';
+ // carousel_items3.innerHTML = '';
 }      
 
 
