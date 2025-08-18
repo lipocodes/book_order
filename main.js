@@ -29,6 +29,8 @@ container1.style.display = "none";
 container2.style.display = "none";
 container3.style.display = "none";
 
+const lior = document.getElementById("lior");
+
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {
 const file = input1.files[0];
@@ -112,7 +114,7 @@ books.forEach(book => {
 
   
    
-  if(num==1) { carousel_items1.appendChild(item);} 
+  if(num==1) { carousel_items1.appendChild(item); lior.appendChild(item);} 
   else if(num==2) { carousel_items2.appendChild(item);}
   else if(num==3) {carousel_items3.appendChild(item);  }
  });
