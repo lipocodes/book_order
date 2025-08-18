@@ -21,9 +21,10 @@ const clear_carousel3 = document.getElementById("clear_carousel3");
 const carousel_items1 = document.getElementById("carousel_items1");
 const carousel_items2 = document.getElementById("carousel_items2");
 const carousel_items3 = document.getElementById("carousel_items3");
-//carousel_items1.style.display = "none";
-//carousel_items2.style.display = "none";
-//carousel_items3.style.display = "none"; 
+carousel_items1.style.display = "none";
+carousel_items2.style.display = "none";
+carousel_items3.style.display = "none"; 
+lior1.style.display = "none";
 
 container1.style.display = "none";
 container2.style.display = "none";
@@ -112,7 +113,7 @@ books.forEach(book => {
 
   
    
-  if(num==1) { carousel_items1.appendChild(item);} 
+  if(num==1) { carousel_items1.appendChild(item);  lior1.appendChild(item);} 
   else if(num==2) { carousel_items2.appendChild(item);}
   else if(num==3) {carousel_items3.appendChild(item);  }
  });
