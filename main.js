@@ -33,7 +33,7 @@ container1.style.display = "none";
 container2.style.display = "none";
 container3.style.display = "none";
 
-const carousel_item1 = document.getElementById("carousel_item1");
+
 
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {
