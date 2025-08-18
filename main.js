@@ -24,9 +24,9 @@ const lior2 = document.getElementById("lior2");
 const lior3 = document.getElementById("lior3");
 //const carousel_items2 = document.getElementById("carousel_items2");
 //const carousel_items3 = document.getElementById("carousel_items3");
-//carousel_items1.style.display = "none";
-//carousel_items2.style.display = "none";
-//carousel_items3.style.display = "none"; 
+lior1.style.display = "none";
+lior2.style.display = "none";
+lior3.style.display = "none"; 
 
 container1.style.display = "none";
 container2.style.display = "none";
@@ -82,19 +82,19 @@ function displayCarousel(books,num) {
 
 //before populating the carousel      
 if(num==1){
-  //carousel_items1.style.display = "block";            
+  lior1.style.display = "block";            
   fileName1.textContent = '';      
-  //carousel_items1.innerHTML = '';  //clear carousel content
+  lior1.innerHTML = '';  //clear carousel content
 }
 else if(num==2){
-  //carousel_items2.style.display = "block";            
+  lior2.style.display = "block";            
   fileName2.textContent = '';      
-  //carousel_items2.innerHTML = ''; 
+  lior2.innerHTML = ''; 
 }
 else if(num==3){
-  //carousel_items3.style.display = "block";            
+  lior3.style.display = "block";            
   fileName3.textContent = '';      
- // carousel_items3.innerHTML = '';
+  lior3.innerHTML = '';
 }      
 
 
