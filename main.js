@@ -69,15 +69,18 @@ fileName3.textContent = input3.files[0].name;
 function clearCarousel(num){ 
  if(num == 1){
    carousel_items1.innerHTML = '';
-   clear_carousel1.style.display = "none";  
+   clear_carousel1.style.display = "none"; 
+   container1.style.display = "none";
  }
  else if(num == 2){
    carousel_items2.innerHTML = '';
-   clear_carousel2.style.display = "none";  
+   clear_carousel2.style.display = "none"; 
+   container2.style.display = "none";
  }
  else if(num == 3){
    carousel_items3.innerHTML = '';
    clear_carousel3.style.display = "none";  
+   container3.style.display = "none";
  }     
       
 }
