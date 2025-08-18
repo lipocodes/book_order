@@ -19,6 +19,7 @@ const clear_carousel1 = document.getElementById("clear_carousel1");
 const clear_carousel2 = document.getElementById("clear_carousel2");
 const clear_carousel3 = document.getElementById("clear_carousel3");
 const carousel_items1 = document.getElementById("carousel_items1");
+const carousel_items1 = document.getElementById("lior1");
 const carousel_items2 = document.getElementById("carousel_items2");
 const carousel_items3 = document.getElementById("carousel_items3");
 carousel_items1.style.display = "none";
