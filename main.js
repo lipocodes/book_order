@@ -24,9 +24,9 @@ const lior2 = document.getElementById("lior2");
 const lior3 = document.getElementById("lior3");
 //const carousel_items2 = document.getElementById("carousel_items2");
 //const carousel_items3 = document.getElementById("carousel_items3");
-lior1.style.display = "none";
-lior2.style.display = "none";
-lior3.style.display = "none"; 
+//carousel_items1.style.display = "none";
+//carousel_items2.style.display = "none";
+//carousel_items3.style.display = "none"; 
 
 container1.style.display = "none";
 container2.style.display = "none";
