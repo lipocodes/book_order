@@ -22,11 +22,11 @@ const clear_carousel3 = document.getElementById("clear_carousel3");
 const lior1 = document.getElementById("lior1");
 const lior2 = document.getElementById("lior2");
 const lior3 = document.getElementById("lior3");
-const carousel_items2 = document.getElementById("carousel_items2");
-const carousel_items3 = document.getElementById("carousel_items3");
+//const carousel_items2 = document.getElementById("carousel_items2");
+//const carousel_items3 = document.getElementById("carousel_items3");
 //carousel_items1.style.display = "none";
-carousel_items2.style.display = "none";
-carousel_items3.style.display = "none"; 
+//carousel_items2.style.display = "none";
+//carousel_items3.style.display = "none"; 
 
 container1.style.display = "none";
 container2.style.display = "none";
@@ -67,11 +67,11 @@ function clearCarousel(num){
    clear_carousel1.style.display = "none";  
  }
  else if(num == 2){
-   carousel_items2.innerHTML = '';
+   //carousel_items2.innerHTML = '';
    clear_carousel2.style.display = "none";  
  }
  else if(num == 3){
-   carousel_items3.innerHTML = '';
+  //carousel_items3.innerHTML = '';
    clear_carousel3.style.display = "none";  
  }     
       
@@ -87,14 +87,14 @@ if(num==1){
   //carousel_items1.innerHTML = '';  //clear carousel content
 }
 else if(num==2){
-  carousel_items2.style.display = "block";            
+  //carousel_items2.style.display = "block";            
   fileName2.textContent = '';      
-  carousel_items2.innerHTML = ''; 
+  //carousel_items2.innerHTML = ''; 
 }
 else if(num==3){
-  carousel_items3.style.display = "block";            
+  //carousel_items3.style.display = "block";            
   fileName3.textContent = '';      
-  carousel_items3.innerHTML = '';
+ // carousel_items3.innerHTML = '';
 }      
 
 
@@ -116,8 +116,8 @@ books.forEach(book => {
   
    
   if(num==1) { /*carousel_items1.appendChild(item);*/  lior1.appendChild(item);} 
-  else if(num==2) { carousel_items2.appendChild(item); lior2.appendChild(item);}
-  else if(num==3) {carousel_items3.appendChild(item);  lior3.appendChild(item);}
+  else if(num==2) { /*carousel_items2.appendChild(item);*/ lior2.appendChild(item);}
+  else if(num==3) {/*carousel_items3.appendChild(item);*/  lior3.appendChild(item);}
  });
 }
 
@@ -125,8 +125,8 @@ books.forEach(book => {
 async function sendImage(num) {
   //carousel needs to be empty
   //if(num==1) document.getElementById("carousel_items1").innerHTML = "";
-  /*else*/ if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
-  else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
+  //else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
+  //else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
          
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
