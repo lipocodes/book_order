@@ -21,6 +21,10 @@ const clear_carousel3 = document.getElementById("clear_carousel3");
 const carousel_items1 = document.getElementById("carousel_items1");
 const carousel_items2 = document.getElementById("carousel_items2");
 const carousel_items3 = document.getElementById("carousel_items3");
+
+const carousel_item1 = document.getElementById("carousel_items1");
+const carousel_item2 = document.getElementById("carousel_items2");
+const carousel_item3 = document.getElementById("carousel_items3");
 carousel_item1.style.display = "none";
 carousel_item2.style.display = "none";
 carousel_item3.style.display = "none"; 
