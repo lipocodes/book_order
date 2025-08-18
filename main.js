@@ -29,6 +29,8 @@ container1.style.display = "none";
 container2.style.display = "none";
 container3.style.display = "none";
 
+const lior = document.getElementById('lior'); 
+
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {
 const file = input1.files[0];
