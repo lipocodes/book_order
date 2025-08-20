@@ -6,8 +6,12 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f8f9fa;
   margin: 0;
-  padding: 20px;
-  font-size: 18px;
+  padding: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center;       /* ✅ center vertically */
+  min-height: 100vh;
+  font-size: 18px;           /* base font size bigger */
 }
 
 .container {
