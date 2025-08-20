@@ -111,11 +111,6 @@ else if(num==3){
 books.forEach(book => {
   const item = document.createElement('div');
   item.className = 'carousel-item';
-  item.style.minWidth = "100px";
-  item.style.height = "100%";
-  item.style.flexShrink = "0";
-  item.style.background = color;
-  item.textContent = "";
 
   const dewey = document.createElement('div');
   dewey.className = 'dewey';
