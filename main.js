@@ -2,9 +2,7 @@ let num_input = 0;
 let selectedFile1 = null;
 let selectedFile2 = null;
 let selectedFile3 = null;
-//const container1 = document.getElementById('carouselContainer1'); 
-//const container2 = document.getElementById('carouselContainer2');
-//const container3 = document.getElementById('carouselContainer3'); 
+
 const input1 = document.getElementById("cameraInput1");
 const input2 = document.getElementById("cameraInput2");
 const input3 = document.getElementById("cameraInput3");
@@ -28,10 +26,6 @@ const carousel_items3 = document.getElementById("carousel_items3");
 carousel_items1.style.display = "none";
 carousel_items2.style.display = "none";
 carousel_items3.style.display = "none"; 
-
-//container1.style.display = "none";
-//container2.style.display = "none";
-//container3.style.display = "none";
 
 clear_carousel1.style.display = "none";
 clear_carousel2.style.display = "none";
