@@ -9,7 +9,7 @@
   <script src="main.js" defer></script>
 </head>
 <body>
-
+ <div id="carousel_items1" style="display: flex; flex-direction: row; gap: 12px; overflow-x: auto; height: 125px;">     </div>  
 
   </div>
   <div class="container">
@@ -23,18 +23,12 @@
       <span id="fileName1"></span>
       <div id="result1">
         <div id="status1"></div>
-
-<div class="carousel-wrapper" style="flex-direction:column; gap:8px; width:100%;">
-  <div id="carousel_items1" style="display:flex; flex-direction:row; overflow-x:auto; gap:12px; height:125px; border:1px solid #000;">
-    <div style="min-width:100px; height:100%; flex-shrink:0; background:#ccc;">AAAAAAAAAA</div>
-    <div style="min-width:100px; height:100%; flex-shrink:0; background:#aaa;">BBBBBBBBBB</div>
-    <div style="min-width:100px; height:100%; flex-shrink:0; background:#888;">CCCCCCCCCC</div>
-  </div>
-  <button id="clear_carousel1" onclick="clearCarousel(1)">Clear</button> 
-</div>
-
-        
-    </div>
+       <div class="carousel-wrapper">
+          <div id="carouselContainer1" class="carousel-container"></div>
+            <!--<div id="carousel_items1" style="display: flex; flex-direction: row; gap: 12px; overflow-x: auto; height: 125px;">     </div>  -->
+            <button id="clear_carousel1" onclick="clearCarousel(1)">Clear</button> 
+        </div>
+      </div>
 
     <br/> 
     
@@ -73,6 +67,7 @@
   </div>
 </body>
 </html>
+
 
 
 
