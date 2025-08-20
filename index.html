@@ -9,11 +9,12 @@
   <script src="main.js" defer></script>
 </head>
 <body>
-  
+ 
+  </div>
   <div class="container">
     <h4>Find Displaced Books</h4>
     
-     <div id="photo1">
+    <div id="photo1">
       <div style="font-size:14px;font-weight: bold;">📷 Photo 1:</div>
       <label for="cameraInput1" class="custom-file-upload">📷 Take a Photo</label>
       <input type="file" accept="image/*" id="cameraInput1" capture="environment" />
@@ -21,12 +22,14 @@
       <span id="fileName1"></span>
       <div id="result1">
         <div id="status1"></div>
-       <div class="carousel-wrapper">
-            <div id="carousel_items1"  style="display: flex; flex-direction: column; gap: 12px; overflow-x: auto; height: 125px;">     </div>  
+        <div class="carousel-wrapper">
+          <div id="carouselContainer1" class="carousel-container"></div>
+            <div id="carousel_items1" style="display: flex; flex-direction: row; gap: 12px; overflow-x: auto; height: 125px;">     </div>  
             <button id="clear_carousel1" onclick="clearCarousel(1)">Clear</button> 
-        </div>
-      </div>
+          </div>
+      </div>  
     </div>
+
     <br/> 
     
     <div id="photo2">
@@ -38,10 +41,9 @@
       <div id="result2">
         <div id="status2"></div>
         <div class="carousel-wrapper">
-          <div id="carouselContainer2" class="carousel-container">
+          <div id="carouselContainer2" class="carousel-container"></div>
             <div id="carousel_items2" style="display: flex; flex-direction: row; gap: 12px; overflow-x: auto; height: 125px;">     </div> 
             <button id="clear_carousel2"  onclick="clearCarousel(2)">Clear</button> 
-          </div>
           </div>
       </div>  
     </div>
@@ -65,35 +67,6 @@
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
