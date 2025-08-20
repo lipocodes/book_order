@@ -29,7 +29,7 @@ const carousel_items3 = document.getElementById("carousel_items3");
 carousel_items2.style.display = "none";
 carousel_items3.style.display = "none"; 
 
-container1.style.display = "none";
+//container1.style.display = "none";
 container2.style.display = "none";
 container3.style.display = "none";
 
