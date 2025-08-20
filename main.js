@@ -25,7 +25,7 @@ const carousel_items1 = document.getElementById("carousel_items1");
 const carousel_items2 = document.getElementById("carousel_items2");
 const carousel_items3 = document.getElementById("carousel_items3");
 
-carousel_items1.style.display = "none";
+//carousel_items1.style.display = "none";
 carousel_items2.style.display = "none";
 carousel_items3.style.display = "none"; 
 
