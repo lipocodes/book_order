@@ -165,36 +165,34 @@ async function sendImage(num) {
    else if(num==2) formData.append("image", selectedFile2);
    else if(num==3) formData.append("image", selectedFile3);
 
-const controller = new AbortController();
-const timeoutId = setTimeout(() => controller.abort(), 10000);
+   const controller = new AbortController();
+   const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-try {
-  const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
+   try {
+    const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
     method: "POST",
     body: formData,
     signal: controller.signal,
-  });
+    });
 
-  cancelTimeout(timeoutId, () => {
+    cancelTimeout(timeoutId, () => {
     console.log("⏹ Timeout cleared successfully");
-    document.getElementById("status1").textContent = "❌ The query failed..";
-  });
+     if(num==1)  document.getElementById("status1").textContent = "❌ The query failed..";
+     else if(num==2)  document.getElementById("status2").textContent = "❌ The query failed..";
+     else if(num==3)  document.getElementById("status3").textContent = "❌ The query failed..";
+    });
 
-} catch (err) {
-  cancelTimeout(timeoutId, () => {
-    console.log("⏹ Timeout cleared in catch block");
-  });
-}
+    } catch (err) {
+    cancelTimeout(timeoutId, () => {
+     console.log("⏹ Timeout cleared in catch block");
+      });
+    }
 
-
-    //document.getElementById("status1").textContent = "❌ The query failed..";  
     
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
     
-   
-    //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
