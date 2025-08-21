@@ -168,14 +168,14 @@ async function sendImage(num) {
 const controller = new AbortController();
 const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
+  
+
+try {
+  const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
     method: "POST",
     body: formData,
     signal: controller.signal,
-  });   
-
-try {
-  
+  }); 
 
   cancelTimeout(timeoutId, () => {
     console.log("⏹ Timeout cleared successfully");
