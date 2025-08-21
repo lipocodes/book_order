@@ -171,11 +171,9 @@ async function sendImage(num) {
     document.getElementById("status1").textContent = "❌ The query failed.."; 
 
    if (!response.ok) {
-    alert("xxxxxxxxxxxxx");
     throw new Error(`HTTP error! Status: ${response.status}`);
-    return;
    }
-   
+    alert("xxxxxxxxxxxxx");
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
