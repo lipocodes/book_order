@@ -159,7 +159,7 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
    const controller = new AbortController();
-   const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
+   const timeoutId = setTimeout(() => controller.abort(), 10000); // 30s timeout
 
    const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
     method: "POST",
