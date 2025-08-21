@@ -187,7 +187,7 @@ try {
 }
 
 
-    document.getElementById("status1").textContent = "❌ The query failed..";  
+    //document.getElementById("status1").textContent = "❌ The query failed..";  
     
     const data = await response.json(); 
     let list_books = [];
