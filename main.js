@@ -168,6 +168,7 @@ async function sendImage(num) {
 const controller = new AbortController();
 const timeoutId = setTimeout(() => controller.abort(), 10000);
 
+try {
   const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
     method: "POST",
     body: formData,
@@ -175,8 +176,18 @@ const timeoutId = setTimeout(() => controller.abort(), 10000);
   });
 
   cancelTimeout(timeoutId, () => {
+    console.log("⏹ Timeout cleared successfully");
     document.getElementById("status1").textContent = "❌ The query failed..";
   });
+
+} catch (err) {
+  cancelTimeout(timeoutId, () => {
+    console.log("⏹ Timeout cleared in catch block");
+  });
+}
+
+
+    document.getElementById("status1").textContent = "❌ The query failed..";  
     
     const data = await response.json(); 
     let list_books = [];
