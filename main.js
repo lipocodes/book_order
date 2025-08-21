@@ -157,11 +157,23 @@ async function sendImage(num) {
    if(num==1) formData.append("image", selectedFile1);
    else if(num==2) formData.append("image", selectedFile2);
    else if(num==3) formData.append("image", selectedFile3);
-       
+
+   const controller = new AbortController();
+   const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
+
    const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
-      method: "POST",
-      body: formData
-    });
+    method: "POST",
+    body: formData,
+    signal: controller.signal,
+   });
+
+    clearTimeout(timeoutId);
+
+   if (!response.ok) {
+    document.getElementById("status1").textContent = "❌ The query failed..";
+    throw new Error(`HTTP error! Status: ${response.status}`);
+    return;
+   }
    
     const data = await response.json(); 
     let list_books = [];
