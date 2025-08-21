@@ -166,7 +166,7 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
 const controller = new AbortController();
-const timeoutId = setTimeout(() => controller.abort(), 10000);
+const timeoutId = setTimeout(() => controller.abort(), 30000);
 
   
 
