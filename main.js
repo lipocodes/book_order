@@ -168,12 +168,14 @@ async function sendImage(num) {
    });
 
     clearTimeout(timeoutId);
-    document.getElementById("status1").textContent = "❌ The query failed.."; 
+
 
    if (!response.ok) {
     throw new Error(`HTTP error! Status: ${response.status}`);
    }
-    alert("xxxxxxxxxxxxx");
+
+    document.getElementById("status1").textContent = "❌ The query failed..";  
+    
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
