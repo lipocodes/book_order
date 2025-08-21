@@ -168,10 +168,10 @@ async function sendImage(num) {
    });
 
     clearTimeout(timeoutId);
+    document.getElementById("status1").textContent = "❌ The query failed.."; 
 
    if (!response.ok) {
     alert("xxxxxxxxxxxxx");
-    document.getElementById("status1").textContent = "❌ The query failed..";
     throw new Error(`HTTP error! Status: ${response.status}`);
     return;
    }
