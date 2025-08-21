@@ -125,13 +125,6 @@ books.forEach(book => {
  });
 }
 
-function cancelTimeout(timeoutId, onCancel) {
-  clearTimeout(timeoutId);
-  if (typeof onCancel === "function") {
-    onCancel();
-  }
-}
-
 
 async function sendImage(num) {
   //carousel needs to be empty
@@ -164,33 +157,12 @@ async function sendImage(num) {
    if(num==1) formData.append("image", selectedFile1);
    else if(num==2) formData.append("image", selectedFile2);
    else if(num==3) formData.append("image", selectedFile3);
-
-const controller = new AbortController();
-const timeoutId = setTimeout(() => controller.abort(), 30000);
-
-  
-
-try {
-  const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
-    method: "POST",
-    body: formData,
-    signal: controller.signal,
-  }); 
-
-  cancelTimeout(timeoutId, () => {
-    console.log("⏹ Timeout cleared successfully");
-    document.getElementById("status1").textContent = "❌ The query failed..";
-  });
-
-} catch (err) {
-  cancelTimeout(timeoutId, () => {
-    console.log("⏹ Timeout cleared in catch block");
-  });
-}
-
-
-    document.getElementById("status1").textContent = "❌ The query failed..";  
-    
+       
+   const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
+      method: "POST",
+      body: formData
+    });
+   
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
