@@ -177,7 +177,7 @@ try {
 
   cancelTimeout(timeoutId, () => {
     console.log("⏹ Timeout cleared successfully");
-    document.getElementById("status1").textContent = "❌ The query failed..";
+    if(num==1) document.getElementById("status1").textContent = "❌ The query failed..";
   });
 
 } catch (err) {
