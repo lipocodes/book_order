@@ -176,10 +176,8 @@ try {
   });
 
   cancelTimeout(timeoutId, () => {
-     console.log("⏹ Timeout cleared successfully");
-     document.getElementById("status1").textContent = "❌ The query failed..";
-     //document.getElementById("status2").textContent = "❌ The query failed..";
-     //document.getElementById("status3").textContent = "❌ The query failed..";
+    console.log("⏹ Timeout cleared successfully");
+     if(num==1) document.getElementById("status1").textContent = "❌ The query failed..";
   });
 
 } catch (err) {
@@ -189,7 +187,7 @@ try {
 }
 
 
- 
+    //document.getElementById("status1").textContent = "❌ The query failed..";  
     
     const data = await response.json(); 
     let list_books = [];
