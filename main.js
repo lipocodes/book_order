@@ -180,8 +180,8 @@ try {
     console.log("⏹ Timeout cleared successfully");
     alert("xxxxxxxxxxxxxxx=" + str(num));
     if(num==1) document.getElementById("status1").textContent = "❌ The query failed..";
-    /*else if(num==2)*/ document.getElementById("status2").textContent = "❌ The query failed..";
-    /*else if(num==3)*/ document.getElementById("status3").textContent = "❌ The query failed..";
+    else if(num==2) document.getElementById("status2").textContent = "❌ The query failed..";
+    else if(num==3) document.getElementById("status3").textContent = "❌ The query failed..";
   });
 
 } catch (err) {
