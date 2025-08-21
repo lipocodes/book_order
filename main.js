@@ -125,6 +125,13 @@ books.forEach(book => {
  });
 }
 
+function cancelTimeout(timeoutId, onCancel) {
+  clearTimeout(timeoutId);
+  if (typeof onCancel === "function") {
+    onCancel();
+  }
+}
+
 
 async function sendImage(num) {
   //carousel needs to be empty
