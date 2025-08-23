@@ -170,7 +170,7 @@ async function sendImage(num) {
    
     //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
-    alert(list_items);
+    //alert(list_items);
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
        return;
