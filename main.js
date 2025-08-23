@@ -161,7 +161,8 @@ async function sendImage(num) {
    let data; 
    let response1,response2,response3;
    
-   /we need each <input> to have its separate fetch() operation
+   alert(num);
+   //we need each <input> to have its separate fetch() operation
    if(num==1){
      response1 = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
