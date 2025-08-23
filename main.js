@@ -222,5 +222,5 @@ async function sendImage(num) {
     }       
 
   }
-  catch(error)  {    console.log("xxxxxxxx=" + error);  }        
+  catch(error)  { alert("eeeeeeeeeeeeeee=" + error);  }        
 }
