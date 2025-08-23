@@ -159,23 +159,24 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
    let data; 
+   let response1,response2,response3;
    
    if(num==1){
-     const response1 = await fetch("https://www.yvclib1.xyz/ocr/process", {
+     response1 = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
       body: formData
     });
     data = await response1.json(); 
    }
    else if(num==2){
-     const response2 = await fetch("https://www.yvclib1.xyz/ocr/process", {
+     response2 = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
       body: formData
     });
     data = await response2.json(); 
    }
    else if(num==3){
-     const response3 = await fetch("https://www.yvclib1.xyz/ocr/process", {
+      response3 = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
       body: formData
     });
@@ -216,10 +217,18 @@ async function sendImage(num) {
     
     displayCarousel(books,num);      
           
-    if (!response.ok) {  
-      console.log("eeeeeeeeeeeeeeeeee=" + response.statusText);
-      throw new Error("Server error: " + response.statusText);
+    if (!response1.ok) {  
+      console.log("eee=" + response1.statusText);
+      throw new Error("Server error: " + response1.statusText);
     }
+    else if (!response2.ok) {  
+      console.log("eee=" + response2.statusText);
+      throw new Error("Server error: " + response2.statusText);
+    }
+    else if (!response3.ok) {  
+      console.log("eee=" + response3.statusText);
+      throw new Error("Server error: " + response3.statusText);
+    }    
 
     //if the book check was not clean of errors      
     if(num==1 && list_books[0]["existing_swaps"] == 1){
