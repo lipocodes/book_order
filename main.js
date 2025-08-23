@@ -157,12 +157,30 @@ async function sendImage(num) {
    if(num==1) formData.append("image", selectedFile1);
    else if(num==2) formData.append("image", selectedFile2);
    else if(num==3) formData.append("image", selectedFile3);
-       
-   const response = await fetch("https://www.yvclib1.xyz/ocr/process", {
+
+   if(num==1){
+     const response1 = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
       body: formData
     });
-    alert(response);
+    alert("aaa=" + response1);
+   }
+   else if(num==2){
+     const response2 = await fetch("https://www.yvclib1.xyz/ocr/process", {
+      method: "POST",
+      body: formData
+    });
+    alert("bbb=" + response2);
+   }
+   else if(num==3){
+     const response2 = await fetch("https://www.yvclib1.xyz/ocr/process", {
+      method: "POST",
+      body: formData
+    });
+    alert("ccc=" + response3);
+   }
+   
+    
     const data = await response.json(); 
     let list_books = [];
     list_books.push(data);
