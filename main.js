@@ -173,7 +173,7 @@ async function sendImage(num) {
     alert("bbb=" + response2);
    }
    else if(num==3){
-     const response2 = await fetch("https://www.yvclib1.xyz/ocr/process", {
+     const response3 = await fetch("https://www.yvclib1.xyz/ocr/process", {
       method: "POST",
       body: formData
     });
