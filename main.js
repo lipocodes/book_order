@@ -134,15 +134,15 @@ async function sendImage(num) {
          
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }
   else if (num==2 && !selectedFile2) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }
   else if (num==3 && !selectedFile3) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }       
       
@@ -170,7 +170,7 @@ async function sendImage(num) {
    
     //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
-    //alert(list_items);
+    alert(list_items);
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
        return;
