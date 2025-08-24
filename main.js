@@ -163,21 +163,21 @@ async function sendImage(num) {
    
    //we need each <input> to have its separate fetch() operation
    if(num==1){
-     response1 = await fetch("https://www.yvclib1.xyz/ocr/process", {
+     response1 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
     });
     data = await response1.json(); 
    }
    else if(num==2){
-     response2 = await fetch("https://www.yvclib1.xyz/ocr/process", {
+     response2 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
     });
     data = await response2.json(); 
    }
    else if(num==3){
-      response3 = await fetch("https://www.yvclib1.xyz/ocr/process", {
+      response3 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
     });
