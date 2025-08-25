@@ -83,17 +83,17 @@ function displayCarousel(books,num) {
 
 //before populating the carousel      
 if(num==1){
-  carousel_items1.style.display = "block";
-  carousel_items1.style.display = "flex";
-  carousel_items1.style.flexDirection = "row";  
-  carousel_items1.style.gap = "8px";
-  carousel_items1.style.height = "50px";
-  // make children stretch and have padding
-  Array.from(carousel_items1.children).forEach(child => {
-  child.style.alignSelf = "stretch";   // take all parent's height
-  child.style.padding = "10px";        // 10px inner padding
-  child.style.boxSizing = "border-box"; // include padding in size
+carousel_items1.style.display = "flex";
+carousel_items1.style.flexDirection = "row";
+carousel_items1.style.gap = "8px";
+carousel_items1.style.height = "50px";
+carousel_items1.style.alignItems = "stretch"; // makes all children fill height
+
+Array.from(carousel_items1.children).forEach(child => {
+  child.style.padding = "10px";        
+  child.style.boxSizing = "border-box"; 
 });
+
  
   fileName1.textContent = '';      
   carousel_items1.innerHTML = '';  
