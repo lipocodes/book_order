@@ -240,15 +240,12 @@ async function sendImage(num) {
     displayCarousel(books,num);      
           
     if (response1 && !response1.ok) {  
-      console.log("eee response1=" + response1.statusText);
       throw new Error("Server error: " + response1.statusText);
     }
     else if (response2 && !response2.ok) {  
-      console.log("eee response2=" + response2.statusText);
       throw new Error("Server error: " + response2.statusText);
     }
     else if (response3 && !response3.ok) {  
-      console.log("eee response3=" + response3.statusText);
       throw new Error("Server error: " + response3.statusText);
     }    
 
@@ -270,5 +267,5 @@ async function sendImage(num) {
     }       
 
   }
-  catch(error)  { alert("eeeeeeeeeeeeeee=" + num + " " + error);  }        
+  catch(error)  {  }        
 }
