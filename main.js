@@ -122,6 +122,10 @@ else if(num==3){
 books.forEach(book => {
   const item = document.createElement('div');
   item.className = 'carousel-item';
+  item.style.backgroundColor = "#E6E6FA";
+  imgDiv.style.color = "white";
+  imgDiv.style.padding = "10px";
+  imgDiv.style.boxSizing = "border-box";
 
   const dewey = document.createElement('div');
   dewey.className = 'dewey';
