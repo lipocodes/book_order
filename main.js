@@ -122,7 +122,7 @@ else if(num==3){
 books.forEach(book => {
   const item = document.createElement('div');
   item.className = 'carousel-item';
-  item.style.backgroundColor = "#E6E6FA";
+  item.style.backgroundColor = "#800080";
   item.style.color = "white";
   item.style.padding = "10px";
   item.style.boxSizing = "border-box";
