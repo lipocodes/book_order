@@ -83,19 +83,11 @@ function displayCarousel(books,num) {
 
 //before populating the carousel      
 if(num==1){
-carousel_items1.style.display = "flex";
-carousel_items1.style.flexDirection = "row";
-carousel_items1.style.gap = "8px";
-carousel_items1.style.height = "100px";
-carousel_items1.style.alignItems = "stretch";
-
-Array.from(carousel_items1.children).forEach(child => {
-  child.style.backgroundColor = "#E6E6FA";
-  child.style.color = "white";
-  child.style.padding = "10px";
-  child.style.boxSizing = "border-box";
-});
-
+ carousel_items1.style.display = "flex";
+ carousel_items1.style.flexDirection = "row";
+ carousel_items1.style.gap = "8px";
+ carousel_items1.style.height = "100px";
+ carousel_items1.style.alignItems = "stretch";
  
   fileName1.textContent = '';      
   carousel_items1.innerHTML = '';  
@@ -106,6 +98,8 @@ else if(num==2){
   carousel_items2.style.display = "flex";
   carousel_items2.style.flexDirection = "row";  
   carousel_items2.style.gap = "8px";
+  carousel_items2.style.height = "100px";
+  carousel_items2.style.alignItems = "stretch";
  
   fileName2.textContent = '';      
   carousel_items2.innerHTML = ''; 
@@ -116,6 +110,8 @@ else if(num==3){
   carousel_items3.style.display = "flex";
   carousel_items3.style.flexDirection = "row";  
   carousel_items3.style.gap = "8px";
+  carousel_items3.style.height = "100px";
+  carousel_items1.style.alignItems = "stretch";
   
  fileName3.textContent = '';      
   carousel_items3.innerHTML = '';
