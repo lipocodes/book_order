@@ -62,18 +62,18 @@ fileName3.textContent = input3.files[0].name;
 //////////////////////////////////////////////////////////////////
 function clearCarousel(num){ 
  if(num == 1){
-   result1.innerHTML = '';
+   carousel_items1.innerHTML = '';
    clear_carousel1.style.display = "none"; 
    carousel_items1.style.display = "none";
  }
  else if(num == 2){
-   result2.innerHTML = '';
+   carousel_items2.innerHTML = '';
    clear_carousel2.style.display = "none"; 
    carousel_items2.style.display = "none";
  }
  else if(num == 3){
-   result3.innerHTML = '';
-   clear_carousel3.style.display = "none";  
+   carousel_items3.innerHTML = '';
+   clear_carouse3.style.display = "none";  
    carousel_items3.style.display = "none"; 
  }           
 }
