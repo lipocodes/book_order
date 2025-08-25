@@ -83,9 +83,12 @@ function displayCarousel(books,num) {
 
 //before populating the carousel      
 if(num==1){
-  carousel_items1.style.display = "block";            
+  carousel_items1.style.display = "block";
+  carousel_items1.style.display = "flex";
+  carousel_items1.style.flexDirection = "row";  
+  carousel_items1.style.gap = "8px";
   fileName1.textContent = '';      
-  carousel_items1.innerHTML = '';  //clear carousel content
+  carousel_items1.innerHTML = '';  
   clear_carousel1.style.display = "block";
 }
 else if(num==2){
