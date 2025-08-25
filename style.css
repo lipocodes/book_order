@@ -276,3 +276,12 @@ button.custom-file-upload,
 .mt-8  { margin-top: 8px; }
 .mt-12 { margin-top: 12px; }
 .mt-16 { margin-top: 16px; }
+
+
+#preview {
+max-width: 300px;
+max-height: 300px;
+margin-top: 10px;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
