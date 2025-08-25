@@ -6,7 +6,9 @@ let selectedFile3 = null;
 const input1 = document.getElementById("cameraInput1");
 const input2 = document.getElementById("cameraInput2");
 const input3 = document.getElementById("cameraInput3");
-const preview = document.getElementById("preview");
+const preview1 = document.getElementById("preview1");
+const preview2 = document.getElementById("preview2");
+const preview3 = document.getElementById("preview3");
 
 const resultBox1 = document.getElementById("result1");
 const resultBox2 = document.getElementById("result2");
@@ -37,7 +39,7 @@ const file = input1.files[0];
 if (file) {
 selectedFile1 = file;
 preview1.src = URL.createObjectURL(file);
-fileName1.textContent = input2.files[0].name;      
+fileName1.textContent = input1.files[0].name;      
    }
 });
 
@@ -45,7 +47,7 @@ input2.addEventListener("change", function () {
 const file = input2.files[0];
 if (file) {
 selectedFile2 = file;
-//preview.src = URL.createObjectURL(file);
+preview2.src = URL.createObjectURL(file);
 fileName2.textContent = input2.files[0].name;      
    }
 });
@@ -54,7 +56,7 @@ input3.addEventListener("change", function () {
 const file = input3.files[0];
 if (file) {
 selectedFile3 = file;
-//preview.src = URL.createObjectURL(file);
+preview3.src = URL.createObjectURL(file);
 fileName3.textContent = input3.files[0].name;      
    }
 });
