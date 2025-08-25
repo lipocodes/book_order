@@ -279,8 +279,8 @@ button.custom-file-upload,
 
 
 #preview1, #preview2, #preview3 {
-max-width: 250px;
-max-height: 180px;
+max-width: 240px;
+max-height: 120px;
 /*margin-top: 10px;*/
 border-radius: 12px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
