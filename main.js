@@ -33,11 +33,12 @@ clear_carousel3.style.display = "none";
 
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {
-const file = inpu1.files[0];
+const file = input1.files[0];
 if (file) {
 selectedFile1 = file;
 preview.src = URL.createObjectURL(file);
-  }
+fileName1.textContent = input2.files[0].name;      
+   }
 });
 
 input2.addEventListener("change", function () {
