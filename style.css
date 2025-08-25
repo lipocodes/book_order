@@ -168,6 +168,12 @@ button.custom-file-upload,
   background: color-mix(in srgb, var(--panel) 85%, transparent);
   border: 1px dashed color-mix(in srgb, var(--text) 14%, transparent);
   border-radius: calc(var(--radius) - 6px);
+
+  overflow-x: auto;       /* enable horizontal scroll if items overflow */
+  white-space: nowrap;    /* keep items on one line */
+  max-width: 100%;        /* constrain width to container */
+  border: 1px solid #444; /* optional, to see the wrapper */
+  padding: 6px; 
 }
 
 /* Turn the inner list into a smooth snapping scroller */
