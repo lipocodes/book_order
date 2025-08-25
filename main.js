@@ -87,12 +87,14 @@ carousel_items1.style.display = "flex";
 carousel_items1.style.flexDirection = "row";
 carousel_items1.style.gap = "8px";
 carousel_items1.style.height = "100px";
-carousel_items1.style.alignItems = "stretch"; // makes all children fill height
+carousel_items1.style.alignItems = "stretch";
 
-/*Array.from(carousel_items1.children).forEach(child => {
-  child.style.padding = "10px";        
-  child.style.boxSizing = "border-box"; 
-});*/
+Array.from(carousel_items1.children).forEach(child => {
+  child.style.backgroundColor = "#E6E6FA";
+  child.style.color = "white";
+  child.style.padding = "10px";
+  child.style.boxSizing = "border-box";
+});
 
  
   fileName1.textContent = '';      
