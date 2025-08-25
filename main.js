@@ -99,14 +99,22 @@ if(num==1){
   clear_carousel1.style.display = "block";
 }
 else if(num==2){
-  carousel_items2.style.display = "block";            
+  carousel_items2.style.display = "block";
+  carousel_items2.style.display = "flex";
+  carousel_items2.style.flexDirection = "row";  
+  carousel_items2.style.gap = "8px";
+ 
   fileName2.textContent = '';      
   carousel_items2.innerHTML = ''; 
   clear_carousel2.style.display = "block";
 }
 else if(num==3){
-  carousel_items3.style.display = "block";            
-  fileName3.textContent = '';      
+  carousel_items3.style.display = "block"; 
+  carousel_items3.style.display = "flex";
+  carousel_items3.style.flexDirection = "row";  
+  carousel_items3.style.gap = "8px";
+  
+ fileName3.textContent = '';      
   carousel_items3.innerHTML = '';
   clear_carousel3.style.display = "block";
 }      
