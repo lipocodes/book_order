@@ -86,13 +86,13 @@ if(num==1){
 carousel_items1.style.display = "flex";
 carousel_items1.style.flexDirection = "row";
 carousel_items1.style.gap = "8px";
-carousel_items1.style.height = "50px";
+carousel_items1.style.height = "100px";
 carousel_items1.style.alignItems = "stretch"; // makes all children fill height
 
-Array.from(carousel_items1.children).forEach(child => {
+/*Array.from(carousel_items1.children).forEach(child => {
   child.style.padding = "10px";        
   child.style.boxSizing = "border-box"; 
-});
+});*/
 
  
   fileName1.textContent = '';      
