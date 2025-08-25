@@ -36,7 +36,7 @@ input1.addEventListener("change", function () {
 const file = input1.files[0];
 if (file) {
  selectedFile1 = file;
- //preview.src = URL.createObjectURL(file);
+ preview.src = URL.createObjectURL(file);
  fileName1.textContent = input1.files[0].name;      
    }
 });
