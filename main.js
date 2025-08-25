@@ -6,7 +6,7 @@ let selectedFile3 = null;
 const input1 = document.getElementById("cameraInput1");
 const input2 = document.getElementById("cameraInput2");
 const input3 = document.getElementById("cameraInput3");
-//const preview = document.getElementById("preview");
+const preview = document.getElementById("preview");
 
 const resultBox1 = document.getElementById("result1");
 const resultBox2 = document.getElementById("result2");
