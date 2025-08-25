@@ -186,7 +186,9 @@ button.custom-file-upload,
   mask-image: linear-gradient(90deg, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%);
 }
 
-#carousel_items1::-webkit-scrollbar {
+ #carousel_items1::-webkit-scrollbar,
+ #carousel_items2::-webkit-scrollbar,
+ #carousel_items3::-webkit-scrollbar{
   width: 0;   /* remove vertical scrollbar */
   height: 0;  /* remove horizontal scrollbar */
 }
