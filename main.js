@@ -190,7 +190,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-    data = await response1.json(); 
+    data = await response1.json();  
    }
    else if(num==2){
      response2 = await fetch("https://www.yvclib.org/ocr/process", {
