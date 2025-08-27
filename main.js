@@ -258,6 +258,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
+    console.log("xxxxxxxxxxxxxxxx");  
     data = await response1.json();  
     console.log("aaa=" + str(data));  
    }
