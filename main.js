@@ -62,24 +62,13 @@ fileName3.textContent = input3.files[0].name;
 });
 
 //////////////////////////////////////////////////////////////////
-/*document.getElementById("preview1").addEventListener("click", function () {
-    const imgSrc = this.src;
-    const popup = window.open("", "popup", "width=600,height=600");
-    popup.document.write(`
-        <html>
-            <head><title>Image Preview</title></head>
-            <body style="margin:0; display:flex; align-items:center; justify-content:center;">
-                <img src="${imgSrc}" style="max-width:100%; max-height:100%;" />
-            </body>
-        </html>
-    `);
-});*/
-
 document.addEventListener("DOMContentLoaded", () => {
   const preview = document.getElementById("preview1");
   const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImg");
   const closeBtn = document.getElementById("closeBtn");
+  // ensure modal is hidden on page load
+  modal.style.display = "none"; 
 
   // Open modal on click/tap
   preview.addEventListener("click", () => {
