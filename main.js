@@ -75,25 +75,29 @@ fileName3.textContent = input3.files[0].name;
     `);
 });*/
 
-const preview = document.getElementById("preview1");
-const modal = document.getElementById("imgModal");
-const modalImg = document.getElementById("modalImg");
-const closeBtn = document.getElementById("closeBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const preview = document.getElementById("preview1");
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.getElementById("closeBtn");
 
-// Open modal on click
-preview.addEventListener("click", () => {
-  modal.style.display = "flex";
-  modalImg.src = preview.src;
-});
+  // Open modal on click/tap
+  preview.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = preview.src;
+  });
 
-// Close modal
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+  // Close modal with the X button
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
 
-// Tap anywhere outside the image to close
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) modal.style.display = "none";
+  // Close modal by tapping outside the image
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 });
 
 //////////////////////////////////////////////////////////////////
