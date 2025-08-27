@@ -63,28 +63,28 @@ fileName3.textContent = input3.files[0].name;
 
 //////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
-  const preview = document.getElementById("preview1");
-  const modal = document.getElementById("imgModal");
-  const modalImg = document.getElementById("modalImg");
-  const closeBtn = document.getElementById("closeBtn");
+  const preview1 = document.getElementById("preview1");
+  const modal1 = document.getElementById("imgModal1");
+  const modalImg1 = document.getElementById("modalImg1");
+  const closeBtn1 = document.getElementById("closeBtn1");
   // ensure modal is hidden on page load
-  modal.style.display = "none"; 
+  modal1.style.display = "none"; 
 
   // Open modal on click/tap
-  preview.addEventListener("click", () => {
-    modal.style.display = "flex";
-    modalImg.src = preview.src;
+  preview1.addEventListener("click", () => {
+    modal1.style.display = "flex";
+    modalImg1.src = preview1.src;
   });
 
   // Close modal with the X button
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
+  closeBtn1.addEventListener("click", () => {
+    modal1.style.display = "none";
   });
 
   // Close modal by tapping outside the image
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
+  modal1.addEventListener("click", (e) => {
+    if (e.target === modal1) {
+      modal1.style.display = "none";
     }
   });
 });
