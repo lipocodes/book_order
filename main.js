@@ -258,9 +258,9 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-    console.log("xxxxxxxxxxxxxxxx");  
+      
     data = await response1.json();  
-    console.log("aaa=" + str(data));  
+    console.log("aaa=" + data.toString());  
    }
    else if(num==2){
      response2 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -268,7 +268,7 @@ async function sendImage(num) {
       body: formData
     });
     data = await response2.json(); 
-    console.log("bbb=" + str(data));    
+    console.log("bbb=" + data.toString());     
    }
    else if(num==3){
       response3 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -276,7 +276,7 @@ async function sendImage(num) {
       body: formData
     });
     data = await response3.json();
-    console.log("ccc=" + str(data));    
+    console.log("ccc=" + data.toString());    
    }
        
     let list_books = [];
