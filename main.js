@@ -76,7 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalImg2 = document.getElementById("modalImg2");
   const closeBtn2 = document.getElementById("closeBtn2");
   // ensure modal is hidden on page load
-  modal2.style.display = "none";   
+  modal2.style.display = "none";
+
+  const preview3 = document.getElementById("preview3");
+  const modal3 = document.getElementById("imgModal3");
+  const modalImg3 = document.getElementById("modalImg3");
+  const closeBtn3 = document.getElementById("closeBtn3");
+  // ensure modal is hidden on page load
+  modal3.style.display = "none";  
 
   // Open modal on click/tap
   preview1.addEventListener("click", () => {
@@ -87,6 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
     modal2.style.display = "flex";
     modalImg2.src = preview2.src;
   }); 
+  preview3.addEventListener("click", () => {
+    modal3.style.display = "flex";
+    modalImg3.src = preview3.src;
+  }); 
 
   // Close modal with the X button
   closeBtn1.addEventListener("click", () => {
@@ -95,6 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
   closeBtn2.addEventListener("click", () => {
     modal2.style.display = "none";
   }); 
+  closeBtn3.addEventListener("click", () => {
+    modal3.style.display = "none";
+  });  
 
   // Close modal by tapping outside the image
   modal1.addEventListener("click", (e) => {
@@ -107,6 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
       modal2.style.display = "none";
     }
   });
+  modal3.addEventListener("click", (e) => {
+    if (e.target === modal3) {
+      modal3.style.display = "none";
+    }
+  }); 
    
 });
 
