@@ -259,7 +259,7 @@ async function sendImage(num) {
       body: formData
     });
     data = await response1.json();  
-    alert("aaa=" + str(data));  
+    console.log("aaa=" + str(data));  
    }
    else if(num==2){
      response2 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -267,7 +267,7 @@ async function sendImage(num) {
       body: formData
     });
     data = await response2.json(); 
-    alert("bbb=" + str(data));    
+    console.log("bbb=" + str(data));    
    }
    else if(num==3){
       response3 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -275,7 +275,7 @@ async function sendImage(num) {
       body: formData
     });
     data = await response3.json();
-    alert("ccc=" + str(data));    
+    console.log("ccc=" + str(data));    
    }
        
     let list_books = [];
