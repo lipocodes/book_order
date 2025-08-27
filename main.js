@@ -62,6 +62,20 @@ fileName3.textContent = input3.files[0].name;
 });
 
 //////////////////////////////////////////////////////////////////
+document.getElementById("preview1").addEventListener("click", function () {
+    const imgSrc = this.src;
+    const popup = window.open("", "popup", "width=600,height=600");
+    popup.document.write(`
+        <html>
+            <head><title>Image Preview</title></head>
+            <body style="margin:0; display:flex; align-items:center; justify-content:center;">
+                <img src="${imgSrc}" style="max-width:100%; max-height:100%;" />
+            </body>
+        </html>
+    `);
+});
+
+//////////////////////////////////////////////////////////////////
 function clearCarousel(num){ 
  if(num == 1){
    carousel_items1.innerHTML = '';
