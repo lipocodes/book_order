@@ -46,6 +46,13 @@
       <div id="result2">
         <div id="status2"></div>
         <img id="preview2" />
+
+        <!-- Fullscreen Image Modal -->
+        <div id="imgModal2"  style="display:none; position:fixed; z-index:9999; top:0; left:0;  width:100%; height:100%; background:rgba(0,0,0,0.9);  display:flex; justify-content:center; align-items:center;">
+          <span id="closeBtn2" style="position:absolute; top:20px; right:20px; font-size:40px;  color:white; cursor:pointer;">&times;</span>
+          <img id="modalImg2" style="max-width:95%; max-height:95%; border-radius:10px;" />
+        </div>
+        
         <div class="carousel-wrapper">
           <div id="carousel_items2"></div> 
           <button id="clear_carousel2" onclick="clearCarousel(2)">Clear</button> 
@@ -74,6 +81,7 @@
   </div> <!-- closes .container -->
 </body>
 </html>
+
 
 
 
