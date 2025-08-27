@@ -340,5 +340,5 @@ async function sendImage(num) {
     }       
 
   }
-  catch(error)  {  }        
+  catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
 }
