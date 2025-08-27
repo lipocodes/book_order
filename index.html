@@ -70,7 +70,14 @@
       <span id="fileName3"></span>
       <div id="result3">
         <div id="status3"></div>
-        <img id="preview3" />
+        <img id="preview3" style="width:120px; cursor:pointer;" />
+
+        <!-- Fullscreen Image Modal -->
+        <div id="imgModal3"  style="display:none; position:fixed; z-index:9999; top:0; left:0;  width:100%; height:100%; background:rgba(0,0,0,0.9);  display:flex; justify-content:center; align-items:center;">
+          <span id="closeBtn3" style="position:absolute; top:20px; right:20px; font-size:40px;  color:white; cursor:pointer;">&times;</span>
+          <img id="modalImg3" style="max-width:95%; max-height:95%; border-radius:10px;" />
+        </div>
+        
         <div class="carousel-wrapper">
           <div id="carousel_items3"></div>  
           <button id="clear_carousel3" onclick="clearCarousel(3)">Clear</button> 
@@ -81,6 +88,7 @@
   </div> <!-- closes .container -->
 </body>
 </html>
+
 
 
 
