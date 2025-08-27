@@ -62,7 +62,7 @@ fileName3.textContent = input3.files[0].name;
 });
 
 //////////////////////////////////////////////////////////////////
-document.getElementById("preview1").addEventListener("click", function () {
+/*document.getElementById("preview1").addEventListener("click", function () {
     const imgSrc = this.src;
     const popup = window.open("", "popup", "width=600,height=600");
     popup.document.write(`
@@ -73,6 +73,27 @@ document.getElementById("preview1").addEventListener("click", function () {
             </body>
         </html>
     `);
+});*/
+
+const preview = document.getElementById("preview1");
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.getElementById("closeBtn");
+
+// Open modal on click
+preview.addEventListener("click", () => {
+  modal.style.display = "flex";
+  modalImg.src = preview.src;
+});
+
+// Close modal
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Tap anywhere outside the image to close
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) modal.style.display = "none";
 });
 
 //////////////////////////////////////////////////////////////////
