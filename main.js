@@ -133,8 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function clearCarousel(num){ 
  if(num == 1){
    carousel_items1.innerHTML = '';
-   clear_carousel1.style.display = "none"; 
-   carousel_items1.style.display = "none";
    resultBox1.style.display = "none";
  }
  else if(num == 2){
