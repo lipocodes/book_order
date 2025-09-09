@@ -37,6 +37,7 @@ clear_carousel3.style.display = "none";
 input1.addEventListener("change", function () {  
 const file = input1.files[0];   
 if (file) {
+alert("xxxxxxxxxxxx");	
 resultBox1.style.display = "block";	
 selectedFile1 = file;
 preview1.src = URL.createObjectURL(file);
