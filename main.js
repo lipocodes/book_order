@@ -136,13 +136,9 @@ function clearCarousel(num){
  }
  else if(num == 2){
    carousel_items2.innerHTML = '';
-   clear_carousel2.style.display = "none"; 
-   carousel_items2.style.display = "none";
  }
  else if(num == 3){
-   carousel_items3.innerHTML = '';
-   clear_carouse3.style.display = "none";  
-   carousel_items3.style.display = "none"; 
+   carousel_items3.innerHTML = ''; 
  }           
 }
 
