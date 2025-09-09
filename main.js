@@ -35,15 +35,13 @@ clear_carousel3.style.display = "none";
 
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {  
-input1.files[0] = null;
 const file = input1.files[0];   
-alert("xxxxxxxx=" + file);	
-if (file) {
+//if (file) {
 resultBox1.style.display = "block";	
 selectedFile1 = file;
 preview1.src = URL.createObjectURL(file);
 fileName1.textContent = input1.files[0].name;      
-   }
+///   }
 });
 
 input2.addEventListener("change", function () {
