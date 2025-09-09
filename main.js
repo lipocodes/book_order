@@ -35,6 +35,7 @@ clear_carousel3.style.display = "none";
 
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {  
+input1.files[0] = null;
 const file = input1.files[0];   
 alert("xxxxxxxx=" + file);	
 if (file) {
