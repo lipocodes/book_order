@@ -254,7 +254,8 @@ async function sendImage(num) {
     });
       
     data = await response1.json();  
-    console.log("aaa=" + data.toString());  
+    console.log("aaa=" + data.toString());
+    alert(data.toString());  
    }
    else if(num==2){
      response2 = await fetch("https://www.yvclib.org/ocr/process", {
