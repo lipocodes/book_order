@@ -30,7 +30,7 @@
         
         <div class="carousel-wrapper">
           <div id="carousel_items1"></div>  
-          <button id="clear_carousel1" onclick="clearCarousel(1)">Clear</button> 
+          <button id="clear_carousel1" onclick="clearCarousel(1)" style="display:none;">Clear</button> 
         </div>
       </div>  
     </div>
@@ -41,7 +41,7 @@
       <div style="font-size:14px;font-weight: bold;">📷 Photo 2:</div>
       <label for="cameraInput2" class="custom-file-upload">📷 Take a Photo</label>
       <input type="file" accept="image/*" id="cameraInput2" capture="environment" />
-      <button class="custom-file-upload" onclick="sendImage(2)">Send</button>
+      <button class="custom-file-upload" onclick="sendImage(2)" style="display:none;">Send</button>
       <span id="fileName2"></span>
       <div id="result2">
         <div id="status2"></div>
@@ -55,7 +55,7 @@
         
         <div class="carousel-wrapper">
           <div id="carousel_items2"></div> 
-          <button id="clear_carousel2" onclick="clearCarousel(2)">Clear</button> 
+          <button id="clear_carousel2" onclick="clearCarousel(2)" style="display:none;">Clear</button> 
         </div>
       </div>  
     </div>
@@ -88,6 +88,7 @@
   </div> <!-- closes .container -->
 </body>
 </html>
+
 
 
 
