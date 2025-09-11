@@ -244,7 +244,6 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
    let data; 
-   let response2,response3;
    
    //we need each <input> to have its separate fetch() operation
    if(num==1){
@@ -257,7 +256,7 @@ async function sendImage(num) {
     console.log("aaa=" + data.toString());
    }
    else if(num==2){
-     response2 = await fetch("https://www.yvclib.org/ocr/process", {
+     const response2 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
     });
@@ -265,7 +264,7 @@ async function sendImage(num) {
     console.log("bbb=" + data.toString());     
    }
    else if(num==3){
-      response3 = await fetch("https://www.yvclib.org/ocr/process", {
+     const response3 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
     });
