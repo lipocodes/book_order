@@ -244,7 +244,7 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
    let data;
-   const response1,response2,response3;  
+   let response1,response2,response3;  
    
    //we need each <input> to have its separate fetch() operation
    if(num==1){
