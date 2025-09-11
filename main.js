@@ -244,11 +244,11 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
    let data;
-   let response1,response2,response3;  
+   //let response1,response2,response3;  
    
    //we need each <input> to have its separate fetch() operation
    if(num==1){
-      response1 = await fetch("https://www.yvclib.org/ocr/process", {
+      const response1 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
     });
@@ -257,7 +257,7 @@ async function sendImage(num) {
     console.log("aaa=" + data.toString());
    }
    else if(num==2){
-      response2 = await fetch("https://www.yvclib.org/ocr/process", {
+      const response2 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
     });
@@ -265,7 +265,7 @@ async function sendImage(num) {
     console.log("bbb=" + data.toString());     
    }
    else if(num==3){
-      response3 = await fetch("https://www.yvclib.org/ocr/process", {
+      const response3 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
     });
@@ -306,7 +306,7 @@ async function sendImage(num) {
     }
     
     displayCarousel(books,num);      
-          
+    /*      
     if (response1 && !response1.ok) {  
       throw new Error("Server error: " + response1.statusText);
     }
@@ -316,7 +316,7 @@ async function sendImage(num) {
     else if (response3 && !response3.ok) {  
       throw new Error("Server error: " + response3.statusText);
     }    
-
+   */
     //if the book check was not clean of errors      
     if(num==1 && list_books[0]["existing_swaps"] == 1){
      document.getElementById("status1").textContent = "❌ The right book order should be:";     
