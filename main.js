@@ -191,7 +191,7 @@ if(num==1){
  
   fileName1.textContent = '';      
   carousel_items1.innerHTML = '';  
-  clear_carousel1.style.display = "block";
+  //clear_carousel1.style.display = "block";
 }
 else if(num==2){
   carousel_items2.style.display = "block";
