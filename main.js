@@ -258,15 +258,15 @@ async function sendImage(num) {
   // Update status
   if(num==1) {
      document.getElementById("status1").textContent = "⏳ Processing...";
-     document.getElementById('button_send1').textContent = "Stop"; 
+     toggleSendButton(1);
   }
   else if(num==2){ 
      document.getElementById("status2").textContent = "⏳ Processing...";
-     document.getElementById('button_send2').textContent = "Stop"; 
+     toggleSendButton(2);
   }
   else if(num==3){ 
      document.getElementById("status3").textContent = "⏳ Processing...";
-     document.getElementById('button_send3').textContent = "Stop";   
+     toggleSendButton(3);
   }
       
   try 
