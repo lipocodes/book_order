@@ -203,7 +203,7 @@ else if(num==2){
  
   fileName2.textContent = '';      
   carousel_items2.innerHTML = ''; 
-  clear_carousel2.style.display = "block";
+  //clear_carousel2.style.display = "block";
 }
 else if(num==3){
   carousel_items3.style.display = "block"; 
@@ -215,7 +215,7 @@ else if(num==3){
   
  fileName3.textContent = '';      
   carousel_items3.innerHTML = '';
-  clear_carousel3.style.display = "block";
+  //clear_carousel3.style.display = "block";
 }      
 
 
