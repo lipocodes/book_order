@@ -216,6 +216,7 @@ books.forEach(book => {
 
 
 async function sendImage(num) {
+   
   //carousel needs to be empty
   if(num==1) document.getElementById("carousel_items1").innerHTML = "";
   else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
@@ -236,9 +237,18 @@ async function sendImage(num) {
   }       
       
   // Update status
-  if(num==1) document.getElementById("status1").textContent = "⏳ Processing...";
-  else if(num==2) document.getElementById("status2").textContent = "⏳ Processing..."; 
-  else if(num==3) document.getElementById("status3").textContent = "⏳ Processing...";      
+  if(num==1) {
+     document.getElementById("status1").textContent = "⏳ Processing...";
+     document.getElementById('button_send1').textContent = "Stop"; 
+  }
+  else if(num==2){ 
+     document.getElementById("status2").textContent = "⏳ Processing...";
+     document.getElementById('button_send2').textContent = "Stop"; 
+  }
+  else if(num==3){ 
+     document.getElementById("status3").textContent = "⏳ Processing...";
+     document.getElementById('button_send3').textContent = "Stop";   
+  }
       
   try 
   {
