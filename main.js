@@ -17,6 +17,10 @@ const fileName1 = document.getElementById("fileName1");
 const fileName2 = document.getElementById("fileName2");
 const fileName3 = document.getElementById("fileName3");
 
+const send_button1 = document.getElementById("send_button1"); 
+const send_button2 = document.getElementById("send_button2");
+const send_button3 = document.getElementById("send_button3"); 
+
 const clear_carousel1 = document.getElementById("clear_carousel1");
 const clear_carousel2 = document.getElementById("clear_carousel2");
 const clear_carousel3 = document.getElementById("clear_carousel3");
