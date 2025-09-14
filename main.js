@@ -21,9 +21,9 @@ const send_button1 = document.getElementById("send_button1");
 const send_button2 = document.getElementById("send_button2");
 const send_button3 = document.getElementById("send_button3"); 
 
-//const clear_carousel1 = document.getElementById("clear_carousel1");
-//const clear_carousel2 = document.getElementById("clear_carousel2");
-//const clear_carousel3 = document.getElementById("clear_carousel3");
+const clear_carousel1 = document.getElementById("clear_carousel1");
+const clear_carousel2 = document.getElementById("clear_carousel2");
+const clear_carousel3 = document.getElementById("clear_carousel3");
 
 const carousel_items1 = document.getElementById("carousel_items1");
 const carousel_items2 = document.getElementById("carousel_items2");
@@ -33,9 +33,9 @@ carousel_items1.style.display = "none";
 carousel_items2.style.display = "none";
 carousel_items3.style.display = "none"; 
 
-//clear_carousel1.style.display = "none";
-//clear_carousel2.style.display = "none";
-//clear_carousel3.style.display = "none";
+clear_carousel1.style.display = "none";
+clear_carousel2.style.display = "none";
+clear_carousel3.style.display = "none";
 
 //////////////////////////////////////////////////
 input1.addEventListener("change", function () {  
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //////////////////////////////////////////////////////////////////
-/*
+
 function clearCarousel(num){ 
  if(num == 1){
    carousel_items1.innerHTML = '';
@@ -146,7 +146,7 @@ function clearCarousel(num){
    carousel_items3.innerHTML = ''; 
  }           
 }
-*/
+
 //////////////////////////////////////////////////////////////
 function toggleSendButton(button_number){
  let text = "";
@@ -191,7 +191,7 @@ if(num==1){
  
   fileName1.textContent = '';      
   carousel_items1.innerHTML = '';  
-  //clear_carousel1.style.display = "block";
+  clear_carousel1.style.display = "block";
 }
 else if(num==2){
   carousel_items2.style.display = "block";
@@ -203,7 +203,7 @@ else if(num==2){
  
   fileName2.textContent = '';      
   carousel_items2.innerHTML = ''; 
-  //clear_carousel2.style.display = "block";
+  clear_carousel2.style.display = "block";
 }
 else if(num==3){
   carousel_items3.style.display = "block"; 
@@ -215,7 +215,7 @@ else if(num==3){
   
  fileName3.textContent = '';      
   carousel_items3.innerHTML = '';
-  //clear_carousel3.style.display = "block";
+  clear_carousel3.style.display = "block";
 }      
 
 
