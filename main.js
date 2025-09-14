@@ -147,6 +147,19 @@ function clearCarousel(num){
 }
 
 //////////////////////////////////////////////////////////////
+function toggleSendButton(button_number){
+ let text = "";
+ if(button_number == 1){
+   text = document.getElementById('button_send1').textContent;
+ }
+ else if(button_number == 2){
+   text = document.getElementById('button_send2').textContent;
+ }
+ else if(button_number == 3){
+   text = document.getElementById('button_send3').textContent;
+ }  
+}
+//////////////////////////////////////////////////////////////
 function displayCarousel(books,num) {
 
 //before populating the carousel      
