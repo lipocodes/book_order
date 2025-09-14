@@ -152,17 +152,26 @@ function toggleSendButton(button_number){
  if(button_number == 1){
    text = document.getElementById('button_send1').textContent;
    if(text == "Send") document.getElementById('button_send1').textContent = "Stop";
-   else document.getElementById('button_send1').textContent = "Send"; 
+   else {
+      document.getElementById('button_send1').textContent = "Send"; 
+      carousel_items1.innerHTML = '';
+   }
  }
  else if(button_number == 2){
    text = document.getElementById('button_send2').textContent;
    if(text == "Send") document.getElementById('button_send2').textContent = "Stop";
-   else document.getElementById('button_send2').textContent = "Send"; 
+   else {
+      document.getElementById('button_send2').textContent = "Send"
+      carousel_items2.innerHTML = '';
+   }; 
  }
  else if(button_number == 3){
    text = document.getElementById('button_send3').textContent;
    if(text == "Send") document.getElementById('button_send3').textContent = "Stop";
-   else document.getElementById('button_send3').textContent = "Send"; 
+   else {
+      document.getElementById('button_send3').textContent = "Send"
+      carousel_items3.innerHTML = '';
+   }; 
  }  
 }
 //////////////////////////////////////////////////////////////
