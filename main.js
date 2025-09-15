@@ -281,7 +281,7 @@ async function sendImage(num) {
      document.getElementById("status3").textContent = "⏳ Processing...";
      toggleSendButton(3);
   }
-   /*   
+     
   try 
   {
    const formData = new FormData();
@@ -290,7 +290,7 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
    let data;
-   
+   /*
    //we need each <input> to have its separate fetch() operation
    if(num==1){
       const response1 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -373,8 +373,8 @@ async function sendImage(num) {
     }else if(num==3){
      document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
     }       
-
+*/
   }
   catch(error)  {console.log("eeeeeeeeeeeee=" + error)  } 
-  */
+  
 }
