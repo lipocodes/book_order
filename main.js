@@ -323,7 +323,7 @@ async function sendImage(num) {
     document.getElementById("status3").textContent = ""; 
     console.log("ccc=" + data.toString());    
    }
-    /*   
+       
     let list_books = [];
     list_books.push(data);
  
@@ -354,7 +354,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-    
+    /*
     displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
