@@ -248,7 +248,7 @@ books.forEach(book => {
 
 
 async function sendImage(num) {
- /*  
+   
   //carousel needs to be empty
   if(num==1) document.getElementById("carousel_items1").innerHTML = "";
   else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
@@ -281,7 +281,7 @@ async function sendImage(num) {
      document.getElementById("status3").textContent = "⏳ Processing...";
      toggleSendButton(3);
   }
-      
+   /*   
   try 
   {
    const formData = new FormData();
