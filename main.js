@@ -354,7 +354,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-    /*
+    
     displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
@@ -373,7 +373,7 @@ async function sendImage(num) {
     }else if(num==3){
      document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
     }       
-*/
+
   }
   catch(error)  {console.log("eeeeeeeeeeeee=" + error)  } 
   
