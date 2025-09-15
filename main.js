@@ -256,15 +256,15 @@ async function sendImage(num) {
          
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }
   else if (num==2 && !selectedFile2) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }
   else if (num==3 && !selectedFile3) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }       
       
@@ -327,8 +327,7 @@ async function sendImage(num) {
        
     let list_books = [];
     list_books.push(data);
-    
-    //displayCarousel(list_books,num);  
+ 
     const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
