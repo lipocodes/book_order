@@ -248,7 +248,7 @@ books.forEach(book => {
 
 
 async function sendImage(num) {
-   
+ /*  
   //carousel needs to be empty
   if(num==1) document.getElementById("carousel_items1").innerHTML = "";
   else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
@@ -290,7 +290,6 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
    let data;
-   //let response1,response2,response3;  
    
    //we need each <input> to have its separate fetch() operation
    if(num==1){
@@ -376,5 +375,6 @@ async function sendImage(num) {
     }       
 
   }
-  catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
+  catch(error)  {console.log("eeeeeeeeeeeee=" + error)  } 
+  */
 }
