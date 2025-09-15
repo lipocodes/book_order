@@ -151,28 +151,28 @@ function clearCarousel(num){
 function toggleSendButton(button_number){
  let text = "";
  if(button_number == 1){
-   text = document.getElementById('send_button1').textContent;
-   if(text == "Send") document.getElementById('send_button1').textContent = "Stop";
+   text = document.getElementById('button_send1').textContent;
+   if(text == "Send") document.getElementById('button_send1').textContent = "Stop";
    else {
-      document.getElementById('send_button1').textContent = "Send";
+      document.getElementById('button_send1').textContent = "Send";
       document.getElementById("status1").textContent = "";
       carousel_items1.innerHTML = '';
    }
  }
  else if(button_number == 2){
-   text = document.getElementById('send_button2').textContent;
-   if(text == "Send") document.getElementById('send_button2').textContent = "Stop";
+   text = document.getElementById('button_send2').textContent;
+   if(text == "Send") document.getElementById('button_send2').textContent = "Stop";
    else {
-      document.getElementById('send_button2').textContent = "Send";
+      document.getElementById('button_send2').textContent = "Send";
       document.getElementById("status2").textContent = "";
       carousel_items2.innerHTML = '';
    }; 
  }
  else if(button_number == 3){
-   text = document.getElementById('send_button3').textContent;
-   if(text == "Send") document.getElementById('send_button3').textContent = "Stop";
+   text = document.getElementById('button_send3').textContent;
+   if(text == "Send") document.getElementById('button_send3').textContent = "Stop";
    else {
-      document.getElementById('send_button3').textContent = "Send";
+      document.getElementById('button_send3').textContent = "Send";
       document.getElementById("status3").textContent = "";
       carousel_items3.innerHTML = '';
    }; 
@@ -256,15 +256,15 @@ async function sendImage(num) {
          
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }
   else if (num==2 && !selectedFile2) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }
   else if (num==3 && !selectedFile3) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }       
       
@@ -281,7 +281,7 @@ async function sendImage(num) {
      document.getElementById("status3").textContent = "⏳ Processing...";
      toggleSendButton(3);
   }
-     
+      
   try 
   {
    const formData = new FormData();
@@ -290,6 +290,7 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
    let data;
+   //let response1,response2,response3;  
    
    //we need each <input> to have its separate fetch() operation
    if(num==1){
@@ -326,7 +327,8 @@ async function sendImage(num) {
        
     let list_books = [];
     list_books.push(data);
- 
+    
+    //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
@@ -375,6 +377,5 @@ async function sendImage(num) {
     }       
 
   }
-  catch(error)  {console.log("eeeeeeeeeeeee=" + error)  } 
-  
+  catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
 }
