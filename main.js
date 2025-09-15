@@ -151,28 +151,28 @@ function clearCarousel(num){
 function toggleSendButton(button_number){
  let text = "";
  if(button_number == 1){
-   text = document.getElementById('button_send1').textContent;
-   if(text == "Send") document.getElementById('button_send1').textContent = "Stop";
+   text = document.getElementById('send_button1').textContent;
+   if(text == "Send") document.getElementById('send_button1').textContent = "Stop";
    else {
-      document.getElementById('button_send1').textContent = "Send";
+      document.getElementById('send_button1').textContent = "Send";
       document.getElementById("status1").textContent = "";
       carousel_items1.innerHTML = '';
    }
  }
  else if(button_number == 2){
-   text = document.getElementById('button_send2').textContent;
-   if(text == "Send") document.getElementById('button_send2').textContent = "Stop";
+   text = document.getElementById('send_button2').textContent;
+   if(text == "Send") document.getElementById('send_button2').textContent = "Stop";
    else {
-      document.getElementById('button_send2').textContent = "Send";
+      document.getElementById('send_button2').textContent = "Send";
       document.getElementById("status2").textContent = "";
       carousel_items2.innerHTML = '';
    }; 
  }
  else if(button_number == 3){
-   text = document.getElementById('button_send3').textContent;
-   if(text == "Send") document.getElementById('button_send3').textContent = "Stop";
+   text = document.getElementById('send_button3').textContent;
+   if(text == "Send") document.getElementById('send_button3').textContent = "Stop";
    else {
-      document.getElementById('button_send3').textContent = "Send";
+      document.getElementById('send_button3').textContent = "Send";
       document.getElementById("status3").textContent = "";
       carousel_items3.innerHTML = '';
    }; 
