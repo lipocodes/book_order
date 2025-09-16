@@ -249,18 +249,18 @@ async function sendImage(num) {
   if(num==1) document.getElementById("carousel_items1").innerHTML = "";
   else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
   else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
-  alert(num +  " " + selectedFile1);       
+     
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }
   else if (num==2 && !selectedFile2) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }
   else if (num==3 && !selectedFile3) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }       
       
