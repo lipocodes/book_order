@@ -304,7 +304,7 @@ async function sendImage(num) {
     document.getElementById("status1").textContent = "";
     console.log("aaa=" + data.toString());
    }
-  /* 
+  
    else if(num==2){
       const response2 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
@@ -376,7 +376,7 @@ async function sendImage(num) {
     }else if(num==3){
      document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
     }       
-*/
+
   }
   catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
 }
