@@ -284,7 +284,7 @@ async function sendImage(num) {
       
   try 
   {
-   /*const formData = new FormData();
+   const formData = new FormData();
    if(num==1) formData.append("image", selectedFile1);
    else if(num==2) formData.append("image", selectedFile2);
    else if(num==3) formData.append("image", selectedFile3);
@@ -375,7 +375,7 @@ async function sendImage(num) {
     }else if(num==3){
      document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
     }       
-*/
+
   }
   catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
 }
