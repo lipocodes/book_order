@@ -191,35 +191,8 @@ if(num==1){
  
   fileName1.textContent = '';      
   carousel_items1.innerHTML = '';  
-  //clear_carousel1.style.display = "block";
-}
-else if(num==2){
-  carousel_items2.style.display = "block";
-  carousel_items2.style.display = "flex";
-  carousel_items2.style.flexDirection = "row";  
-  carousel_items2.style.gap = "8px";
-  carousel_items2.style.height = "100px";
-  carousel_items2.style.alignItems = "stretch";
- 
-  fileName2.textContent = '';      
-  carousel_items2.innerHTML = ''; 
-  //clear_carousel2.style.display = "block";
-}
-else if(num==3){
-  carousel_items3.style.display = "block"; 
-  carousel_items3.style.display = "flex";
-  carousel_items3.style.flexDirection = "row";  
-  carousel_items3.style.gap = "8px";
-  carousel_items3.style.height = "100px";
-  carousel_items1.style.alignItems = "stretch";
-  
- fileName3.textContent = '';      
-  carousel_items3.innerHTML = '';
-  //clear_carousel3.style.display = "block";
-}      
 
-
-books.forEach(book => {
+  books.forEach(book => {
   const item = document.createElement('div');
   item.className = 'carousel-item';
   item.style.backgroundColor = "#800080";
@@ -244,6 +217,60 @@ books.forEach(book => {
   else if(num==2) { carousel_items2.appendChild(item);}
   else if(num==3) {carousel_items3.appendChild(item);}
  });
+   
+}
+else if(num==2){
+  carousel_items2.style.display = "block";
+  carousel_items2.style.display = "flex";
+  carousel_items2.style.flexDirection = "row";  
+  carousel_items2.style.gap = "8px";
+  carousel_items2.style.height = "100px";
+  carousel_items2.style.alignItems = "stretch";
+ 
+  fileName2.textContent = '';      
+  carousel_items2.innerHTML = ''; 
+
+  books.forEach(book => {
+  const item = document.createElement('div');
+  item.className = 'carousel-item';
+  item.style.backgroundColor = "#800080";
+  item.style.color = "white";
+  item.style.padding = "10px";
+  item.style.boxSizing = "border-box";
+
+  const dewey = document.createElement('div');
+  dewey.className = 'dewey';
+  dewey.textContent = book.dewey;
+
+  const title = document.createElement('div');
+  title.className = 'title';
+  title.textContent = book.title;
+
+  item.appendChild(dewey);
+  item.appendChild(title);
+
+  
+   
+  if(num==1) { carousel_items1.appendChild(item); } 
+  else if(num==2) { carousel_items2.appendChild(item);}
+  else if(num==3) {carousel_items3.appendChild(item);}
+ }); 
+}
+else if(num==3){
+  carousel_items3.style.display = "block"; 
+  carousel_items3.style.display = "flex";
+  carousel_items3.style.flexDirection = "row";  
+  carousel_items3.style.gap = "8px";
+  carousel_items3.style.height = "100px";
+  carousel_items1.style.alignItems = "stretch";
+  
+ fileName3.textContent = '';      
+  carousel_items3.innerHTML = '';
+  //clear_carousel3.style.display = "block";
+}      
+
+
+
 }
 
 
@@ -293,8 +320,7 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
    let data;
-   //let response1,response2,response3;  
-   
+    
    //we need each <input> to have its separate fetch() operation
    if(num==1){
       const response1 = await fetch("https://www.yvclib.org/ocr/process", {
