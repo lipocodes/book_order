@@ -31,6 +31,23 @@
   }
 }
 
+@media (orientation: landscape) {
+  body::before {
+    content: "🔄 Please rotate your device to portrait";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background: #0f172a; /* match your bg or make opaque */
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    z-index: 9999;
+    padding: 20px;
+    line-height: 1.4;
+  }
+
 * { box-sizing: border-box; }
 
 html, body {
