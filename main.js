@@ -318,7 +318,7 @@ async function sendImage(num) {
     data = await response3.json();
     document.getElementById('button_send3').textContent = "Send";
     document.getElementById("status3").textContent = ""; 
-    console.log("ccc=" + data.toString());    
+    alert("ccc=" + data.toString());    
    }
        
     let list_books = [];
