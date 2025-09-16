@@ -285,9 +285,9 @@ async function sendImage(num) {
   try 
   {
    const formData = new FormData();
-   if(num==1) formData.append("image", selectedFile1);
-   else if(num==2) formData.append("image", selectedFile2);
-   else if(num==3) formData.append("image", selectedFile3);
+   if(num==1) formData.append("image1", selectedFile1);
+   else if(num==2) formData.append("image2", selectedFile2);
+   else if(num==3) formData.append("image3", selectedFile3);
 
    let data;
     
