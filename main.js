@@ -304,7 +304,7 @@ async function sendImage(num) {
     document.getElementById("status1").textContent = "";
     console.log("aaa=" + data.toString());
    }
-   /*else if(num==2){
+   else if(num==2){
       const response2 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
@@ -324,7 +324,7 @@ async function sendImage(num) {
     document.getElementById("status3").textContent = ""; 
     console.log("ccc=" + data.toString());    
    }
-       
+    /*   
     let list_books = [];
     list_books.push(data);
     
