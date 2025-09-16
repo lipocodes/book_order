@@ -191,6 +191,7 @@ if(num==1){
  
   fileName1.textContent = '';      
   carousel_items1.innerHTML = '';  
+  //clear_carousel1.style.display = "block";
 }
 else if(num==2){
   carousel_items2.style.display = "block";
@@ -202,6 +203,7 @@ else if(num==2){
  
   fileName2.textContent = '';      
   carousel_items2.innerHTML = ''; 
+  //clear_carousel2.style.display = "block";
 }
 else if(num==3){
   carousel_items3.style.display = "block"; 
@@ -213,6 +215,7 @@ else if(num==3){
   
  fileName3.textContent = '';      
   carousel_items3.innerHTML = '';
+  //clear_carousel3.style.display = "block";
 }      
 
 
@@ -244,23 +247,24 @@ books.forEach(book => {
 }
 
 
-async function sendImage(num) {   
+async function sendImage(num) {
+   
   //carousel needs to be empty
   if(num==1) document.getElementById("carousel_items1").innerHTML = "";
   else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
   else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
-     
+         
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }
   else if (num==2 && !selectedFile2) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }
   else if (num==3 && !selectedFile3) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }       
       
@@ -298,6 +302,7 @@ async function sendImage(num) {
     data = await response1.json(); 
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
+    console.log("aaa=" + data.toString());
    }
    else if(num==2){
       const response2 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -306,7 +311,8 @@ async function sendImage(num) {
     });
     data = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
-    document.getElementById("status2").textContent = "";    
+    document.getElementById("status2").textContent = "";
+    console.log("bbb=" + data.toString());     
    }
    else if(num==3){
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -315,12 +321,14 @@ async function sendImage(num) {
     });
     data = await response3.json();
     document.getElementById('button_send3').textContent = "Send";
-    document.getElementById("status3").textContent = "";   
+    document.getElementById("status3").textContent = ""; 
+    console.log("ccc=" + data.toString());    
    }
        
     let list_books = [];
     list_books.push(data);
     
+    //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
