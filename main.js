@@ -298,7 +298,7 @@ async function sendImage(num) {
     data = await response1.json(); 
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
-    console.log("aaa=" + data.toString());
+    alert("aaa=" + data.toString());
    }
    else if(num==2){
       const response2 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -308,7 +308,7 @@ async function sendImage(num) {
     data = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
     document.getElementById("status2").textContent = "";
-    console.log("bbb=" + data.toString());     
+    alert("bbb=" + data.toString());     
    }
    else if(num==3){
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
