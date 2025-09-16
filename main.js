@@ -291,7 +291,7 @@ async function sendImage(num) {
 
    let data;
     
-   
+   /*
    //we need each <input> to have its separate fetch() operation
    if(num==1){
       const response1 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -304,7 +304,7 @@ async function sendImage(num) {
     document.getElementById("status1").textContent = "";
     console.log("aaa=" + data.toString());
    }
-   /*
+   
    else if(num==2){
       const response2 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
