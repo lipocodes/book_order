@@ -324,7 +324,7 @@ async function sendImage(num) {
     document.getElementById("status3").textContent = ""; 
     console.log("ccc=" + data.toString());    
    }
-       
+     /*  
     let list_books = [];
     list_books.push(data);
     
@@ -375,7 +375,7 @@ async function sendImage(num) {
     }else if(num==3){
      document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
     }       
-
+*/
   }
   catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
 }
