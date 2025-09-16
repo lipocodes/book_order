@@ -191,7 +191,6 @@ if(num==1){
  
   fileName1.textContent = '';      
   carousel_items1.innerHTML = '';  
-  //clear_carousel1.style.display = "block";
 }
 else if(num==2){
   carousel_items2.style.display = "block";
@@ -203,7 +202,6 @@ else if(num==2){
  
   fileName2.textContent = '';      
   carousel_items2.innerHTML = ''; 
-  //clear_carousel2.style.display = "block";
 }
 else if(num==3){
   carousel_items3.style.display = "block"; 
@@ -215,7 +213,6 @@ else if(num==3){
   
  fileName3.textContent = '';      
   carousel_items3.innerHTML = '';
-  //clear_carousel3.style.display = "block";
 }      
 
 
@@ -247,13 +244,12 @@ books.forEach(book => {
 }
 
 
-async function sendImage(num) {
-   
+async function sendImage(num) {   
   //carousel needs to be empty
   if(num==1) document.getElementById("carousel_items1").innerHTML = "";
   else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
   else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
-         
+  alert(num +  " " + selectedFile1);       
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
    ("Please take a photo first.");
