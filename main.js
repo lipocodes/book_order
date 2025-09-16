@@ -290,7 +290,7 @@ async function sendImage(num) {
    else if(num==3) formData.append("image", selectedFile3);
 
    let data;
-   //let response1,response2,response3;  
+   /* 
    
    //we need each <input> to have its separate fetch() operation
    if(num==1){
@@ -324,7 +324,7 @@ async function sendImage(num) {
     document.getElementById("status3").textContent = ""; 
     console.log("ccc=" + data.toString());    
    }
-     /*  
+       
     let list_books = [];
     list_books.push(data);
     
