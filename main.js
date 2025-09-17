@@ -286,7 +286,8 @@ async function sendImage(num) {
   {
    const formData1 = new FormData();
    const formData2 = new FormData();
-   const formData3 = new FormData();  
+   const formData3 = new FormData(); 
+   let list_books = [];   
    if(num==1) formData1.append("image1", selectedFile1);
    else if(num==2) formData2.append("image2", selectedFile2);
    else if(num==3) formData3.append("image3", selectedFile3);
@@ -328,7 +329,7 @@ async function sendImage(num) {
     console.log("ccc=" + data3.toString());    
    }
        
-    let list_books = [];   
+   
     //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
  
