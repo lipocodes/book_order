@@ -291,7 +291,7 @@ async function sendImage(num) {
    else if(num==2) formData2.append("image2", selectedFile2);
    else if(num==3) formData3.append("image3", selectedFile3);
 
-   let data;
+   let data1,data2,data3;
     
    
    //we need each <input> to have its separate fetch() operation
@@ -301,7 +301,7 @@ async function sendImage(num) {
       body: formData1
     });
       
-    data = await response1.json(); 
+    data1 = await response1.json(); 
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
     console.log("aaa=" + data.toString());
@@ -312,7 +312,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData2
     });
-    data = await response2.json(); 
+    data2 = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
     document.getElementById("status2").textContent = "";
     console.log("bbb=" + data.toString());     
@@ -322,14 +322,16 @@ async function sendImage(num) {
       method: "POST",
       body: formData3
     });
-    data = await response3.json();
+    data3 = await response3.json();
     document.getElementById('button_send3').textContent = "Send";
     document.getElementById("status3").textContent = ""; 
     console.log("ccc=" + data.toString());    
    }
        
     let list_books = [];
-    list_books.push(data);
+    if(data1) list_books.push(data1);
+    else if(data2) list_books.push(data2);
+    else if(data3) list_books.push(data3);  
     
     //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
