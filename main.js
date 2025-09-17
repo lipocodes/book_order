@@ -310,7 +310,7 @@ async function sendImage(num) {
      return;
     }
       
-    console.log("aaa=" + list_items.toString());
+    alert("aaa=" + list_items.toString());
    }
   
    else if(num==2){
