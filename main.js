@@ -287,13 +287,14 @@ async function sendImage(num) {
    const formData1 = new FormData();
    const formData2 = new FormData();
    const formData3 = new FormData(); 
-   let list_books = [];   
+     
    if(num==1) formData1.append("image1", selectedFile1);
    else if(num==2) formData2.append("image2", selectedFile2);
    else if(num==3) formData3.append("image3", selectedFile3);
    
    //we need each <input> to have its separate fetch() operation
    if(num==1){
+      let list_books = []; 
       const response1 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData1
@@ -310,10 +311,11 @@ async function sendImage(num) {
      return;
     }
       
-    alert("aaa=" + list_items.toString());
+    console.log("aaa=" + list_items.toString());
    }
   
    else if(num==2){
+      let list_books = []; 
       const response2 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData2
@@ -322,9 +324,16 @@ async function sendImage(num) {
     list_books.push(data2);  
     document.getElementById('button_send2').textContent = "Send";
     document.getElementById("status2").textContent = "";
-    console.log("bbb=" + data2.toString());     
+
+   const list_items = list_books[0]["sorted"];  
+   if(list_items.length==0){
+     document.getElementById("status2").textContent = "❌ The query failed.."; 
+     return;
+    }  
+    console.log("bbb=" + list_items.toString());     
    }
    else if(num==3){
+      let list_books = []; 
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData3
@@ -333,24 +342,15 @@ async function sendImage(num) {
     list_books.push(data3);
     document.getElementById('button_send3').textContent = "Send";
     document.getElementById("status3").textContent = ""; 
-    console.log("ccc=" + data3.toString());    
-   }
-       
-    const list_items = list_books[0]["sorted"];
- 
-    if(num==1 && list_items.length==0){
-       document.getElementById("status1").textContent = "❌ The query failed.."; 
-       return;
-    }
-    else  if(num==2 && list_items.length==0){
-     document.getElementById("status2").textContent = "❌ The query failed.."; 
+
+    const list_items = list_books[0]["sorted"];  
+    if(list_items.length==0){
+     document.getElementById("status3").textContent = "❌ The query failed.."; 
      return;
-    }
-    if(num==3 && list_items.length==0){
-       document.getElementById("status3").textContent = "❌ The query failed.."; 
-       return;
     } 
-          
+    console.log("ccc=" + list_items.toString());    
+   }
+                 
     let books = [];      
     for(let i=0; i<list_items.length; i++){
      const item = list_items[i];
