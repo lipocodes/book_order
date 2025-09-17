@@ -284,10 +284,12 @@ async function sendImage(num) {
       
   try 
   {
-   const formData = new FormData();
-   if(num==1) formData.append("image1", selectedFile1);
-   else if(num==2) formData.append("image2", selectedFile2);
-   else if(num==3) formData.append("image3", selectedFile3);
+   const formData1 = new FormData();
+   const formData2 = new FormData();
+   const formData3 = new FormData();  
+   if(num==1) formData1.append("image1", selectedFile1);
+   else if(num==2) formData2.append("image2", selectedFile2);
+   else if(num==3) formData3.append("image3", selectedFile3);
 
    let data;
     
@@ -296,7 +298,7 @@ async function sendImage(num) {
    if(num==1){
       const response1 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
-      body: formData
+      body: formData1
     });
       
     data = await response1.json(); 
@@ -308,7 +310,7 @@ async function sendImage(num) {
    else if(num==2){
       const response2 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
-      body: formData
+      body: formData2
     });
     data = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
@@ -318,7 +320,7 @@ async function sendImage(num) {
    else if(num==3){
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
-      body: formData
+      body: formData3
     });
     data = await response3.json();
     document.getElementById('button_send3').textContent = "Send";
