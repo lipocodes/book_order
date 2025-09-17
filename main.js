@@ -310,6 +310,21 @@ async function sendImage(num) {
      document.getElementById("status1").textContent = "❌ The query failed.."; 
      return;
     }
+
+    let books = [];      
+    for(let i=0; i<list_items.length; i++){
+     const item = list_items[i];
+     const pos = item.indexOf("^^^");
+     const dewey = item.substr(pos+3);     
+     const title = item.substr(0,pos);
+      
+     let obj = {};
+     obj.dewey = dewey;
+     obj.title = title;         
+     books.push(obj);     
+    }
+    
+    displayCarousel(books,1);     
       
     console.log("aaa=" + list_items.length().toString());
    }
@@ -329,7 +344,23 @@ async function sendImage(num) {
    if(list_items.length==0){
      document.getElementById("status2").textContent = "❌ The query failed.."; 
      return;
-    }  
+    }
+
+    let books = [];      
+    for(let i=0; i<list_items.length; i++){
+     const item = list_items[i];
+     const pos = item.indexOf("^^^");
+     const dewey = item.substr(pos+3);     
+     const title = item.substr(0,pos);
+      
+     let obj = {};
+     obj.dewey = dewey;
+     obj.title = title;         
+     books.push(obj);     
+    }
+    
+    displayCarousel(books,2); 
+      
     console.log("bbb=" + list_items.length().toString());     
    }
    else if(num==3){
@@ -348,9 +379,7 @@ async function sendImage(num) {
      document.getElementById("status3").textContent = "❌ The query failed.."; 
      return;
     } 
-    console.log("ccc=" + list_items.length().toString());    
-   }
-                 
+
     let books = [];      
     for(let i=0; i<list_items.length; i++){
      const item = list_items[i];
@@ -364,7 +393,12 @@ async function sendImage(num) {
      books.push(obj);     
     }
     
-    displayCarousel(books,num);      
+    displayCarousel(books,3);  
+      
+    console.log("ccc=" + list_items.length().toString());    
+   }
+                 
+    
 
     //if the book check was not clean of errors      
     if(num==1 && list_books[0]["existing_swaps"] == 1){
