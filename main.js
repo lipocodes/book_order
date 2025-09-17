@@ -303,7 +303,14 @@ async function sendImage(num) {
     list_books.push(data1);  
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
-    console.log("aaa=" + data1.toString());
+
+    const list_items = list_books[0]["sorted"];  
+    if(list_items.length==0){
+     document.getElementById("status1").textContent = "❌ The query failed.."; 
+     return;
+    }
+      
+    console.log("aaa=" + list_items.toString());
    }
   
    else if(num==2){
@@ -329,8 +336,6 @@ async function sendImage(num) {
     console.log("ccc=" + data3.toString());    
    }
        
-   
-    //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
