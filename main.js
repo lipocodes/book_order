@@ -323,10 +323,15 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-    
-    displayCarousel(books,1);     
+    displayCarousel(books,1);
+ 
+    //if the book check was not clean of errors      
+    if(list_books[0]["existing_swaps"] == 1){
+     document.getElementById("status1").textContent = "❌ The right book order should be:";     
+    }else{
+     document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
+    }
       
-    console.log("aaa=" + list_items.length().toString());
    }
   
    else if(num==2){
@@ -359,9 +364,14 @@ async function sendImage(num) {
      books.push(obj);     
     }
     
-    displayCarousel(books,2); 
-      
-    console.log("bbb=" + list_items.length().toString());     
+    displayCarousel(books,2);  
+
+     //if the book check was not clean of errors      
+    if(list_books[0]["existing_swaps"] == 1){
+     document.getElementById("status2").textContent = "❌ The right book order should be:";     
+    }else{
+     document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
+    }  
    }
    else if(num==3){
       let list_books = []; 
@@ -393,30 +403,15 @@ async function sendImage(num) {
      books.push(obj);     
     }
     
-    displayCarousel(books,3);  
-      
-    console.log("ccc=" + list_items.length().toString());    
-   }
-                 
-    
+    displayCarousel(books,3);
 
     //if the book check was not clean of errors      
-    if(num==1 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status1").textContent = "❌ The right book order should be:";     
-    }else if(num==1){
-     document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
-    }
-    else if(num==2 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status2").textContent = "❌ The right book order should be:";     
-    }else if(num==2){
-     document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
-    }  
-    else if(num==3 && list_books[0]["existing_swaps"] == 1){
+    if(list_books[0]["existing_swaps"] == 1){
      document.getElementById("status3").textContent = "❌ The right book order should be:";     
-    }else if(num==3){
+    }else{
      document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
-    }       
-
+    }    
+   }
   }
   catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
 }
