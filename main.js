@@ -302,7 +302,7 @@ async function sendImage(num) {
     list_books.push(data1);  
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
-    console.log("aaa=" + data.toString());
+    console.log("aaa=" + data1.toString());
    }
   
    else if(num==2){
@@ -314,7 +314,7 @@ async function sendImage(num) {
     list_books.push(data2);  
     document.getElementById('button_send2').textContent = "Send";
     document.getElementById("status2").textContent = "";
-    console.log("bbb=" + data.toString());     
+    console.log("bbb=" + data2.toString());     
    }
    else if(num==3){
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -325,7 +325,7 @@ async function sendImage(num) {
     list_books.push(data3);
     document.getElementById('button_send3').textContent = "Send";
     document.getElementById("status3").textContent = ""; 
-    console.log("ccc=" + data.toString());    
+    console.log("ccc=" + data3.toString());    
    }
        
     let list_books = [];   
