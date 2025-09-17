@@ -311,7 +311,7 @@ async function sendImage(num) {
      return;
     }
       
-    console.log("aaa=" + list_items.toString());
+    console.log("aaa=" + list_items.length().toString());
    }
   
    else if(num==2){
@@ -330,7 +330,7 @@ async function sendImage(num) {
      document.getElementById("status2").textContent = "❌ The query failed.."; 
      return;
     }  
-    console.log("bbb=" + list_items.toString());     
+    console.log("bbb=" + list_items.length().toString());     
    }
    else if(num==3){
       let list_books = []; 
@@ -348,7 +348,7 @@ async function sendImage(num) {
      document.getElementById("status3").textContent = "❌ The query failed.."; 
      return;
     } 
-    console.log("ccc=" + list_items.toString());    
+    console.log("ccc=" + list_items.length().toString());    
    }
                  
     let books = [];      
