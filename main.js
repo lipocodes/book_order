@@ -256,15 +256,15 @@ async function sendImage(num) {
          
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }
   else if (num==2 && !selectedFile2) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }
   else if (num==3 && !selectedFile3) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }       
       
