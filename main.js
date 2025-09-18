@@ -332,19 +332,14 @@ async function sendImage(num) {
     let list_items;	
     if(num==1){ 
 	 list_items = list_books[0]["sorted"];
-	 alert("aaaaaaaaaa=" + list_books[0]["sorted"]);
 	}
 	else if(num==2){ 
 	list_items = list_books[1]["sorted"];
-	alert("bbbbbbbbbbbbbb=" + list_books[1]["sorted"]);
 	}
 	else if(num==3){ 
 	 list_items = list_books[2]["sorted"];
-	 alert("cccccccccccc=" + list_books[2]["sorted"]);
 	}
 
-	//console.log("bbbbbbbbbb=" + list_books[1]["sorted"]);
-	//console.log("cccccccccc=" + list_books[2]["sorted"]);
  
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
@@ -358,7 +353,8 @@ async function sendImage(num) {
        document.getElementById("status3").textContent = "❌ The query failed.."; 
        return;
     } 
-          
+      
+    alert(list_items);	  
     let books = [];      
     for(let i=0; i<list_items.length; i++){
      const item = list_items[i];
