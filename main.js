@@ -328,7 +328,7 @@ async function sendImage(num) {
    }
        
     list_books.push(data);
-	console.log("bbbbbbbbbbbb=" + list_books.length);
+	console.log("xxxxxxxxxxxx=" + list_books.length);
      
     const list_items = list_books[0]["sorted"];
  
