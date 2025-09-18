@@ -328,9 +328,8 @@ async function sendImage(num) {
        
     let list_books = [];
     list_books.push(data);
-	console.log("aaaaaaaaaa=" + Object.keys(data));
-    
-    //displayCarousel(list_books,num);  
+	console.log("aaaaaaaaaa=" + Object.keys(list_books));
+     
     const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
