@@ -328,12 +328,12 @@ async function sendImage(num) {
    }
        
     list_books.push(data);
-	console.log("xxxxxxxxxxxx=" + list_books.length);
-    
+	
     let list_items;	
     if(num==1) list_items = list_books[0]["sorted"];
 	else if(num==2) list_items = list_books[1]["sorted"];
 	else if(num==3) list_items = list_books[2]["sorted"];
+	console.log("pppppppppppp=" + list_items.length);
  
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
