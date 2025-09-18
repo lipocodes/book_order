@@ -328,7 +328,7 @@ async function sendImage(num) {
    }
        
     list_books.push(data);
-	
+	alert("zzzzzzzzzzzzz=" + num.toString() + " " + list_books.length);
     let list_items;	
     if(num==1) list_items = list_books[0]["sorted"];
 	else if(num==2) list_items = list_books[1]["sorted"];
