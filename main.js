@@ -328,12 +328,13 @@ async function sendImage(num) {
        
     let list_books = [];
     list_books.push(data);
-    
+    alert(list_books.length);
     //displayCarousel(list_books,num);  
     const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
+
        return;
     }
     else  if(num==2 && list_items.length==0){
