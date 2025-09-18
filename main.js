@@ -354,7 +354,7 @@ async function sendImage(num) {
        return;
     } 
       
-    alert(list_items);	  
+      
     let books = [];      
     for(let i=0; i<list_items.length; i++){
      const item = list_items[i];
@@ -367,7 +367,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-    
+    alert(num + "\n" +books);	
     displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
