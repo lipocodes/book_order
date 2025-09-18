@@ -333,7 +333,9 @@ async function sendImage(num) {
     if(num==1) list_items = list_books[0]["sorted"];
 	else if(num==2) list_items = list_books[1]["sorted"];
 	else if(num==3) list_items = list_books[2]["sorted"];
-	console.log("xxxxxxxxxxxx=" + list_books[1]["sorted"]);
+	console.log("aaaaaaaaaa=" + list_books[0]["sorted"]);
+	console.log("bbbbbbbbbb=" + list_books[1]["sorted"]);
+	console.log("cccccccccc=" + list_books[2]["sorted"]);
  
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
