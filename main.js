@@ -1,3 +1,4 @@
+let list_books = [];
 let num_input = 0;
 let selectedFile1 = null;
 let selectedFile2 = null;
@@ -326,15 +327,15 @@ async function sendImage(num) {
     console.log("ccc=" + data.toString());    
    }
        
-    let list_books = [];
-    list_books.push(data);
     
+    list_books.push(data);
+    alert(list_books.length);	
  
     const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
-
+	   
        return;
     }
     else  if(num==2 && list_items.length==0){
@@ -358,7 +359,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-    alert(books.length);
+   
     displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
