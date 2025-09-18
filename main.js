@@ -300,10 +300,9 @@ async function sendImage(num) {
     });
       
     data = await response1.json(); 
-	document.cookie += "image1=" +  data + "***";
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
-	alert("aaaaaaaaaaaa");
+    console.log("aaa=" + data.toString());
    }
   
    else if(num==2){
@@ -312,10 +311,9 @@ async function sendImage(num) {
       body: formData
     });
     data = await response2.json(); 
-	document.cookie += "image2=" +  data + "***";  
     document.getElementById('button_send2').textContent = "Send";
     document.getElementById("status2").textContent = "";
-	alert("bbbbbbbbbbbbb");
+    console.log("bbb=" + data.toString());     
    }
    else if(num==3){
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -323,23 +321,20 @@ async function sendImage(num) {
       body: formData
     });
     data = await response3.json();
-	document.cookie += "image3=" +  data + "***"; 
     document.getElementById('button_send3').textContent = "Send";
-    document.getElementById("status3").textContent = "";    
+    document.getElementById("status3").textContent = ""; 
+    console.log("ccc=" + data.toString());    
    }
-      
-
-	
-	  
+       
     let list_books = [];
     list_books.push(data);
-		
+    
  
     const list_items = list_books[0]["sorted"];
-
  
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
+	   
        return;
     }
     else  if(num==2 && list_items.length==0){
@@ -364,8 +359,7 @@ async function sendImage(num) {
      books.push(obj);     
     }
    
-    displayCarousel(books,num);
-
+    displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
     if(num==1 && list_books[0]["existing_swaps"] == 1){
