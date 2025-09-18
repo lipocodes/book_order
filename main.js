@@ -1,4 +1,3 @@
-let list_books = [];
 let num_input = 0;
 let selectedFile1 = null;
 let selectedFile2 = null;
@@ -327,19 +326,11 @@ async function sendImage(num) {
     console.log("ccc=" + data.toString());    
    }
        
+    let list_books = [];
     list_books.push(data);
-	
-    let list_items;	
-    if(num==1){ 
-	 list_items = list_books[0]["sorted"];
-	}
-	else if(num==2){ 
-	list_items = list_books[1]["sorted"];
-	}
-	else if(num==3){ 
-	 list_items = list_books[2]["sorted"];
-	}
-
+    
+    //displayCarousel(list_books,num);  
+    const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
@@ -353,8 +344,7 @@ async function sendImage(num) {
        document.getElementById("status3").textContent = "❌ The query failed.."; 
        return;
     } 
-      
-      
+          
     let books = [];      
     for(let i=0; i<list_items.length; i++){
      const item = list_items[i];
@@ -367,7 +357,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-    alert(num + "\n" +books);	
+    
     displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
