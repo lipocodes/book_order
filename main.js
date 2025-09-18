@@ -331,8 +331,8 @@ async function sendImage(num) {
 		
  
     const list_items = list_books[0]["sorted"];
-	document.cookie += list_books[0]["sorted"];
-    
+	document.cookie += "*****" +  data;
+    alert(document.cookie);
  
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
@@ -361,8 +361,7 @@ async function sendImage(num) {
     }
    
     displayCarousel(books,num);
-    document.cookie = "";	
-	alert(document.cookie);
+
 
     //if the book check was not clean of errors      
     if(num==1 && list_books[0]["existing_swaps"] == 1){
