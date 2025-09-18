@@ -328,6 +328,7 @@ async function sendImage(num) {
        
     let list_books = [];
     list_books.push(data);
+	document.cookie = list_booksף
     alert(document.cookie);	
  
     const list_items = list_books[0]["sorted"];
