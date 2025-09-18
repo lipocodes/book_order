@@ -361,7 +361,7 @@ async function sendImage(num) {
     }
    
     displayCarousel(books,num);
-    document.cookie -= list_books[0]["sorted"];	
+    document.cookie = "";	
 	alert(document.cookie);
 
     //if the book check was not clean of errors      
