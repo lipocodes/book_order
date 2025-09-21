@@ -337,7 +337,7 @@ async function sendImage(num) {
     let list_items1, list_items2;
     if(num==1) list_items1 = list_books1[0]["sorted"];
 	if(num==2) list_items2 = list_books2[0]["sorted"];
- 
+    alert(num);    
     if(num==1 && list_items1.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
        return;
@@ -350,7 +350,7 @@ async function sendImage(num) {
        document.getElementById("status3").textContent = "❌ The query failed.."; 
        return;
     } 
-    alert(list_items1.length);      
+      
     let books = [];      
     for(let i=0; i<list_items.length; i++){
      const item = list_items[i];
