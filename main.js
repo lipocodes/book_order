@@ -373,7 +373,7 @@ async function sendImage2() {
    }
   }
   catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }  
-
+}
 
 
 
