@@ -336,13 +336,15 @@ async function sendImage(num) {
     
     let list_items1, list_items2;
     if(num==1) list_items1 = list_books1[0]["sorted"];
-	if(num==2) list_items2 = list_books2[0]["sorted"];
-    alert(num);    
-    if(num==1 && list_items1.length==0){
+	if(num==2) list_items2 = list_books1[0]["sorted"];
+	alert(num);
+ 
+    if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
+	   
        return;
     }
-    else  if(num==2 && list_items2.length==0){
+    else  if(num==2 && list_items.length==0){
      document.getElementById("status2").textContent = "❌ The query failed.."; 
      return;
     }
@@ -350,7 +352,7 @@ async function sendImage(num) {
        document.getElementById("status3").textContent = "❌ The query failed.."; 
        return;
     } 
-      
+          
     let books = [];      
     for(let i=0; i<list_items.length; i++){
      const item = list_items[i];
@@ -363,7 +365,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-
+   
     displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
