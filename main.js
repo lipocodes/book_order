@@ -246,6 +246,49 @@ books.forEach(book => {
  });
 }
 
+/////////////////////////////////////////////////////////////////////////////////
+async fetchData(num){
+  
+ if(num==1){
+    const formData1 = new FormData();
+	const response1 = await fetch("https://www.yvclib.org/ocr/process", {
+    method: "POST",
+    body: formData1
+   });
+   const data1 = await response.json(); 
+   document.getElementById('button_send1').textContent = "Send";
+   document.getElementById("status1").textContent = "";
+   return data1;
+  }
+
+ else if(num==2){
+	const formData2 = new FormData(); 
+	const response2 = await fetch("https://www.yvclib.org/ocr/process", {
+    method: "POST",
+    body: formData2
+   });   
+    const data2 = await response.json(); 
+    document.getElementById('button_send2').textContent = "Send";
+    document.getElementById("status2").textContent = "";
+	return data2;
+  }
+
+ else if(num==3){
+    const formData3 = new FormData();
+	const response3 = await fetch("https://www.yvclib.org/ocr/process", {
+    method: "POST",
+    body: formData3
+   });
+      
+   const data3 = await response.json(); 
+   document.getElementById('button_send3').textContent = "Send";
+   document.getElementById("status3").textContent = "";
+   return data3;
+  }  
+  
+}
+
+////////////////////////////////////////////////////////////////////////////////
 
 async function sendImage(num) {
    
@@ -283,48 +326,9 @@ async function sendImage(num) {
   }
       
   try 
-  {
-   const formData = new FormData();
-   if(num==1) formData.append("image1", selectedFile1);
-   else if(num==2) formData.append("image2", selectedFile2);
-   else if(num==3) formData.append("image3", selectedFile3);
-
-   let data;
-    
-   
-   //we need each <input> to have its separate fetch() operation
-   if(num==1){
-      const response1 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-      
-    data = await response1.json(); 
-    document.getElementById('button_send1').textContent = "Send";
-    document.getElementById("status1").textContent = "";
-    console.log("aaa=" + data.toString());
-   }
-  
-   else if(num==2){
-      const response2 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    data = await response2.json(); 
-    document.getElementById('button_send2').textContent = "Send";
-    document.getElementById("status2").textContent = "";
-    console.log("bbb=" + data.toString());     
-   }
-   else if(num==3){
-      const response3 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    data = await response3.json();
-    document.getElementById('button_send3').textContent = "Send";
-    document.getElementById("status3").textContent = ""; 
-    console.log("ccc=" + data.toString());    
-   }
+  {   
+    //we need each <input> to have its separate fetch() operation
+    let data = fetchData(num);
        
     let list_books = [];
     list_books.push(data);
