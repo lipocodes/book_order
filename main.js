@@ -268,12 +268,12 @@ async function sendImage1() {
    const formData = new FormData();
    formData.append("image1", selectedFile1);
        
-   const response1 = await fetch("https://www.yvclib.org/ocr/process", {
+   const response = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
    });
 
-   const data = await response1.json(); 
+   const data = await response.json(); 
    document.getElementById('button_send1').textContent = "Send";
    document.getElementById("status1").textContent = "";
           
@@ -332,12 +332,12 @@ async function sendImage2() {
    const formData = new FormData();
    formData.append("image2", selectedFile1);
        
-   const response1 = await fetch("https://www.yvclib.org/ocr/process", {
+   const response = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
    });
 
-   const data = await response2.json(); 
+   const data = await response.json(); 
    document.getElementById('button_send2').textContent = "Send";
    document.getElementById("status2").textContent = "";
           
