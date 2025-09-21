@@ -302,7 +302,7 @@ async function sendImage(num) {
     data = await response1.json(); 
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
-    console.log("aaa=" + data.toString());
+    alert("aaaaaaaaaaa");
    }
   
    else if(num==2){
@@ -313,7 +313,7 @@ async function sendImage(num) {
     data = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
     document.getElementById("status2").textContent = "";
-    console.log("bbb=" + data.toString());     
+    alert("bbbbbbbbbbbbb");  
    }
    else if(num==3){
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -323,7 +323,7 @@ async function sendImage(num) {
     data = await response3.json();
     document.getElementById('button_send3').textContent = "Send";
     document.getElementById("status3").textContent = ""; 
-    console.log("ccc=" + data.toString());    
+    alert("cccccccccc");   
    }
        
     let list_books = [];
