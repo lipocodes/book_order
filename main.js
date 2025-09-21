@@ -290,7 +290,7 @@ async function sendImage(num) {
 
    let data1,data2,data3;
     
-   alrtt("xxxxxxxxxx=" + num)
+   alert("xxxxxxxxxx=" + num)
    //we need each <input> to have its separate fetch() operation
    if(num==1){
       const response1 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -301,7 +301,6 @@ async function sendImage(num) {
     data1 = await response1.json(); 
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
-    console.log("aaa=" + data.toString());
    }
   
    else if(num==2){
@@ -311,8 +310,7 @@ async function sendImage(num) {
     });
     data2 = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
-    document.getElementById("status2").textContent = "";
-    console.log("bbb=" + data.toString());     
+    document.getElementById("status2").textContent = ""; 
    }
    else if(num==3){
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -321,8 +319,7 @@ async function sendImage(num) {
     });
     data3 = await response3.json();
     document.getElementById('button_send3').textContent = "Send";
-    document.getElementById("status3").textContent = ""; 
-    console.log("ccc=" + data.toString());    
+    document.getElementById("status3").textContent = "";    
    }
        
     let list_books = [];
