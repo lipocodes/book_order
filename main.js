@@ -180,7 +180,6 @@ function toggleSendButton(button_number){
 }
 //////////////////////////////////////////////////////////////
 function displayCarousel(books,num) {
-
 //before populating the carousel      
 if(num==1){
  carousel_items1.style.display = "flex";
@@ -246,248 +245,49 @@ books.forEach(book => {
  });
 }
 
-
-async function sendImage(num) {
-   
-  //carousel needs to be empty
-  if(num==1) document.getElementById("carousel_items1").innerHTML = "";
-  else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
-  else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
-         
-  // taking a photo is compulsory..      
-  if (num==1 && !selectedFile1) {
-   alert("Please take a photo first.");
-   return;
-  }
-  else if (num==2 && !selectedFile2) {
-   alert("Please take a photo first.");
-   return;
-  }
-  else if (num==3 && !selectedFile3) {
-   alert("Please take a photo first.");
-   return;
-  }       
-      
-  // Update status
-  if(num==1) {
-     document.getElementById("status1").textContent = "⏳ Processing...";
-     toggleSendButton(1);
-  }
-  else if(num==2){ 
-     document.getElementById("status2").textContent = "⏳ Processing...";
-     toggleSendButton(2);
-  }
-  else if(num==3){ 
-     document.getElementById("status3").textContent = "⏳ Processing...";
-     toggleSendButton(3);
-  }
-      
-  try 
-  {
-   const formData = new FormData();
-   if(num==1) formData.append("image1", selectedFile1);
-   else if(num==2) formData.append("image2", selectedFile2);
-   else if(num==3) formData.append("image3", selectedFile3);
-
-   let data;
-    
-   
-   //we need each <input> to have its separate fetch() operation
-   if(num==1){
-	  alert("aaaaaaaaaaa"); 
-      const response1 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    alert("axaxax");  
-    data = await response1.json(); 
-    document.getElementById('button_send1').textContent = "Send";
-    document.getElementById("status1").textContent = "";
-    
-   }
-  
-   else if(num==2){
-	  alert("bbbbbbbbbbbbb");  
-      const response2 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    data = await response2.json(); 
-    document.getElementById('button_send2').textContent = "Send";
-    document.getElementById("status2").textContent = "";
-   
-   }
-   else if(num==3){
-      const response3 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    data = await response3.json();
-    document.getElementById('button_send3').textContent = "Send";
-    document.getElementById("status3").textContent = ""; 
-    alert("cccccccccc");   
-   }
-       
-    let list_books = [];
-    list_books.push(data);
-    
- 
-    const list_items = list_books[0]["sorted"];
- 
-    if(num==1 && list_items.length==0){
-       document.getElementById("status1").textContent = "❌ The query failed.."; 
-	   
-       return;
-    }
-    else  if(num==2 && list_items.length==0){
-     document.getElementById("status2").textContent = "❌ The query failed.."; 
-     return;
-    }
-    if(num==3 && list_items.length==0){
-       document.getElementById("status3").textContent = "❌ The query failed.."; 
-       return;
-    } 
-          
-    let books = [];      
-    for(let i=0; i<list_items.length; i++){
-     const item = list_items[i];
-     const pos = item.indexOf("^^^");
-     const dewey = item.substr(pos+3);     
-     const title = item.substr(0,pos);
-      
-     let obj = {};
-     obj.dewey = dewey;
-     obj.title = title;         
-     books.push(obj);     
-    }
-   
-    displayCarousel(books,num);      
-
-    //if the book check was not clean of errors      
-    if(num==1 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status1").textContent = "❌ The right book order should be:";     
-    }else if(num==1){
-     document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
-    }
-    else if(num==2 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status2").textContent = "❌ The right book order should be:";     
-    }else if(num==2){
-     document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
-    }  
-    else if(num==3 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status3").textContent = "❌ The right book order should be:";     
-    }else if(num==3){
-     document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
-    }       
-
-  }
-  catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
-}
 ////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 async function sendImage1() {
    
   //carousel needs to be empty
-  if(num==1) document.getElementById("carousel_items1").innerHTML = "";
-  else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
-  else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
-         
+  document.getElementById("carousel_items1").innerHTML = "";
+       
   // taking a photo is compulsory..      
-  if (num==1 && !selectedFile1) {
+  if (!selectedFile1) {
    alert("Please take a photo first.");
    return;
   }
-  else if (num==2 && !selectedFile2) {
-   alert("Please take a photo first.");
-   return;
-  }
-  else if (num==3 && !selectedFile3) {
-   alert("Please take a photo first.");
-   return;
-  }       
-      
+         
   // Update status
-  if(num==1) {
-     document.getElementById("status1").textContent = "⏳ Processing...";
-     toggleSendButton(1);
-  }
-  else if(num==2){ 
-     document.getElementById("status2").textContent = "⏳ Processing...";
-     toggleSendButton(2);
-  }
-  else if(num==3){ 
-     document.getElementById("status3").textContent = "⏳ Processing...";
-     toggleSendButton(3);
-  }
+  document.getElementById("status1").textContent = "⏳ Processing...";
+  toggleSendButton(1);
+  
       
   try 
   {
    const formData = new FormData();
    if(num==1) formData.append("image1", selectedFile1);
-   else if(num==2) formData.append("image2", selectedFile2);
-   else if(num==3) formData.append("image3", selectedFile3);
-
-   let data;
-    
-   
-   //we need each <input> to have its separate fetch() operation
-   if(num==1){
-	  alert("aaaaaaaaaaa"); 
-      const response1 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    alert("axaxax");  
-    data = await response1.json(); 
-    document.getElementById('button_send1').textContent = "Send";
-    document.getElementById("status1").textContent = "";
-    
-   }
-  
-   else if(num==2){
-	  alert("bbbbbbbbbbbbb");  
-      const response2 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    data = await response2.json(); 
-    document.getElementById('button_send2').textContent = "Send";
-    document.getElementById("status2").textContent = "";
-   
-   }
-   else if(num==3){
-      const response3 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    data = await response3.json();
-    document.getElementById('button_send3').textContent = "Send";
-    document.getElementById("status3").textContent = ""; 
-    alert("cccccccccc");   
-   }
        
-    let list_books = [];
-    list_books.push(data);
-    
+   const response1 = await fetch("https://www.yvclib.org/ocr/process", {
+      method: "POST",
+      body: formData
+   });
+
+   const data = await response1.json(); 
+   document.getElementById('button_send1').textContent = "Send";
+   document.getElementById("status1").textContent = "";
+          
+   let list_books = [];
+   list_books.push(data);
+   const list_items = list_books[0]["sorted"];
  
-    const list_items = list_books[0]["sorted"];
- 
-    if(num==1 && list_items.length==0){
-       document.getElementById("status1").textContent = "❌ The query failed.."; 
-	   
-       return;
-    }
-    else  if(num==2 && list_items.length==0){
-     document.getElementById("status2").textContent = "❌ The query failed.."; 
+   if(list_items.length==0){
+     document.getElementById("status1").textContent = "❌ The query failed..";    
      return;
     }
-    if(num==3 && list_items.length==0){
-       document.getElementById("status3").textContent = "❌ The query failed.."; 
-       return;
-    } 
-          
-    let books = [];      
-    for(let i=0; i<list_items.length; i++){
+           
+   let books = [];      
+   for(let i=0; i<list_items.length; i++){
      const item = list_items[i];
      const pos = item.indexOf("^^^");
      const dewey = item.substr(pos+3);     
@@ -497,304 +297,22 @@ async function sendImage1() {
      obj.dewey = dewey;
      obj.title = title;         
      books.push(obj);     
-    }
+   }
    
-    displayCarousel(books,num);      
+   displayCarousel(books,num);      
 
-    //if the book check was not clean of errors      
-    if(num==1 && list_books[0]["existing_swaps"] == 1){
+   //if the book check was not clean of errors      
+   if(list_books[0]["existing_swaps"] == 1){
      document.getElementById("status1").textContent = "❌ The right book order should be:";     
-    }else if(num==1){
+   }else{
      document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
-    }
-    else if(num==2 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status2").textContent = "❌ The right book order should be:";     
-    }else if(num==2){
-     document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
-    }  
-    else if(num==3 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status3").textContent = "❌ The right book order should be:";     
-    }else if(num==3){
-     document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
-    }       
-
-  }
-  catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
-}
-
-async function sendImage2() {
-   
-  //carousel needs to be empty
-  if(num==1) document.getElementById("carousel_items1").innerHTML = "";
-  else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
-  else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
-         
-  // taking a photo is compulsory..      
-  if (num==1 && !selectedFile1) {
-   alert("Please take a photo first.");
-   return;
-  }
-  else if (num==2 && !selectedFile2) {
-   alert("Please take a photo first.");
-   return;
-  }
-  else if (num==3 && !selectedFile3) {
-   alert("Please take a photo first.");
-   return;
-  }       
-      
-  // Update status
-  if(num==1) {
-     document.getElementById("status1").textContent = "⏳ Processing...";
-     toggleSendButton(1);
-  }
-  else if(num==2){ 
-     document.getElementById("status2").textContent = "⏳ Processing...";
-     toggleSendButton(2);
-  }
-  else if(num==3){ 
-     document.getElementById("status3").textContent = "⏳ Processing...";
-     toggleSendButton(3);
-  }
-      
-  try 
-  {
-   const formData = new FormData();
-   if(num==1) formData.append("image1", selectedFile1);
-   else if(num==2) formData.append("image2", selectedFile2);
-   else if(num==3) formData.append("image3", selectedFile3);
-
-   let data;
-    
-   
-   //we need each <input> to have its separate fetch() operation
-   if(num==1){
-	  alert("aaaaaaaaaaa"); 
-      const response1 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    alert("axaxax");  
-    data = await response1.json(); 
-    document.getElementById('button_send1').textContent = "Send";
-    document.getElementById("status1").textContent = "";
-    
    }
-  
-   else if(num==2){
-	  alert("bbbbbbbbbbbbb");  
-      const response2 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    data = await response2.json(); 
-    document.getElementById('button_send2').textContent = "Send";
-    document.getElementById("status2").textContent = "";
-   
-   }
-   else if(num==3){
-      const response3 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    data = await response3.json();
-    document.getElementById('button_send3').textContent = "Send";
-    document.getElementById("status3").textContent = ""; 
-    alert("cccccccccc");   
-   }
-       
-    let list_books = [];
-    list_books.push(data);
-    
- 
-    const list_items = list_books[0]["sorted"];
- 
-    if(num==1 && list_items.length==0){
-       document.getElementById("status1").textContent = "❌ The query failed.."; 
-	   
-       return;
-    }
-    else  if(num==2 && list_items.length==0){
-     document.getElementById("status2").textContent = "❌ The query failed.."; 
-     return;
-    }
-    if(num==3 && list_items.length==0){
-       document.getElementById("status3").textContent = "❌ The query failed.."; 
-       return;
-    } 
-          
-    let books = [];      
-    for(let i=0; i<list_items.length; i++){
-     const item = list_items[i];
-     const pos = item.indexOf("^^^");
-     const dewey = item.substr(pos+3);     
-     const title = item.substr(0,pos);
-      
-     let obj = {};
-     obj.dewey = dewey;
-     obj.title = title;         
-     books.push(obj);     
-    }
-   
-    displayCarousel(books,num);      
-
-    //if the book check was not clean of errors      
-    if(num==1 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status1").textContent = "❌ The right book order should be:";     
-    }else if(num==1){
-     document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
-    }
-    else if(num==2 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status2").textContent = "❌ The right book order should be:";     
-    }else if(num==2){
-     document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
-    }  
-    else if(num==3 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status3").textContent = "❌ The right book order should be:";     
-    }else if(num==3){
-     document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
-    }       
-
   }
   catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
 }
 
 
-async function sendImage3() {
-   
-  //carousel needs to be empty
-  if(num==1) document.getElementById("carousel_items1").innerHTML = "";
-  else if(num==2)  document.getElementById("carousel_items2").innerHTML = "";
-  else if(num==3)  document.getElementById("carousel_items3").innerHTML = "";
-         
-  // taking a photo is compulsory..      
-  if (num==1 && !selectedFile1) {
-   alert("Please take a photo first.");
-   return;
-  }
-  else if (num==2 && !selectedFile2) {
-   alert("Please take a photo first.");
-   return;
-  }
-  else if (num==3 && !selectedFile3) {
-   alert("Please take a photo first.");
-   return;
-  }       
-      
-  // Update status
-  if(num==1) {
-     document.getElementById("status1").textContent = "⏳ Processing...";
-     toggleSendButton(1);
-  }
-  else if(num==2){ 
-     document.getElementById("status2").textContent = "⏳ Processing...";
-     toggleSendButton(2);
-  }
-  else if(num==3){ 
-     document.getElementById("status3").textContent = "⏳ Processing...";
-     toggleSendButton(3);
-  }
-      
-  try 
-  {
-   const formData = new FormData();
-   if(num==1) formData.append("image1", selectedFile1);
-   else if(num==2) formData.append("image2", selectedFile2);
-   else if(num==3) formData.append("image3", selectedFile3);
 
-   let data;
-    
-   
-   //we need each <input> to have its separate fetch() operation
-   if(num==1){
-	  alert("aaaaaaaaaaa"); 
-      const response1 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    alert("axaxax");  
-    data = await response1.json(); 
-    document.getElementById('button_send1').textContent = "Send";
-    document.getElementById("status1").textContent = "";
-    
-   }
-  
-   else if(num==2){
-	  alert("bbbbbbbbbbbbb");  
-      const response2 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    data = await response2.json(); 
-    document.getElementById('button_send2').textContent = "Send";
-    document.getElementById("status2").textContent = "";
-   
-   }
-   else if(num==3){
-      const response3 = await fetch("https://www.yvclib.org/ocr/process", {
-      method: "POST",
-      body: formData
-    });
-    data = await response3.json();
-    document.getElementById('button_send3').textContent = "Send";
-    document.getElementById("status3").textContent = ""; 
-    alert("cccccccccc");   
-   }
-       
-    let list_books = [];
-    list_books.push(data);
-    
- 
-    const list_items = list_books[0]["sorted"];
- 
-    if(num==1 && list_items.length==0){
-       document.getElementById("status1").textContent = "❌ The query failed.."; 
-	   
-       return;
-    }
-    else  if(num==2 && list_items.length==0){
-     document.getElementById("status2").textContent = "❌ The query failed.."; 
-     return;
-    }
-    if(num==3 && list_items.length==0){
-       document.getElementById("status3").textContent = "❌ The query failed.."; 
-       return;
-    } 
-          
-    let books = [];      
-    for(let i=0; i<list_items.length; i++){
-     const item = list_items[i];
-     const pos = item.indexOf("^^^");
-     const dewey = item.substr(pos+3);     
-     const title = item.substr(0,pos);
-      
-     let obj = {};
-     obj.dewey = dewey;
-     obj.title = title;         
-     books.push(obj);     
-    }
-   
-    displayCarousel(books,num);      
 
-    //if the book check was not clean of errors      
-    if(num==1 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status1").textContent = "❌ The right book order should be:";     
-    }else if(num==1){
-     document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
-    }
-    else if(num==2 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status2").textContent = "❌ The right book order should be:";     
-    }else if(num==2){
-     document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
-    }  
-    else if(num==3 && list_books[0]["existing_swaps"] == 1){
-     document.getElementById("status3").textContent = "❌ The right book order should be:";     
-    }else if(num==3){
-     document.getElementById("status3").textContent = "✅ No misplaced books have been found!";
-    }       
-
-  }
-  catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
-}
 
 
