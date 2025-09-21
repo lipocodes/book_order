@@ -310,6 +310,69 @@ async function sendImage1() {
   }
   catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
 }
+////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+async function sendImage2() {
+   
+  //carousel needs to be empty
+  document.getElementById("carousel_items2").innerHTML = "";
+       
+  // taking a photo is compulsory..      
+  if (!selectedFile2) {
+   alert("Please take a photo first.");
+   return;
+  }
+         
+  // Update status
+  document.getElementById("status2").textContent = "⏳ Processing...";
+  toggleSendButton(2);
+      
+  try 
+  {
+   const formData = new FormData();
+   formData.append("image2", selectedFile1);
+       
+   const response1 = await fetch("https://www.yvclib.org/ocr/process", {
+      method: "POST",
+      body: formData
+   });
+
+   const data = await response2.json(); 
+   document.getElementById('button_send2').textContent = "Send";
+   document.getElementById("status2").textContent = "";
+          
+   let list_books = [];
+   list_books.push(data);
+   const list_items = list_books[0]["sorted"];
+ 
+   if(list_items.length==0){
+     document.getElementById("status2").textContent = "❌ The query failed..";    
+     return;
+    }
+           
+   let books = [];      
+   for(let i=0; i<list_items.length; i++){
+     const item = list_items[i];
+     const pos = item.indexOf("^^^");
+     const dewey = item.substr(pos+3);     
+     const title = item.substr(0,pos);
+      
+     let obj = {};
+     obj.dewey = dewey;
+     obj.title = title;         
+     books.push(obj);     
+   }
+   
+   displayCarousel(books,2);      
+
+   //if the book check was not clean of errors      
+   if(list_books[0]["existing_swaps"] == 1){
+     document.getElementById("status2").textContent = "❌ The right book order should be:";     
+   }else{
+     document.getElementById("status2").textContent = "✅ No misplaced books have been found!";
+   }
+  }
+  catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }  
 
 
 
