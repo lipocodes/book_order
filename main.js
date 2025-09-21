@@ -297,8 +297,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-	alert("aaaaaaaaaaaa")
-      
+	  
     data1 = await response1.json(); 
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
@@ -309,7 +308,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-	alert("bbbbbbbbbbbbb")
+
     data2 = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
     document.getElementById("status2").textContent = ""; 
@@ -319,7 +318,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-	alert("cccccccccccc")
+
     data3 = await response3.json();
     document.getElementById('button_send3').textContent = "Send";
     document.getElementById("status3").textContent = "";    
@@ -328,7 +327,6 @@ async function sendImage(num) {
     let list_books = [];
     list_books.push(data);
     
- 
     const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
@@ -357,7 +355,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-   
+    alert("sssssssssssss=" + books.length); 
     displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
