@@ -297,7 +297,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-      
+    alert("aaaaaaaaaaaa");  
     data = await response1.json(); 
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
@@ -309,6 +309,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
+	alert("bbbbbbbbbbb");  
     data = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
     document.getElementById("status2").textContent = "";
@@ -319,6 +320,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
+	alert("ccccccccccccc");  
     data = await response3.json();
     document.getElementById('button_send3').textContent = "Send";
     document.getElementById("status3").textContent = ""; 
