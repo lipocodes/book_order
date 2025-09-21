@@ -290,7 +290,7 @@ async function sendImage(num) {
 
    let data1,data2,data3;
     
-   
+   alrtt("xxxxxxxxxx=" + num)
    //we need each <input> to have its separate fetch() operation
    if(num==1){
       const response1 = await fetch("https://www.yvclib.org/ocr/process", {
@@ -299,7 +299,6 @@ async function sendImage(num) {
     });
       
     data1 = await response1.json(); 
-	alert("aaaaaaaaaaaaaa");
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
     console.log("aaa=" + data.toString());
@@ -311,7 +310,6 @@ async function sendImage(num) {
       body: formData
     });
     data2 = await response2.json(); 
-	alert("bbbbbbbbbbbb");
     document.getElementById('button_send2').textContent = "Send";
     document.getElementById("status2").textContent = "";
     console.log("bbb=" + data.toString());     
@@ -322,7 +320,6 @@ async function sendImage(num) {
       body: formData
     });
     data3 = await response3.json();
-	alert("cccccccccccccc");
     document.getElementById('button_send3').textContent = "Send";
     document.getElementById("status3").textContent = ""; 
     console.log("ccc=" + data.toString());    
