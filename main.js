@@ -363,7 +363,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-   
+    alert(list_items1.length);
     displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
