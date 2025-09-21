@@ -350,7 +350,7 @@ async function sendImage(num) {
        document.getElementById("status3").textContent = "❌ The query failed.."; 
        return;
     } 
-          
+    alert(list_items1.length);      
     let books = [];      
     for(let i=0; i<list_items.length; i++){
      const item = list_items[i];
@@ -363,7 +363,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-    alert(list_items1.length);
+
     displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
