@@ -180,7 +180,6 @@ function toggleSendButton(button_number){
 }
 //////////////////////////////////////////////////////////////
 function displayCarousel(books,num) {
-alert(num);
 //before populating the carousel      
 if(num==1){
  carousel_items1.style.display = "flex";
