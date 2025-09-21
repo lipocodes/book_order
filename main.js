@@ -299,7 +299,7 @@ async function sendImage1() {
      books.push(obj);     
    }
    
-   displayCarousel(books,num);      
+   displayCarousel(books,1);      
 
    //if the book check was not clean of errors      
    if(list_books[0]["existing_swaps"] == 1){
