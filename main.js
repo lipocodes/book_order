@@ -335,7 +335,7 @@ async function sendImage(num) {
 	else if(num==2) list_books2.push(data2);
     
  
-    const list_items = list_books1[0]["sorted"];
+    const list_items = list_books2[0]["sorted"];
  
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
