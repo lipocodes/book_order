@@ -288,7 +288,7 @@ async function sendImage(num) {
    else if(num==2) formData.append("image2", selectedFile2);
    else if(num==3) formData.append("image3", selectedFile3);
 
-   let data1,data2,data3;
+   let data;
     
    
    //we need each <input> to have its separate fetch() operation
@@ -297,10 +297,11 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-	  
-    data1 = await response1.json(); 
+      
+    data = await response1.json(); 
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
+    console.log("aaa=" + data.toString());
    }
   
    else if(num==2){
@@ -308,25 +309,26 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-
-    data2 = await response2.json(); 
+    data = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
-    document.getElementById("status2").textContent = ""; 
+    document.getElementById("status2").textContent = "";
+    console.log("bbb=" + data.toString());     
    }
    else if(num==3){
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
     });
-
-    data3 = await response3.json();
+    data = await response3.json();
     document.getElementById('button_send3').textContent = "Send";
-    document.getElementById("status3").textContent = "";    
+    document.getElementById("status3").textContent = ""; 
+    console.log("ccc=" + data.toString());    
    }
        
     let list_books = [];
     list_books.push(data);
     
+ 
     const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
@@ -355,7 +357,7 @@ async function sendImage(num) {
      obj.title = title;         
      books.push(obj);     
     }
-
+   
     displayCarousel(books,num);      
 
     //if the book check was not clean of errors      
