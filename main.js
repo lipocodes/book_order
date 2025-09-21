@@ -255,15 +255,15 @@ async function sendImage(num) {
          
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }
   else if (num==2 && !selectedFile2) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }
   else if (num==3 && !selectedFile3) {
-   ("Please take a photo first.");
+   alert("Please take a photo first.");
    return;
   }       
       
@@ -300,7 +300,6 @@ async function sendImage(num) {
     data = await response1.json(); 
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
-    console.log("aaa=" + data.toString());
    }
   
    else if(num==2){
@@ -309,10 +308,9 @@ async function sendImage(num) {
       body: formData
     });
 	alert("bbbbbbbbbbbbb");
-    data = await response2.json(); 
+    //data = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
-    document.getElementById("status2").textContent = "";
-    console.log("bbb=" + data.toString());     
+    document.getElementById("status2").textContent = "";   
    }
    else if(num==3){
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
