@@ -180,6 +180,7 @@ function toggleSendButton(button_number){
 }
 //////////////////////////////////////////////////////////////
 function displayCarousel(books,num) {
+
 //before populating the carousel      
 if(num==1){
  carousel_items1.style.display = "flex";
@@ -255,15 +256,15 @@ async function sendImage(num) {
          
   // taking a photo is compulsory..      
   if (num==1 && !selectedFile1) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }
   else if (num==2 && !selectedFile2) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }
   else if (num==3 && !selectedFile3) {
-   alert("Please take a photo first.");
+   ("Please take a photo first.");
    return;
   }       
       
@@ -283,61 +284,53 @@ async function sendImage(num) {
       
   try 
   {
-   const formData1 = new FormData();
-   if(num==1) formData1.append("image1", selectedFile1);
-   else if(num==2) formData1.append("image2", selectedFile2);
-   else if(num==3) formData1.append("image3", selectedFile3);
-   
-   const formData2 = new FormData();
-   if(num==1) formData2.append("image1", selectedFile1);
-   else if(num==2) formData2.append("image2", selectedFile2);
-   else if(num==3) formData2.append("image3", selectedFile3);
+   const formData = new FormData();
+   if(num==1) formData.append("image1", selectedFile1);
+   else if(num==2) formData.append("image2", selectedFile2);
+   else if(num==3) formData.append("image3", selectedFile3);
 
-   let data1,data2;
+   let data;
+    
    
    //we need each <input> to have its separate fetch() operation
    if(num==1){
       const response1 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
-      body: formData1
+      body: formData
     });
-	alert("aaaaaaaaaaaaaa");
-    data1 = await response1.json(); 
+      
+    data = await response1.json(); 
     document.getElementById('button_send1').textContent = "Send";
     document.getElementById("status1").textContent = "";
+    console.log("aaa=" + data.toString());
    }
   
    else if(num==2){
       const response2 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
-      body: formData2
+      body: formData
     });
-	alert("bbbbbbbbbbbbb");
-    data2 = await response2.json(); 
+    data = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
-    document.getElementById("status2").textContent = "";   
+    document.getElementById("status2").textContent = "";
+    console.log("bbb=" + data.toString());     
    }
    else if(num==3){
       const response3 = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
       body: formData
     });
-	console.log("ccccccccccccccc");
     data = await response3.json();
     document.getElementById('button_send3').textContent = "Send";
     document.getElementById("status3").textContent = ""; 
     console.log("ccc=" + data.toString());    
    }
        
-    let list_books1 = [];
-	let list_books2 = [];
-    if(num==1) list_books1.push(data1);
-	else if(num==2) list_books2.push(data2);
+    let list_books = [];
+    list_books.push(data);
     
-    let list_items1, list_items2;
-    if(num==1) list_items1 = list_books1[0]["sorted"];
-	if(num==2) list_items2 = list_books1[0]["sorted"];
-	alert(num);
+ 
+    const list_items = list_books[0]["sorted"];
  
     if(num==1 && list_items.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
