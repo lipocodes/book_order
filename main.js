@@ -334,15 +334,15 @@ async function sendImage(num) {
     if(num==1) list_books1.push(data1);
 	else if(num==2) list_books2.push(data2);
     
+    let list_items1, list_items2;
+    if(num==1) list_items1 = list_books1[0]["sorted"];
+	if(num==2) list_items2 = list_books2[0]["sorted"];
  
-    const list_items = list_books2[0]["sorted"];
- 
-    if(num==1 && list_items.length==0){
+    if(num==1 && list_items1.length==0){
        document.getElementById("status1").textContent = "❌ The query failed.."; 
-	   
        return;
     }
-    else  if(num==2 && list_items.length==0){
+    else  if(num==2 && list_items2.length==0){
      document.getElementById("status2").textContent = "❌ The query failed.."; 
      return;
     }
