@@ -312,7 +312,7 @@ async function sendImage(num) {
       method: "POST",
       body: formData
     });
-    //data = await response2.json(); 
+    data = await response2.json(); 
     document.getElementById('button_send2').textContent = "Send";
     document.getElementById("status2").textContent = "";
    
