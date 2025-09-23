@@ -41,8 +41,7 @@ clear_carousel3.style.display = "none";
 input1.addEventListener("change", function () {  
 const file = input1.files[0];   
 if (file) {
-// Clone the file to make it independent of the input
-selectedFile1 = file.slice(0, file.size, file.type);	
+selectedFile1 = file.slice(0, file.size, file.type);
 //selectedFile1 = file;
 preview1.src = URL.createObjectURL(file);
 fileName1.textContent = input1.files[0].name;      
@@ -52,7 +51,8 @@ fileName1.textContent = input1.files[0].name;
 input2.addEventListener("change", function () {
 const file = input2.files[0];
 if (file) {
-selectedFile2 = file;
+ selectedFile2 = file.slice(0, file.size, file.type);
+//selectedFile2 = file;
 preview2.src = URL.createObjectURL(file);
 fileName2.textContent = input2.files[0].name;      
    }
