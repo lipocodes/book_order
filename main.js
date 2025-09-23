@@ -41,7 +41,8 @@ clear_carousel3.style.display = "none";
 input1.addEventListener("change", function () {  
 const file = input1.files[0];   
 if (file) {
-selectedFile1 = file;
+selectedFile1 = e.target.files[0].slice(0, e.target.files[0].size, e.target.files[0].type);	
+//selectedFile1 = file;
 preview1.src = URL.createObjectURL(file);
 fileName1.textContent = input1.files[0].name;      
    }
@@ -265,12 +266,12 @@ async function sendImage1() {
       
   try 
   {
-   const formData1 = new FormData();
-   formData1.append("image1", selectedFile1);
+   const formData = new FormData();
+   formData.append("image1", selectedFile1);
        
    const response = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
-      body: formData1
+      body: formData
    });
    
    
