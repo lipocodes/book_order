@@ -42,6 +42,11 @@ input1.addEventListener("change", function () {
 const file = input1.files[0];   
 if (file) {
 selectedFile1 = file;
+var reader = new FileReader()
+reader.onload = function(base64) {
+   localStorage["image1"] = base64;
+ }
+ reader.readAsDataURL(file);
 preview1.src = URL.createObjectURL(file);
 fileName1.textContent = input1.files[0].name;      
    }
