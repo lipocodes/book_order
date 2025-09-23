@@ -248,7 +248,7 @@ books.forEach(book => {
 ////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 async function sendImage1() {
-  alert("aaaaaaaaaaaaaaaa"); 
+
   //carousel needs to be empty
   document.getElementById("carousel_items1").innerHTML = "";
        
@@ -273,7 +273,6 @@ async function sendImage1() {
       body: formData
    });
    
-   alert("fetch"); 
    
    const data = await response.json(); 
    document.getElementById('button_send1').textContent = "Send";
@@ -315,7 +314,7 @@ async function sendImage1() {
 ////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 async function sendImage2() {
-  alert("bbbbbbbbbbbbbbb"); 
+
   //carousel needs to be empty
   document.getElementById("carousel_items2").innerHTML = "";
        
