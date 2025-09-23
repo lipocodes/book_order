@@ -265,12 +265,12 @@ async function sendImage1() {
       
   try 
   {
-   const formData = new FormData();
-   formData.append("image1", selectedFile1);
+   const formData1 = new FormData();
+   formData1.append("image1", selectedFile1);
        
    const response = await fetch("https://www.yvclib.org/ocr/process", {
       method: "POST",
-      body: formData
+      body: formData1
    });
    
    
