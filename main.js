@@ -309,7 +309,7 @@ async function sendImage1() {
      document.getElementById("status1").textContent = "✅ No misplaced books have been found!";
    }
   }
-  catch(error)  {console.log("eeeeeeeeeeeee=" + error)  }        
+  catch(error)  {alert("eee=" + error)  }        
 }
 ////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
