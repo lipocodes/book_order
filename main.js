@@ -42,8 +42,8 @@ input1.addEventListener("change", function () {
 const file = input1.files[0];   
 if (file) {
 //if another <input> is selected, this gets invalidated
-selectedFile1 = file;
-//selectedFile1 = selectedFile1.slice(0, selectedFile1.size, selectedFile1.type);
+//selectedFile1 = file;
+selectedFile1 = file.slice(0, file.size, file.type); // cloned file
 preview1.src = URL.createObjectURL(file);
 fileName1.textContent = input1.files[0].name;      
    }
