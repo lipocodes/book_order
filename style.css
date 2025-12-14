@@ -287,3 +287,12 @@ max-height: 120px;
 border-radius: 12px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
+
+
+  .page-title {
+        font-size: 1.6rem;
+        padding: 20px;
+        gap: 10px;
+        flex-direction: column; /* stack logo + text */
+        text-align: center;
+  }
